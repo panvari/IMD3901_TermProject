@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
 
-    <script src="./js/logic.js"></script>
     <title>Term Project - IMD3901</title>
 </head>
 <body>
     <a-scene>
-        <a-entity geometry="primitive: box" material="color: red"> <!-- placeholder -->
+        
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+
+        <a-entity class="box" geometry="primitive: box" material="color: red" /> <!-- placeholder -->
     </a-scene>
+
+    <script src="js/logic.js"></script>
 </body>
 </html>

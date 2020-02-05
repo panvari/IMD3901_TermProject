@@ -1,0 +1,24 @@
+{
+  "name": "IMD3901_TermProject",
+  "version": "1.0.0",
+  "description": "- Eric: Programmer and Designer\r   - Josh: 3D Modeler and Designer (Extra programmer)\r   - Pauline: Project Manager, 3D Modeler and Designer (Extra programmer) \r   - Julianna: Programmer and Designer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panvari/IMD3901_TermProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/panvari/IMD3901_TermProject/issues"
+  },
+  "homepage": "https://github.com/panvari/IMD3901_TermProject#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

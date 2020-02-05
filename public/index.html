@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-
     <title>Term Project - IMD3901</title>
 </head>
 <body>
     <a-scene>
         
-        <a-camera>
+        <a-assets>
+            <a-asset-item id="gatehouse" src="./assets/models/Gatehouse.obj"></a-asset-item>
+            <a-asset-item id="wall1" src="./assets/models/Wall1.obj"></a-asset-item>
+        </a-assets>
+
+        <a-camera id="camera" wasd-controls="acceleration: 200">
             <a-cursor></a-cursor>
         </a-camera>
+        
 
+        <a-obj-model material="color: grey" src="#gatehouse" position="0 0 -5" scale="0.005 0.005 0.005" rotation="0 90 0"></a-obj-model>
+        <a-obj-model material="color: grey" src="#wall1" position="-15 0 -17" scale="0.005 0.005 0.005" rotation="0 100 0"></a-obj-model>
+        
+        
         <a-entity class="box" geometry="primitive: box" material="color: red" /> <!-- placeholder -->
     </a-scene>
 

@@ -13,6 +13,12 @@
         <a-assets>
             <a-asset-item id="gatehouse" src="./assets/models/Gatehouse.obj"></a-asset-item>
             <a-asset-item id="wall1" src="./assets/models/Wall1.obj"></a-asset-item>
+            <a-asset-item id="RoofedTurret" src="./assets/models/RoofedTurret.obj"></a-asset-item>
+            <a-asset-item id="bed" src="./assets/models/Bed.obj"></a-asset-item>
+            <a-asset-item id="bucket" src="./assets/models/Bucket.obj"></a-asset-item>
+            <a-asset-item id="room" src="./assets/models/Room.obj"></a-asset-item>
+            <a-asset-item id="turret" src="./assets/models/Turret.obj"></a-asset-item>
+            <a-asset-item id="box" src="./assets/models/Box.obj"></a-asset-item>
         </a-assets>
 
         <a-camera id="camera" wasd-controls="acceleration: 200">
@@ -20,13 +26,14 @@
         </a-camera>
         
 
-        <a-obj-model material="color: grey" src="#gatehouse" position="0 0 -5" scale="0.005 0.005 0.005" rotation="0 90 0"></a-obj-model>
-        <a-obj-model material="color: grey" src="#wall1" position="-15 0 -17" scale="0.005 0.005 0.005" rotation="0 100 0"></a-obj-model>
+        <!-- <a-obj-model material="color: grey" src="#gatehouse" position="0 0 -5" scale="0.005 0.005 0.005" rotation="0 90 0"></a-obj-model>
+        <a-obj-model material="color: grey" src="#wall1" position="-15 0 -17" scale="0.005 0.005 0.005" rotation="0 100 0"></a-obj-model> -->
         
         
         <a-entity class="box" geometry="primitive: box" material="color: red" /> <!-- placeholder -->
     </a-scene>
 
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="js/logic.js"></script>
 </body>
 </html>

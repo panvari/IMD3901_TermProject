@@ -28,7 +28,7 @@ app.use(express.static(__dirname + '/public'));
 
 /************* CREATE ROUTES ***************/
 app.get('/', function(req, res) {
-    res.sendFile(__dirname + 'public/index.html');
+    res.sendFile(__dirname + 'public/mobile.html');
 });
 
 /************* LOAD SSL CERTS (if you ran 'node createCerts.js') ***************/

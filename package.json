@@ -20,6 +20,7 @@
   "homepage": "https://github.com/panvari/IMD3901_TermProject#readme",
   "dependencies": {
     "aframe-gui": "^0.3.8",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-forge": "^0.9.1"
   }
 }

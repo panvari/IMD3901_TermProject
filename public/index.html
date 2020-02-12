@@ -28,6 +28,10 @@
             <!-- Pauline Models -->
             <a-asset-item id="stool" src="./assets/models/stool.obj"></a-asset-item>
             <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
+            <a-asset-item id="table" src="./assets/models/table.obj"></a-asset-item>
+            <a-asset-item id="candle" src="./assets/models/candle.obj"></a-asset-item>
+
+            <a-asset-item></a-asset-item>
         </a-assets>
 
         <a-entity id="cameraRig" position="0 1.6 0">
@@ -40,7 +44,7 @@
                     font-size="50px"
                     padding="1rem 2rem"
                     position="2 1.5 -2"
-                    value="Gems Collected"
+                    value="Servants Quarters"
                 >
                 </a-gui-label>
             </a-camera> 
@@ -48,8 +52,12 @@
         
         <!-- josh models -->
         <a-obj-model id="room" material="color: grey" src="#room" position="0 0 -10" scale="0.009 0.015 0.009"></a-obj-model>
-        <a-obj-model id="box" material="color: #6C3D0F" src="#box" position="2 0 -15.9" scale="0.018 0.018 0.009"></a-obj-model>
+        <a-obj-model id="box" material="color: #342618" src="#box" position="2 0 -15.9" scale="0.018 0.018 0.009"></a-obj-model>
+        <a-obj-model id="box" material="color: #342618" src="#box" position="-1 0 -15.9" scale="0.018 0.018 0.009"></a-obj-model>
+        <a-obj-model id="box" material="color: #342618" src="#box" position="-3.5 0 -6" scale="0.018 0.018 0.009" rotation="0 90 0"></a-obj-model>
+        <a-obj-model material="color: white" src="#bed" position="2.3 -1 -13" scale="0.15 0.3 0.2" rotation="0 -180 0"></a-obj-model>
         <a-obj-model material="color: white" src="#bed" position="2.3 -1 -10" scale="0.15 0.3 0.2" rotation="0 -180 0"></a-obj-model>
+        <a-obj-model material="color: white" src="#bed" position="2.3 -1 -7" scale="0.15 0.3 0.2" rotation="0 -180 0"></a-obj-model>
         <a-obj-model material="color: #747373" src="#bucket" position="-2 0.4 -12" scale="0.004 0.0029 0.004"></a-obj-model>
         <a-obj-model material="color: grey" src="#turret" position="6 0 -4" scale="0.005 0.005 0.005"></a-obj-model> <!-- Turret Right -->
         <a-obj-model material="color: grey" src="#turret" position="-6 0 -4" scale="0.005 0.005 0.005"></a-obj-model>  <!-- Turret Left -->
@@ -58,8 +66,11 @@
         <a-obj-model material="color: grey" src="#wall1" position="-4 0 8" rotation="0 -70 0" scale="0.005 0.005 0.005"></a-obj-model>
 
         <!-- Pauline models -->
-        <a-obj-model material="color: brown" src="#stool" scale="0.02 0.02 0.02" position="3 0 -7"></a-obj-model>
-        <a-obj-model material="color: green" src="#gem" scale="0.08 0.08 0.08" position="-2 -2 -6" rotation="0 135 0"></a-obj-model>
+        <a-obj-model material="color: brown" src="#stool" scale="0.02 0.02 0.02" position="3 0 -4"></a-obj-model>
+        <a-obj-model material="color: green" src="#gem" scale="0.05 0.05 0.05" position="3.5 0 -10" rotation="0 135 0"></a-obj-model>
+        <a-obj-model material="color: #47280A" src="#table" scale="0.012 0.01 0.018" position="-3 0 -10" rotation="0 0 0"></a-obj-model>
+        <a-obj-model material="color: white" src="#candle" scale="0.12 0.1 0.18" position="-3 0.85 -11" rotation="0 0 0"></a-obj-model>
+
     </a-scene>
 
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>

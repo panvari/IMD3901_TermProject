@@ -26,33 +26,31 @@
 
         <a-entity id="cameraRig" position="0 1.6 0">
             <a-camera look-controls wasd-controls="acceleration: 220" position="0 0 0">
-                <a-gui-cursor id="cursor"
-                          raycaster="objects: [gui-interactable]"
-                          fuse="false">
-                </a-gui-cursor>
-
+                <a-cursor></a-cursor>
                 <a-gui-label 
                     id="playerScore"
                     width="1" height="0.2"
-                    value='0'
                     font-family="Arial"
                     font-size="50px"
                     padding="1rem 2rem"
                     position="2 1.5 -2"
+                    value="score"
                 >
                 </a-gui-label>
             </a-camera> 
         </a-entity>
+
+        <a-box scorecomponent id="gem" material="color: lightgreen" position="0 1.6 -5"></a-box>
         
-        <a-obj-model material="color: grey" src="#room" position="0 0 -10" scale="0.015 0.015 0.009"></a-obj-model>
-        <a-obj-model material="color: brown" src="#box" position="5 0 -15.9" scale="0.015 0.015 0.009"></a-obj-model>
-        <a-obj-model material="color: white" src="#bed" position="0 0 -15" scale="0.1 0.1 0.1"></a-obj-model>
+        <a-obj-model id="room" material="color: grey" src="#room" position="0 0 -10" scale="0.015 0.015 0.009"></a-obj-model>
+        <a-obj-model id="box" material="color: brown" src="#box" position="5 0 -15.9" scale="0.015 0.015 0.009"></a-obj-model>
+        <a-obj-model material="color: white" src="#bed" position="0 0 -14" scale="0.2 0.1 0.2" rotation="0 -90 0"></a-obj-model>
         <a-obj-model material="color: brown" src="#bucket" position="0 0 -10" scale="0.009 0.009 0.009"></a-obj-model>
-        <a-obj-model material="color: grey" src="#turret" position="5 0 -4" scale="0.005 0.005 0.005"></a-obj-model>
-        <a-obj-model material="color: grey" src="#turret" position="-5 0 -4" scale="0.005 0.005 0.005"></a-obj-model>
+        <a-obj-model material="color: grey" src="#turret" position="6 0 -4" scale="0.005 0.005 0.005"></a-obj-model> <!-- Turret Right -->
+        <a-obj-model material="color: grey" src="#turret" position="-6 0 -4" scale="0.005 0.005 0.005"></a-obj-model>  <!-- Turret Left -->
     </a-scene>
 
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-    <script src="js/logic.js"></script>
+    <script src="/js/scoreComponent.js"></script>
 </body>
 </html>

@@ -1,22 +1,13 @@
 AFRAME.registerComponent('scorecomponent', {
     schema: {
-        
     },
 
-    // init: function () {
-    //   // Do something when component first attached.
-    // },
+    init: function () {
 
-    // update: function () {
-    //   // Do something when component's data is updated.
-    // },
-
-    // remove: function () {
-    //   // Do something the component or its entity is detached.
-    // },
-
-    tick: function (time, timeDelta) {
-        
-        
+        this.el.addEventListener('click', (event) => {
+            console.log('add score!')
+            let score = document.getElementsByName('a-gui-label');
+            score.value = 'val';
+      });
     }
 });

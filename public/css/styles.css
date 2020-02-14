@@ -34,7 +34,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background-image: url("bg.jpg")
+	background-image: url("bg.jpg");
 	background-repeat: repeat;
 
 	background-color: #ffffff;
@@ -82,3 +82,4 @@ a{
 #buttons{
 	text-align: center;
 	line-height: 1.5;
+}

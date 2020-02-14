@@ -2,20 +2,12 @@
 <html lang="en">
     <head>
         <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
     </head>
     <body>
+        <h1>I AM WORKING</h1>
         <script>
-            console.log("yokes");
-            if(AFRAME.utils.isMobile()){
-                function pageRedirect() {
-                    window.location.replace("/mobile_test");
-                }      
-            }
-            // else{
-            //     function pageRedirect() {
-            //         window.location.replace("/index");
-            //     }
-            //}
+            let socket = io();
         </script>
     </body>
 </html>

@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const server = require('http').createServer(app);
+//let x = window.matchMedia("(max-width: 640px)");
 
 const port = 8080;
 app.use(express.static(__dirname + '/public'));
+
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');

@@ -22,5 +22,6 @@
     "aframe-gui": "^0.3.8",
     "express": "^4.17.1",
     "node-forge": "^0.9.1"
-  }
+  },
+  "devDependencies": {}
 }

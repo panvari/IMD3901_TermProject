@@ -7,6 +7,8 @@
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!--GUI Library-->
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script> <!--Physics Library-->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
+
     <title>Term Project - IMD3901</title>
 </head>
 <body>
@@ -47,7 +49,7 @@
                 >
                 </a-gui-label>
             </a-camera> 
-        </a-entity>
+        </a-entity> 
         
         <!-- josh models -->
         <a-obj-model id="room" material="color: grey" src="#room" position="0 0 -10" scale="0.009 0.015 0.009"></a-obj-model>
@@ -67,7 +69,7 @@
         <a-obj-model material="color: #47280A" src="#gatehouse" position="0 0 -9" rotation="0 90 0" scale="0.002 0.0028 0.006"></a-obj-model>
         <a-obj-model material="color: #47280A" src="#gatehouse" position="0 0 -13" rotation="0 90 0" scale="0.002 0.0028 0.006"></a-obj-model>
         
-        <a-gltf-model src="#cheese" position="0 0 0" rotation="0 0 0" scale="1 1 1"></a-gltf-model>
+        <a-gltf-model src="#cheese" id="button" position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3"></a-gltf-model>
 
 
         <!-- Pauline models -->
@@ -78,8 +80,38 @@
 
     </a-scene>
 
-    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-    <script src="/js/scoreComponent.js"></script>
-    <script src="./js/gemRotate.js"></script>
+    <!-- Socket Script -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        let socket = io(); 
+
+        // setInterval(function(){
+        //     let playerCamera = document.getElementById('cameraRig');
+        //     //check every 100ms
+        //     console.log(playerCamera);
+        // }, 1000)
+
+        let changeScene = document.getElementById('button');
+        changeScene.addEventListener('click', () => {
+            socket.emit('change_to_scene2')
+        });
+
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_1', function(data) {
+            window.location.replace('index.html')
+        });
+
+        socket.on('scene_2', function(data) {
+            window.location.replace('newScene.html')
+        });
+
+        // socket.emit('green');
+
+    </script>
 </body>
 </html>

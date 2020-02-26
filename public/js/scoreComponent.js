@@ -11,3 +11,4 @@ AFRAME.registerComponent('scorecomponent', {
       });
     }
 });
+

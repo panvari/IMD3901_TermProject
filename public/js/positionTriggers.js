@@ -11,6 +11,9 @@ AFRAME.registerComponent('player_position', {
 
             console.log(playerPosition, playerRotation);
 
-            if(playerCamera) 
+            if(playerPosition.z > -5 && playerPosition.z < -4){
+                console.log('true')
+                changeScene(2);
+            };
     }
 });

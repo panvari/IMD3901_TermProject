@@ -2,9 +2,9 @@ const express   = require('express');
 const app       = express();
 const http      = require('http');
 const server    = http.createServer(app);
-const socketIO  = require('socket.io')(server); //hello I am new
+const socketIO  = require('socket.io')(server);
 
-const LISTEN_PORT = 8080; //make sure greater than 3000. Some ports are reserved/blocked by firewall ...
+const LISTEN_PORT = 8080; 
 
 app.use((express.static(__dirname + '/public'))); //set root dir to the public folder
 
@@ -14,7 +14,7 @@ app.get('/scene1', function(req,res) {
 });
 
 app.get('/scene2', function(req,res) {
-    res.sendFile(__dirname + '/public/newScene.html');
+    res.sendFile(__dirname + '/public/scene2.html');
 });
 
 //websocket stuff

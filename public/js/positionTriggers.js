@@ -8,10 +8,10 @@ AFRAME.registerComponent('player_position', {
             let playerPosition = playerCamera.getAttribute('position');
             let playerRotation = playerCamera.getAttribute('rotation');
 
-            console.log(playerPosition, playerRotation);
+            // console.log(playerPosition, playerRotation);
 
             if(playerPosition.z > -5 && playerPosition.z < -4){ //specify specific points around castle
-                console.log('true')
+                // console.log('true')
                 changeScene(2);
             };
     }

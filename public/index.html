@@ -10,7 +10,7 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script> <!--Physics Library-->
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
 
-    <title>Term Project - IMD3901</title>
+    <title>scene: 1</title>
 </head>
 <body>
     <a-scene physics="debug:true">
@@ -97,29 +97,17 @@
             console.log(event.detail.newData);
         });
 
-        let socket = io(); 
-
-        // setInterval(function(){
-        //     let playerCamera = document.getElementById('cameraRig');
-        //     //check every 100ms
-        //     console.log(playerCamera);
-        // }, 1000)
 
         function changeScene(val){
             if(val == 1){
-                socket.emit('change_to_scene1')
+                socket.emit('change_to_scene1') //calls server method
             }
             if(val == 2){
-                socket.emit('change_to_scene2')
+                socket.emit('change_to_scene2') //calls server method
             }
         };
 
-        let changeButton = document.getElementById('button');
-        changeButton.addEventListener('click', () => {
-            changeScene(2);
-        });
-
-
+        let socket = io(); 
         //default connect event
         socket.on('connect', function() {
             console.log("connected!");

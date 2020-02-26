@@ -35,7 +35,7 @@
             <a-asset-item id="candle" src="./assets/models/candle.obj"></a-asset-item>
         </a-assets>
 
-        <a-entity id="cameraRig" position="0 1.6 0">
+        <a-entity player_position id="cameraRig" position="0 1.6 0">
             <a-camera look-controls wasd-controls="acceleration: 220" position="0 0 0">
                 <a-cursor></a-cursor>
                 <a-gui-label 
@@ -84,6 +84,18 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
 
+        let playerCamera = document.getElementById('cameraRig');
+        let worldPos = new THREE.Vector3();
+
+         worldPos.setFromMatrixPosition(playerCamera.object3D.matrixWorld);
+         console.log(worldPos.x, worldPos.y, worldPos.z);
+
+
+        playerCamera.addEventListener('componentchanged', function (event) {
+            if (event.detail.name !== 'position') { return; }
+            console.log(event.detail.newData);
+        });
+
         let socket = io(); 
 
         // setInterval(function(){
@@ -113,5 +125,6 @@
         // socket.emit('green');
 
     </script>
+    <script src="./js/positionTriggers.js"></script>
 </body>
 </html>

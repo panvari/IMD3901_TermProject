@@ -10,12 +10,26 @@ app.use((express.static(__dirname + '/public'))); //set root dir to the public f
 
 //routes
 app.get('/scene1', function(req,res) {
-    res.sendFile(__dirname + '/public/scenes/index.html');
+    res.sendFile(__dirname + '/public/scenes/01startScene.html');
 });
 
 app.get('/scene2', function(req,res) {
+    res.sendFile(__dirname + '/public/scenes/02entrance.html');
+});
+
+app.get('/scene3', function(req,res) {
+    res.sendFile(__dirname + '/public/scenes/03weaponRoom.html');
+});
+
+app.get('/scene4', function(req,res) {
+    res.sendFile(__dirname + '/public/scenes/greatHall.html');
+});
+
+app.get('/scene5', function(req,res) {
     res.sendFile(__dirname + '/public/scenes/scene2.html');
 });
+
+
 
 //websocket stuff
 socketIO.on('connection', function(socket) {
@@ -27,12 +41,12 @@ socketIO.on('connection', function(socket) {
 
     //custom events
     socket.on('change_to_scene2', function(data) {
-        console.log('switch scene called');
+        console.log('switch to entrance hall');
         socketIO.sockets.emit('scene_2');
     });
 
     socket.on('change_to_scene1', function(data) {
-        console.log('switch scene called');
+        console.log('switch to courtyard/entrance to caslte ground scene');
         socketIO.sockets.emit('scene_1');
     });
 });

@@ -115,11 +115,19 @@
         });
 
         socket.on('scene_1', function(data) {
-            window.location.replace('index.html')
+            window.location.replace('01startScene.html')
         });
 
         socket.on('scene_2', function(data) {
-            window.location.replace('scene2.html')
+            window.location.replace('02entrance.html')
+        });
+
+        socket.on('scene_3', function(data) {
+            window.location.replace('02entrance.html')
+        });
+
+        socket.on('scene_4', function(data) {
+            window.location.replace('03weaponRoom.html')
         });
 
         // socket.emit('green');

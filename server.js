@@ -10,17 +10,18 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
-    console.log('Server pull active.');
 });
 
 app.get('/mobile', (req, res) => {
     res.sendFile(__dirname + '/public/mobile.html');
-    console.log('Server pull active.');
 });
 
 app.get('/desktop', (req, res) => {
     res.sendFile(__dirname + '/public/desktop.html');
-    console.log('Server pull active.');
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(__dirname + '/public/about.html');
 });
 
 app.listen(port, () => {

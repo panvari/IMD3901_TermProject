@@ -31,6 +31,18 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + 'public/index.html');
 });
 
+app.get('/mobile', (req, res) => {
+    res.sendFile(__dirname + '/public/mobile.html');
+});
+
+app.get('/desktop', (req, res) => {
+    res.sendFile(__dirname + '/public/desktop.html');
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(__dirname + '/public/about.html');
+});
+
 /************* LOAD SSL CERTS (if you ran 'node createCerts.js') ***************/
 let privateKeyPem = '';
 let certPem = '';

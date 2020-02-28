@@ -13,6 +13,16 @@ app.get('/', (req, res) => {
     console.log('Server pull active.');
 });
 
+app.get('/mobile', (req, res) => {
+    res.sendFile(__dirname + '/public/mobile.html');
+    console.log('Server pull active.');
+});
+
+app.get('/desktop', (req, res) => {
+    res.sendFile(__dirname + '/public/desktop.html');
+    console.log('Server pull active.');
+});
+
 app.listen(port, () => {
     console.log('Listening on port ' + port);
 })

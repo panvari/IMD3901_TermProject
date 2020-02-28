@@ -28,8 +28,7 @@
                     <a-gui-label 
                         id="playerLocation"
                         width="1" height="0.2"
-                        font-family="Arial"
-                        font-size="50px"
+                        font-size="4.5rem"
                         padding="1rem 2rem"
                         position="2 1.5 -2"
                         value="Servants Quarters"
@@ -55,8 +54,8 @@
                 <!-- castle front towers -->
                 <a-obj-model material="color: grey" src="#turret" position="-19 0 12" scale="0.009 0.007 0.009"></a-obj-model>
                 <a-obj-model material="color: grey" src="#turret" position="19 0 12" scale="0.009 0.007 0.009"></a-obj-model>
-                <a-obj-model material="color: grey" src="#turret" position="-7.5 0 13" scale="0.0075 0.01 0.007"></a-obj-model>
-                <a-obj-model material="color: grey" src="#turret" position="7.5 0 13" scale="0.0075 0.01 0.007"></a-obj-model>
+                <a-obj-model material="color: grey" src="#turret" position="-7.5w 0 13" scale="0.0075 0.009 0.007"></a-obj-model>
+                <a-obj-model material="color: grey" src="#turret" position="7.5w 0 13" scale="0.0075 0.009 0.007"></a-obj-model>
 
 
             <!-- castle front walls -->
@@ -82,7 +81,7 @@
             <!-- front gatehouse -->
             <a-obj-model material="color: grey" src="#gatehouse" position="0 0 45" rotation="0 90 0" scale="0.005 0.0051 0.005"></a-obj-model>
 
-            <!-- well -->
+            <!--courtyard 1 well -->
             <a-obj-model material="color: grey" src="#well" position="-12 0 26" rotation="0 45 0" scale="1.2 1.2 1.2"></a-obj-model>
 
             <!-- Lights -->
@@ -93,13 +92,18 @@
     <script>
 
         let locator = document.getElementById('playerLocation');
-        locator.setAttribute('value', 'Hello'); //change room values dynamically
+        let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
+        const path = window.location.pathname;
+        const page = path.split('/').pop();
+        if (page == "scene1"){
+            locator.setAttribute('value', "Main Courtyard");
+            locator.setAttribute('font-family', "Enchanted")
+        } 
 
         let playerCamera = document.getElementById('cameraRig');
         let worldPos = new THREE.Vector3();
 
-         worldPos.setFromMatrixPosition(playerCamera.object3D.matrixWorld);
-        //  console.log(worldPos.x, worldPos.y, worldPos.z);
+        worldPos.setFromMatrixPosition(playerCamera.object3D.matrixWorld);
         playerCamera.addEventListener('componentchanged', function (event) {
             if (event.detail.name !== 'position') { return; }
             console.log(event.detail.newData);
@@ -120,8 +124,6 @@
         socket.on('scene_2', function(data) {
             window.location.replace('02entrance.html')
         });
-
-        // socket.emit('green');
 
     </script>
 </body>

@@ -10,11 +10,11 @@ app.use((express.static(__dirname + '/public'))); //set root dir to the public f
 
 //routes
 app.get('/scene1', function(req,res) {
-    res.sendFile(__dirname + '/public/index.html');
+    res.sendFile(__dirname + '/public/scenes/index.html');
 });
 
 app.get('/scene2', function(req,res) {
-    res.sendFile(__dirname + '/public/scene2.html');
+    res.sendFile(__dirname + '/public/scenes/scene2.html');
 });
 
 //websocket stuff

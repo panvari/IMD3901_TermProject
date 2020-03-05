@@ -6,11 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="./js/scene1PositionTrigger.js"></script>
-    <script src="./js/scene1PositionTrigger.js"></script>
-
+    <script src="./js/follow.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
-
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!--GUI Library-->
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
     <title>Courtyard and Entrance Scene</title>
@@ -26,21 +24,21 @@
         </a-assets>
 
         <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
-
-            <a-entity id="camera" position="0 1.6 50w">
-                <a-entity id="camera" camera look-controls wasd-controls="acceleration: 200" kinematic-body>
-                    <a-cursor></a-cursor>
-                    <a-gui-label 
+        
+            <a-entity id="camera" position="0 1.6 50" camera look-controls wasd-controls="acceleration: 400" kinematic-body>
+                <a-cursor></a-cursor>
+                <a-gui-label 
                         id="playerLocation"
                         width="1" height="0.2"
                         font-size="4.5rem"
                         padding="1rem 2rem"
                         position="2 1.5 -2"
                         value="Servants Quarters"
-                    >
-                    </a-gui-label>
-                </a-entity>
-              </a-entity>
+                >
+                </a-gui-label>
+            </a-entity>
+            
+            
     
             <!-- Floor -->
             <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 25"></a-plane> 
@@ -91,7 +89,7 @@
             <a-obj-model material="color: grey" src="#gatehouse" position="0 0 45" rotation="0 90 0" scale="0.005 0.0051 0.005"></a-obj-model>
 
             <!--courtyard 1 well -->
-            <a-obj-model material="color: grey" src="#well" position="-12 0 26" rotation="0 45 0" scale="1.2 1.2 1.2"></a-obj-model>
+            <a-obj-model static-body material="color: grey" src="#well" position="-12 0 26" rotation="0 45 0" scale="1.2 1.2 1.2"></a-obj-model>
 
             <!-- Lights -->
             

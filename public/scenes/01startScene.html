@@ -6,13 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="./js/scene1PositionTrigger.js"></script>
+    <script src="./js/scene1PositionTrigger.js"></script>
+
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!--GUI Library-->
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script> <!--Physics Library-->
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
     <title>Courtyard and Entrance Scene</title>
+
 </head>
 <body>
-    <a-scene>
+    <a-scene physics="debug: true">
 
         <a-assets>
             <a-asset-item id="gatehouse" src="./assets/models/Gatehouse.obj"></a-asset-item>
@@ -21,9 +26,9 @@
         </a-assets>
 
         <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
-        
-            <a-entity player_position id="cameraRig" position="0 1.7 55">
-                <a-camera look-controls wasd-controls="acceleration: 420" position="0 0 0">
+
+            <a-entity id="camera" position="0 1.6 50w">
+                <a-entity id="camera" camera look-controls wasd-controls="acceleration: 200" kinematic-body>
                     <a-cursor></a-cursor>
                     <a-gui-label 
                         id="playerLocation"
@@ -34,17 +39,21 @@
                         value="Servants Quarters"
                     >
                     </a-gui-label>
-                </a-camera> 
-            </a-entity> 
+                </a-entity>
+              </a-entity>
+    
+            <!-- Floor -->
+            <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 25"></a-plane> 
 
             <!-- forward position reference -->
             <a-box position="0 0 49" scale="1 1 1" material="color: blue"></a-box> 
 
             <!-- outer walls -->
-            <a-box material="color: grey" scale="20 10 1.5" position="-16 5 35" rotation="0 -70 0"></a-box>
-            <a-box material="color: grey" scale="20 10 1.5" position="16 5 35" rotation="0 70 0"></a-box>
-            <a-box material="color: grey" scale="13 10 1.5" position="-19 5 18" rotation="0 90 0"></a-box>
-            <a-box material="color: grey" scale="13 10 1.5" position="19 5 18" rotation="0 90 0"></a-box>
+            <a-box static-body rotation="0 -70 0" position="-16 5 35" material="color: grey" scale="20 10 1.5"></a-box>
+
+            <a-box static-body material="color: grey" scale="20 10 1.5" position="16 5 35" rotation="0 70 0"></a-box>
+            <a-box static-body material="color: grey" scale="13 10 1.5" position="-19 5 18" rotation="0 90 0"></a-box>
+            <a-box static-body material="color: grey" scale="13 10 1.5" position="19 5 18" rotation="0 90 0"></a-box>
 
             <!--towers (turrets) -->
                 <!-- outer wall towers -->
@@ -52,15 +61,15 @@
                 <a-obj-model material="color: grey" src="#turret" position="19 0 27" scale="0.008 0.006 0.008"></a-obj-model>
 
                 <!-- castle front towers -->
-                <a-obj-model material="color: grey" src="#turret" position="-19 0 12" scale="0.009 0.007 0.009"></a-obj-model>
-                <a-obj-model material="color: grey" src="#turret" position="19 0 12" scale="0.009 0.007 0.009"></a-obj-model>
-                <a-obj-model material="color: grey" src="#turret" position="-7.5w 0 13" scale="0.0075 0.009 0.007"></a-obj-model>
-                <a-obj-model material="color: grey" src="#turret" position="7.5w 0 13" scale="0.0075 0.009 0.007"></a-obj-model>
+                <a-obj-model static-body material="color: grey" src="#turret" position="-19 0 12" scale="0.009 0.007 0.009"></a-obj-model>
+                <a-obj-model static-body material="color: grey" src="#turret" position="19 0 12" scale="0.009 0.007 0.009"></a-obj-model>
+                <a-obj-model static-body material="color: grey" src="#turret" position="-7.5w 0 13" scale="0.0075 0.009 0.007"></a-obj-model>
+                <a-obj-model static-body material="color: grey" src="#turret" position="7.5w 0 13" scale="0.0075 0.009 0.007"></a-obj-model>
 
 
             <!-- castle front walls -->
-            <a-box material="color: grey" scale="10 10 1.5" position="-11 5 13" rotation="0 -10 0"></a-box>
-            <a-box material="color: grey" scale="10 10 1.5" position="11 5 13" rotation="0 10 0"></a-box>
+            <a-box static-body material="color: grey" scale="10 10 1.5" position="-11 5 13" rotation="0 -10 0"></a-box>
+            <a-box static-body material="color: grey" scale="10 10 1.5" position="11 5 13" rotation="0 10 0"></a-box>
 
             <!-- wall walkways -->
                 <!-- front walkway -->

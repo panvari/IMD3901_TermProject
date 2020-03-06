@@ -16,6 +16,6 @@ AFRAME.registerComponent('popup', {
                     console.log('invisible')
                 }
                 counter += 1;
-        })
+        });
     }
 });

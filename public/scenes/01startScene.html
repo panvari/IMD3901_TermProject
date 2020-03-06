@@ -21,24 +21,26 @@
             <a-asset-item id="gatehouse" src="./assets/models/Gatehouse.obj"></a-asset-item>
             <a-asset-item id="turret" src="./assets/models/Turret.obj"></a-asset-item>
             <a-asset-item id="well" src="./assets/models/well.obj"></a-asset-item>
+
+            <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
         </a-assets>
 
         <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
-        
-            <a-entity id="camera" position="0 1.6 50" camera look-controls wasd-controls="acceleration: 400" kinematic-body>
-                <a-cursor></a-cursor>
-                <a-gui-label 
-                        id="playerLocation"
-                        width="1" height="0.2"
-                        font-size="4.5rem"
-                        padding="1rem 2rem"
-                        position="2 1.5 -2"
-                        value="Servants Quarters"
-                >
-                </a-gui-label>
+            
+            <a-entity id="rig" movement-controls kinematic-body>
+                <a-entity id="camera" camera position="0 1.6 0" look-controls>
+                    <a-cursor></a-cursor>
+                    <a-gui-label 
+                            id="playerLocation"
+                            width="1" height="0.2"
+                            font-size="4.5rem"
+                            padding="1rem 2rem"
+                            position="2 1.5 -2"
+                            value="Servants Quarters"
+                    >
+                    </a-gui-label>
+                </a-entity>
             </a-entity>
-            
-            
     
             <!-- Floor -->
             <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 25"></a-plane> 

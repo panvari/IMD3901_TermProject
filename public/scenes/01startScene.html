@@ -23,7 +23,7 @@
             <a-asset-item id="well" src="./assets/models/well.obj"></a-asset-item>
 
             <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
-            <a-asset-item id="bridge" src="./assets/models/Drawbridge.glb"></a-asset-item>
+            <a-asset-item id="bridge" src="./assets/models/Drawbridge.glb"></a-asset-item> 
             <a-asset-item id="innerGatehouse" src="./assets/models/InnerGatehouse.glb"></a-asset-item>
             <a-asset-item id="table" src="./assets/models/longTable.glb"></a-asset-item>
             <a-asset-item id="wall" src="./assets/models/Wall1.glb"></a-asset-item>
@@ -44,21 +44,17 @@
                             value="Servants Quarters">
                     </a-gui-label>
 
-                    <a-gui-flex-container visible="false" id="popUp" align-items="normal" component-padding="0.1" opacity="0.9" width="2" height="5" position="-1.3 0.5 -2" rotation="0 0 0">
-                        <a-gui-label 
-                                    id="playerLocation"
-                                    width="2" height="5"
-                                    font-size="2rem"
-                                    padding="1rem"
-                                    value="This is a placeholder"
-                                    opacity="0.9">
-                        </a-gui-label>
-                    </a-gui-flex-container>
-
+                    <a-entity
+                        visible="false"
+                        id="popUp"
+                        geometry="primitive: plane; width: 3; height: 3.5"
+                        material="color: grey"
+                        text=" width: 2.8; align: left; font: https://cdn.aframe.io/fonts/Exo2SemiBold.fnt; color: black; baseline: bottom; letterSpacing: 3; lineHeight:40; value: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem iste distinctio facere error in? Natus dolorum modi, aspernatur amet praesentium eveniet, ea ex aliquam voluptatem repellat nesciunt minima non autem, labore facilis perspiciatis quis. Eius, tempore accusamus! Quos, ipsa eos aliquam vero architecto quae eligendi voluptate ex corrupti mollitia ducimus. "
+                        position="-2.5 0.2 -2.5">
+                    </a-entity>
                 </a-entity>
             </a-entity>
 
-            <a-entity light="color: #AFA; intensity: 1.5" position="1 2.5 1"></a-entity>
             <a-gltf-model id="drawBridge" src="#bridge" scale="1.2 1.7 2" position="0 0 6" rotation="0 -90 0"></a-gltf-model>
             <a-gltf-model id="gatehouse" src="#innerGatehouse" scale="2 1.7 2.0" position="0 0 1" rotation="0 -90 0"></a-gltf-model>
             <a-gltf-model id="table" src="#table" scale="0.3 0.5 0.6" position="0 0 -20" rotation="0 0 0"></a-gltf-model>

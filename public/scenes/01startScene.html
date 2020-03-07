@@ -7,6 +7,7 @@
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="./js/scene1PositionTrigger.js"></script>
     <script src="./js/popup.js"></script>
+    <!-- <script src="./js/locationManager.js"></script> -->
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!--GUI Library-->
@@ -25,13 +26,12 @@
             <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
             <a-asset-item id="bridge" src="./assets/models/Drawbridge.glb"></a-asset-item> 
             <a-asset-item id="innerGatehouse" src="./assets/models/InnerGatehouse.glb"></a-asset-item>
-            <a-asset-item id="table" src="./assets/models/longTable.glb"></a-asset-item>
             <a-asset-item id="wall" src="./assets/models/Wall1.glb"></a-asset-item>
         </a-assets>
 
         <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
             
-            <a-entity id="rig" movement-controls kinematic-body>
+            <a-entity location id="rig" movement-controls kinematic-body>
                 <a-entity id="camera" camera look-controls position="0 1.7 0">
                     <a-cursor></a-cursor>
 
@@ -48,18 +48,13 @@
                         visible="false"
                         id="popUp"
                         geometry="primitive: plane; width: 3; height: 3.5"
-                        material="color: grey"
-                        text=" width: 2.8; align: left; font: https://cdn.aframe.io/fonts/Exo2SemiBold.fnt; color: black; baseline: bottom; letterSpacing: 3; lineHeight:40; value: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem iste distinctio facere error in? Natus dolorum modi, aspernatur amet praesentium eveniet, ea ex aliquam voluptatem repellat nesciunt minima non autem, labore facilis perspiciatis quis. Eius, tempore accusamus! Quos, ipsa eos aliquam vero architecto quae eligendi voluptate ex corrupti mollitia ducimus. "
+                        material="color: white"
+                        text=" width: 2.8; align: left; font: https://cdn.aframe.io/fonts/Exo2SemiBold.fnt; color: white; baseline: bottom; letterSpacing: 3; lineHeight:40; value: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem iste distinctio facere error in? Natus dolorum modi, aspernatur amet praesentium eveniet, ea ex aliquam voluptatem repellat nesciunt minima non autem, labore facilis perspiciatis quis. Eius, tempore accusamus! Quos, ipsa eos aliquam vero architecto quae eligendi voluptate ex corrupti mollitia ducimus. "
                         position="-2.5 0.2 -2.5">
                     </a-entity>
                 </a-entity>
             </a-entity>
-
-            <a-gltf-model id="drawBridge" src="#bridge" scale="1.2 1.7 2" position="0 0 6" rotation="0 -90 0"></a-gltf-model>
-            <a-gltf-model id="gatehouse" src="#innerGatehouse" scale="2 1.7 2.0" position="0 0 1" rotation="0 -90 0"></a-gltf-model>
-            <a-gltf-model id="table" src="#table" scale="0.3 0.5 0.6" position="0 0 -20" rotation="0 0 0"></a-gltf-model>
-            
-            
+ 
             <a-obj-model popup id="gemItem" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>
 
             <!-- Floor -->
@@ -77,13 +72,15 @@
                 <a-obj-model material="color: grey" src="#turret" position="-19 0 -37" scale="0.008 0.006 0.008"></a-obj-model>
                 <a-obj-model material="color: grey" src="#turret" position="19 0 -37" scale="0.008 0.006 0.008"></a-obj-model>
 
-                <!-- castle front towers -->
+                <!-- castle front -->
                 <a-obj-model static-body material="color: grey" src="#turret" position="-19 0 -22" scale="0.009 0.007 0.009"></a-obj-model>
                 <a-obj-model static-body material="color: grey" src="#turret" position="19 0 -22" scale="0.009 0.007 0.009"></a-obj-model>
                 <a-obj-model static-body material="color: grey" src="#turret" position="-7.5 0 -35" scale="0.0075 0.0075 0.007"></a-obj-model>
                 <a-obj-model static-body material="color: grey" src="#turret" position="7.5 0 -35" scale="0.0075 0.0075 0.007"></a-obj-model>
 
-
+                <a-gltf-model id="drawBridge" src="#bridge" scale="1.2 1.7 2" position="0 0 6" rotation="0 -90 0"></a-gltf-model>
+                <a-gltf-model id="gatehouse" src="#innerGatehouse" scale="2 1.7 2.0" position="0 0 1" rotation="0 -90 0"></a-gltf-model>            
+               
             <!-- castle front walls -->
             <a-box static-body material="color: grey" scale="10 10 1.5" position="-11 5 -36" rotation="0 -10 0"></a-box>
             <a-box static-body material="color: grey" scale="10 10 1.5" position="11 5 -36" rotation="0 10 0"></a-box>

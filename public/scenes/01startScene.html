@@ -61,12 +61,15 @@
             <!-- Floor -->
             <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 -25"></a-plane>  
 
-            <!-- outer walls -->
-            <a-box static-body rotation="0 -70 0" position="-16 5 -10" material="color: grey" scale="20 10 1.5"></a-box>
+            <!-- outer wall Colliders -->
+            <!-- Front walls -->
+            <a-box static-body rotation="0 -60 0" position="-17 4 -10" material="color: grey" scale="20 10 0.5"></a-box>
+            <a-box static-body material="color: grey" scale="20 10 0.5" position="18 4 -10" rotation="0 60.5 0"></a-box>
+            <!-- Side Walls -->
+            <a-box static-body material="color: grey" scale="13 10 0.5" position="-24 4 -28" rotation="0 -85 0"></a-box>
+            <a-box static-body material="color: grey" scale="13 10 0.5" position="24 4 -28" rotation="0 82 0"></a-box>
+            <!-- Back Walls -->
 
-            <a-box static-body material="color: grey" scale="20 10 1.5" position="16 5 -10" rotation="0 70 0"></a-box>
-            <a-box static-body material="color: grey" scale="13 10 1.5" position="-19 5 -28" rotation="0 90 0"></a-box>
-            <a-box static-body material="color: grey" scale="13 10 1.5" position="19 5 -28" rotation="0 90 0"></a-box>
 
             <!--towers (turrets) -->
                 <!-- outer wall towers -->
@@ -83,8 +86,12 @@
                 <a-gltf-model id="gatehouse" src="#innerGatehouse" scale="2 1.8 2.0" position="0 0 1" rotation="0 -90 0"></a-gltf-model>            
                
             <!-- castle front walls -->
-            <a-box static-body material="color: grey" scale="10 10 1.5" position="-11 5 -36" rotation="0 -10 0"></a-box>
-            <a-box static-body material="color: grey" scale="10 10 1.5" position="11 5 -36" rotation="0 10 0"></a-box>
+            <!-- <a-box static-body material="color: grey" scale="10 10 1.5" position="-11 5 -36" rotation="0 -10 0"></a-box>
+            <a-box static-body material="color: grey" scale="10 10 1.5" position="11 5 -36" rotation="0 10 0"></a-box> -->
+
+            <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="9 0 6" rotation="0 -120 0"></a-gltf-model>
+            <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-9.5 0 3.1" rotation="0 -60 0"></a-gltf-model>            
+           
 
             <!-- front gatehouse -->
             <!-- <a-obj-model material="color: grey" src="#gatehouse" position="0 0 -2" rotation="0 90 0" scale="0.005 0.0051 0.005"></a-obj-model> -->

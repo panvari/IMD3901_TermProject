@@ -20,13 +20,14 @@
 
         <a-assets>
             <a-asset-item id="gatehouse" src="./assets/models/Gatehouse.obj"></a-asset-item>
-            <a-asset-item id="turret" src="./assets/models/Turret.obj"></a-asset-item>
+            <a-asset-item id="turret" src="./assets/models/Turret.glb"></a-asset-item>
             <a-asset-item id="well" src="./assets/models/well.obj"></a-asset-item>
 
             <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
             <a-asset-item id="bridge" src="./assets/models/Drawbridge.glb"></a-asset-item> 
             <a-asset-item id="innerGatehouse" src="./assets/models/InnerGatehouse.glb"></a-asset-item>
             <a-asset-item id="wall" src="./assets/models/Wall1.glb"></a-asset-item>
+            <a-asset-item id="keep" src="./assets/models/Keep.glb"></a-asset-item>
         </a-assets>
 
         <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
@@ -69,37 +70,21 @@
 
             <!--towers (turrets) -->
                 <!-- outer wall towers -->
-                <a-obj-model material="color: grey" src="#turret" position="-19 0 -37" scale="0.008 0.006 0.008"></a-obj-model>
-                <a-obj-model material="color: grey" src="#turret" position="19 0 -37" scale="0.008 0.006 0.008"></a-obj-model>
+                <a-gltf-model material="color: grey" src="#turret" position="-25 0 -37" scale="1 0.85 1"></a-gltf-model>
+                <a-gltf-model material="color: grey" src="#turret" position="25 0 -37" scale="1 0.85 1"></a-gltf-model>
 
                 <!-- castle front -->
-                <a-obj-model static-body material="color: grey" src="#turret" position="-19 0 -22" scale="0.009 0.007 0.009"></a-obj-model>
-                <a-obj-model static-body material="color: grey" src="#turret" position="19 0 -22" scale="0.009 0.007 0.009"></a-obj-model>
-                <a-obj-model static-body material="color: grey" src="#turret" position="-7.5 0 -35" scale="0.0075 0.0075 0.007"></a-obj-model>
-                <a-obj-model static-body material="color: grey" src="#turret" position="7.5 0 -35" scale="0.0075 0.0075 0.007"></a-obj-model>
+                <a-gltf-model static-body material="color: grey" src="#turret" position="-22 0 -18" scale="1 0.85 1"></a-gltf-model>
+                <a-gltf-model static-body material="color: grey" src="#turret" position="22 0 -18" scale="1 0.85 1"></a-gltf-model>
+                <a-gltf-model static-body material="color: grey" src="#turret" position="-10.5 0 1.5" scale="1 0.85 1"></a-gltf-model>
+                <a-gltf-model static-body material="color: grey" src="#turret" position="10.5 0 1.5" scale="1 0.85 1"></a-gltf-model>
 
                 <a-gltf-model id="drawBridge" src="#bridge" scale="1.2 1.7 2" position="0 0 6" rotation="0 -90 0"></a-gltf-model>
-                <a-gltf-model id="gatehouse" src="#innerGatehouse" scale="2 1.7 2.0" position="0 0 1" rotation="0 -90 0"></a-gltf-model>            
+                <a-gltf-model id="gatehouse" src="#innerGatehouse" scale="2 1.8 2.0" position="0 0 1" rotation="0 -90 0"></a-gltf-model>            
                
             <!-- castle front walls -->
             <a-box static-body material="color: grey" scale="10 10 1.5" position="-11 5 -36" rotation="0 -10 0"></a-box>
             <a-box static-body material="color: grey" scale="10 10 1.5" position="11 5 -36" rotation="0 10 0"></a-box>
-
-            <!-- wall walkways -->
-                <!-- front walkway -->
-                <a-box static-body material="color: brown" scale="25 0.5 2.2" position="0 9.2 -1.8"></a-box>
-                <a-box static-body material="color: brown" scale="0.5 10 0.5" position="5 4 -1.6"></a-box>
-                <a-box static-body material="color: brown" scale="0.5 10 0.5" position="-5 4 -1.6"></a-box>
-
-                <!-- right walkways -->
-                <a-box static-body material="color: brown" scale="15 0.5 2.4" position="17.5 8 -28" rotation="0 90 0"></a-box>
-                <a-box static-body material="color: brown" scale="0.5 8 0.5" position="17 4 -26" rotation="0 90 0"></a-box>
-                <a-box static-body material="color: brown" scale="0.5 8 0.5" position="17 4 -32" rotation="0 90 0"></a-box>
-
-                <!-- left walkway -->
-                <a-box static-body material="color: brown" scale="15 0.5 2.4" position="-17.5 8 -28" rotation="0 90 0"></a-box>
-                <a-box static-body material="color: brown" scale="0.5 8 0.5" position="-17 4 -26" rotation="0 90 0"></a-box>
-                <a-box static-body material="color: brown" scale="0.5 8 0.5" position="-17 4 -32" rotation="0 90 0"></a-box>
 
             <!-- front gatehouse -->
             <!-- <a-obj-model material="color: grey" src="#gatehouse" position="0 0 -2" rotation="0 90 0" scale="0.005 0.0051 0.005"></a-obj-model> -->
@@ -107,7 +92,8 @@
             <!--courtyard 1 well -->
             <a-obj-model static-body material="color: grey" src="#well" position="-12 0 -26" rotation="0 45 0" scale="1.2 1.2 1.2"></a-obj-model>
 
-            <!-- Lights -->
+            <!-- Keep -->
+            <a-gltf-model src="#keep" position="0 0 -37" scale="1 2.5 2" rotation="0 90 0"></a-gltf-model>
             
     </a-scene>
 

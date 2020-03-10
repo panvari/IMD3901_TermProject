@@ -9,14 +9,17 @@ const LISTEN_PORT = 8080;
 app.use((express.static(__dirname + '/public'))); //set root dir to the public folder
 
 //routes
-app.get('/scene1', (req,res) => {
+app.get('/courtyard', (req,res) => {
     res.sendFile(__dirname + '/public/scenes/mainCourtyard.html');
 });
 
-app.get('/scene2', (req,res) => {
+app.get('/greatHall', (req,res) => {
     res.sendFile(__dirname + '/public/scenes/greatHall.html');
 });
 
+app.get('/throneRoom', (req,res) => {
+    res.sendFile(__dirname + '/public/scenes/thromeRoom.html');
+});
 
 
 //websocket stuff

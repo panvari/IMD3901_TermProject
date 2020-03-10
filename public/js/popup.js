@@ -12,10 +12,8 @@ AFRAME.registerComponent('popup', {
             if(counter % 2 == 0){
                     popUp.setAttribute('visible', 'true')
                     gemNoise.play();
-                    console.log('visible')
                 }else if(counter % 2 == 1 ){
                     popUp.setAttribute('visible', 'false');
-                    console.log('invisible')
                 }
                 counter += 1;
         });

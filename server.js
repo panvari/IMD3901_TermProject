@@ -9,8 +9,24 @@ const LISTEN_PORT = 8080;
 app.use((express.static(__dirname + '/public'))); //set root dir to the public folder
 
 //routes
-app.get('/scene1', function(req,res) {
+app.get('/', function(req,res) {
     res.sendFile(__dirname + '/public/index.html');
+});
+
+app.get('/mobile', function(req,res) {
+    res.sendFile(__dirname + '/public/mobile.html');
+});
+
+app.get('/desktop', function(req,res) {
+    res.sendFile(__dirname + '/public/desktop.html');
+});
+
+app.get('/about', function(req,res) {
+    res.sendFile(__dirname + '/public/about.html');
+});
+
+app.get('/scene1', function(req,res) {
+    res.sendFile(__dirname + '/public/desktop.html');
 });
 
 app.get('/scene2', function(req,res) {

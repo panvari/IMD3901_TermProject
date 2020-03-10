@@ -10,23 +10,11 @@ app.use((express.static(__dirname + '/public'))); //set root dir to the public f
 
 //routes
 app.get('/scene1', (req,res) => {
-    res.sendFile(__dirname + '/public/scenes/01startScene.html');
+    res.sendFile(__dirname + '/public/scenes/mainCourtyard.html');
 });
 
 app.get('/scene2', (req,res) => {
-    res.sendFile(__dirname + '/public/scenes/02entrance.html');
-});
-
-app.get('/scene3', (req,res) => {
-    res.sendFile(__dirname + '/public/scenes/03weaponRoom.html');
-});
-
-app.get('/scene4', (req,res) => {
     res.sendFile(__dirname + '/public/scenes/greatHall.html');
-});
-
-app.get('/scene5', (req,res) => {
-    res.sendFile(__dirname + '/public/scenes/scene2.html');
 });
 
 

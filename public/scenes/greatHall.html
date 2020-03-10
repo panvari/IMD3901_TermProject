@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!--GUI Library-->
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script> <!--Physics Library-->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <title>Great Hall</title>
+</head>
+<body>
+    <a-scene physics="debug:true">
+
+        <a-assets>
+            <a-asset-item id="cheese" src="./assets/models/Cheese.glb"></a-assasset-item>
+
+        </a-assets>
+
+        <a-entity environment="preset: threetowers; dressingAmount: 0;"></a-entity>
+
+        <a-entity id="cameraRig" position="0 1.6 0">
+            <a-camera look-controls wasd-controls="acceleration: 220" position="0 0 0">
+                <a-cursor></a-cursor>
+                <a-gui-label 
+                    id="playerScore"
+                    width="1" height="0.2"
+                    font-family="Arial"
+                    font-size="50px"
+                    padding="1rem 2rem"
+                    position="2 1.5 -2"
+                    value="Great Hall"
+                >s
+                </a-gui-label>
+            </a-camera> 
+        </a-entity>
+
+        <a-gltf-model src="#cheese" id="button" position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3"></a-gltf-model>
+
+    </a-scene>
+
+    <!-- Socket Script -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        let socket = io(); 
+
+        let changeScene = document.getElementById('button');
+            changeScene.addEventListener('click', () => {
+            socket.emit('change_to_scene1')
+        });
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_1', function(data) {
+            window.location.replace('index.html')
+        });
+
+        socket.on('scene_2', function(data) {
+            window.location.replace('scene2.html')
+        });
+
+    </script>
+</body>
+</html>

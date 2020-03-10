@@ -4,13 +4,13 @@ AFRAME.registerComponent('player_position', {
     },
 
     tick: function (time, timeDelta) {
-            var playerCamera = this.el.sceneEl.camera.el;
-            let playerPosition = playerCamera.getAttribute('position');
 
-            // console.log(playerPosition, playerRotation);
+            console.log(this.el.getAttribute('position'));
 
-            if(playerPosition.z > -5000 && playerPosition.z < -4000){ //specify specific points around castle
-                // console.log('true')
+            let playerPosition = this.el.getAttribute('position');
+
+            if(-1.2 < playerPosition.x < 1.2 && playerPosition.z < -36){ //specify specific points around castle
+                // console.log('change to scene 2 (Great Hall) ')
                 changeScene(2); //call changescene function within the startScene imbedded html script
             };
     }

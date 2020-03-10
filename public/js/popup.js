@@ -11,6 +11,7 @@ AFRAME.registerComponent('popup', {
         this.el.addEventListener('click', () => {
             if(counter % 2 == 0){
                     popUp.setAttribute('visible', 'true')
+                    gem1Clicked = true;
                     gemNoise.play();
                 }else if(counter % 2 == 1 ){
                     popUp.setAttribute('visible', 'false');

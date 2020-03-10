@@ -7,7 +7,7 @@
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="./js/scene1PositionTrigger.js"></script>
     <script src="./js/popup.js"></script>
-    <script src="./js/scoreSystem.js"></script>    
+    <script src="./js/closePopup.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!--GUI Library-->
@@ -141,6 +141,7 @@
 
     </a-scene>
 
+    <script src="./js/scoreSystem.js"></script>  
     <script src="/socket.io/socket.io.js"></script>
     <script>
 
@@ -153,15 +154,6 @@
             locator.setAttribute('value', "Main Courtyard");
             locator.setAttribute('font-family', "Enchanted")
         } 
-
-        let playerCamera = document.getElementById('cameraRig');
-        let worldPos = new THREE.Vector3();
-
-        worldPos.setFromMatrixPosition(playerCamera.object3D.matrixWorld);
-        playerCamera.addEventListener('componentchanged', function (event) {
-            if (event.detail.name !== 'position') { return; }
-            console.log(event.detail.newData);
-        });
 
         function changeScene(val){
             if(val == 2){

@@ -111,7 +111,7 @@
             <a-obj-model static-body material="color: grey" src="#well" position="-12 0 -26" rotation="0 45 0" scale="1.2 1.2 1.2"></a-obj-model>
 
             <!-- Keep -->
-            <a-gltf-model src="#keep" position="0 0 -37" scale="1 2.5 2" rotation="0 90 0"></a-gltf-model>
+            <a-gltf-model src="#keep" position="0 0 -37" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
 
             <!-- Pillars -->
             <!-- <a-gltf-model src="#pillar" position="0 0 0" scale="1 1 1" rotation="0 0 0"></a-gltf-model> -->
@@ -142,7 +142,7 @@
 
         function changeScene(val){
             if(val == 2){
-                socket.emit('change_to_scene2') //calls server method
+                socket.emit('courtyard_to_greathall') //calls server method
             }
         };
 

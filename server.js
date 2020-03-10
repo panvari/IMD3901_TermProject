@@ -28,7 +28,7 @@ socketIO.on('connection', (socket) => {
     });
 
     //custom events
-    socket.on('change_to_scene2', (data) => {
+    socket.on('courtyard_to_greathall', (data) => {
         console.log('switch to entrance hall');
         socketIO.sockets.emit('scene_2');
     });

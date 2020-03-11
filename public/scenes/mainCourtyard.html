@@ -8,6 +8,7 @@
     <script src="./js/scene1PositionTrigger.js"></script>
     <script src="./js/popup.js"></script>
     <script src="./js/closePopup.js"></script>
+    <script src="./js/spherical-env-map.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!--GUI Library-->
@@ -21,22 +22,27 @@
         <a-assets>
             <!-- Images -->
             <img id="gemImage" src="./assets/images/gem.png">
+            <img id="sky" src="./assets/images/CloudySky.jpg">
 
             <!-- Models -->
-            <a-asset-item id="gatehouse" src="./assets/models/Gatehouse.obj"></a-asset-item>
             <a-asset-item id="turret" src="./assets/models/Turret.glb"></a-asset-item>
-            <a-asset-item id="well" src="./assets/models/well.obj"></a-asset-item>
-
             <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
             <a-asset-item id="bridge" src="./assets/models/Drawbridge.glb"></a-asset-item> 
             <a-asset-item id="innerGatehouse" src="./assets/models/InnerGatehouse.glb"></a-asset-item>
             <a-asset-item id="wall" src="./assets/models/Wall1.glb"></a-asset-item>
             <a-asset-item id="keep" src="./assets/models/Keep.glb"></a-asset-item>
             <a-asset-item id="pillar" src="./assets/models/pillar.glb"></a-asset-item>
+            <a-asset-item id="well" src="./assets/models/well.glb"></a-asset-item>
+
+            <a-asset-item id="dummy" src="./assets/models/trainingDummy.glb"></a-asset-item>
+            <a-asset-item id="fence" src="./assets/models/fence.glb"></a-asset-item>
+
         </a-assets>
 
         <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
-            
+            <!-- Lighting  -->
+            <a-light type="ambient" color="#222"></a-light>
+
             <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
                 <a-entity camera look-controls position="0 1.7 0">
                     <a-cursor></a-cursor>
@@ -69,7 +75,7 @@
             </a-entity>
 
             <!-- Gem -->
-            <a-obj-model popup id="gemItem" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>
+            <a-gltf-model popup id="gemItem" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-gltf-model>
 
             <!-- Floor -->
             <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 -25"></a-plane>  
@@ -85,7 +91,6 @@
             <a-box static-body material="color: grey" scale="13 10 0.5" position="-19 4 -38" rotation="0 -170 0"></a-box>
             <a-box static-body material="color: grey" scale="13 10 0.5" position="19 4 -38" rotation="0 170 0"></a-box>
            
-
             <!--towers (turrets) -->
                 <!-- outer wall towers -->
                 <a-gltf-model static-body material="color: grey" src="#turret" position="-25 0 -37" scale="1 0.85 1"></a-gltf-model>
@@ -96,13 +101,31 @@
                 <a-gltf-model static-body material="color: grey" src="#turret" position="22 0 -18" scale="1 0.85 1"></a-gltf-model>
                 <a-gltf-model static-body material="color: grey" src="#turret" position="-10.5 0 1.5" scale="1 0.85 1"></a-gltf-model>
                 <a-gltf-model static-body material="color: grey" src="#turret" position="10.5 0 1.5" scale="1 0.85 1"></a-gltf-model>
-
                 <a-gltf-model id="drawBridge" src="#bridge" scale="1.2 1.7 2" position="0 0 6" rotation="0 -90 0"></a-gltf-model>
-                <a-gltf-model id="gatehouse" src="#innerGatehouse" scale="2 1.8 2.0" position="0 0 1" rotation="0 -90 0"></a-gltf-model>            
-               
-            <!-- castle front walls -->
-            <!-- <a-box static-body material="color: grey" scale="10 10 1.5" position="-11 5 -36" rotation="0 -10 0"></a-box>
-            <a-box static-body material="color: grey" scale="10 10 1.5" position="11 5 -36" rotation="0 10 0"></a-box> -->
+
+            <!-- LIGHTING -->
+            <a-light type="point" position="0 -10 0"></a-light>
+            <a-light type="point" position="0 10 0"></a-light>
+
+            <!-- Outside Area area -->
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="0 -1.5 -41" rotation="0 -90 0"></a-gltf-model>
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="5 -1.5 -41" rotation="0 -90 0"></a-gltf-model>
+
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="0 -1.5 -37" rotation="0 -90 0"></a-gltf-model>
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="5 -1.5 -37" rotation="0 -90 0"></a-gltf-model>
+
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="0 -1.5 -33" rotation="0 -90 0"></a-gltf-model>
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="5 -1.5 -33" rotation="0 -90 0"></a-gltf-model>
+
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="0 -1.5 -29" rotation="0 -90 0"></a-gltf-model>
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="5 -1.5 -29" rotation="0 -90 0"></a-gltf-model>
+
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="0 -1.5 -25" rotation="0 -90 0"></a-gltf-model>
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="5 -1.5 -25" rotation="0 -90 0"></a-gltf-model>
+
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="0 -1.5 -21" rotation="0 -90 0"></a-gltf-model>
+            <a-gltf-model id="fences" src="#fence" scale="0.8 0.8 0.8" position="5 -1.5 -21" rotation="0 -90 0"></a-gltf-model>
+
 
             <!-- Front Wall Models -->
             <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="9 0 6" rotation="0 -120 0"></a-gltf-model>
@@ -117,16 +140,13 @@
            
 
             <!-- front gatehouse -->
-            <!-- <a-obj-model material="color: grey" src="#gatehouse" position="0 0 -2" rotation="0 90 0" scale="0.005 0.0051 0.005"></a-obj-model> -->
+            <a-gltf-model material="color: grey" src="#innerGatehouse" position="0 0 2" rotation="0 -90 0" scale="2 1.8 2"></a-gltf-model>
 
             <!--courtyard 1 well -->
-            <a-obj-model static-body material="color: grey" src="#well" position="-12 0 -26" rotation="0 45 0" scale="1.2 1.2 1.2"></a-obj-model>
+            <a-gltf-model spherical-map static-body src="#well" position="-12 0 -26" rotation="0 45 0" scale="1.2 1.2 1.2"></a-gltf-model>
 
             <!-- Keep -->
             <a-gltf-model src="#keep" position="0 0 -37" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
-
-            <!-- Pillars -->
-            <!-- <a-gltf-model src="#pillar" position="0 0 0" scale="1 1 1" rotation="0 0 0"></a-gltf-model> -->
 
     </a-scene>
 

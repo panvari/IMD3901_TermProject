@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/scene1PositionTrigger.js"></script>
+    <script src="./js/popup.js"></script>
+    <script src="./js/closePopup.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!--GUI Library-->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
+    <title>Courtyard and Castle Entrance</title>
+
+</head>
+<body>
+    <a-scene physics="debug: false">
+
+        <a-assets>
+            <!-- Images -->
+            <img id="gemImage" src="./assets/images/gem.png">
+
+            <!-- Models -->
+            <a-asset-item id="gatehouse" src="./assets/models/Gatehouse.obj"></a-asset-item>
+            <a-asset-item id="turret" src="./assets/models/Turret.glb"></a-asset-item>
+            <a-asset-item id="well" src="./assets/models/well.obj"></a-asset-item>
+
+            <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
+            <a-asset-item id="bridge" src="./assets/models/Drawbridge.glb"></a-asset-item> 
+            <a-asset-item id="innerGatehouse" src="./assets/models/InnerGatehouse.glb"></a-asset-item>
+            <a-asset-item id="wall" src="./assets/models/Wall1.glb"></a-asset-item>
+            <a-asset-item id="keep" src="./assets/models/Keep.glb"></a-asset-item>
+            <a-asset-item id="pillar" src="./assets/models/pillar.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
+            
+            <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
+                <a-entity camera look-controls position="0 1.7 0">
+                    <a-cursor></a-cursor>
+
+                    <a-gui-label 
+                            id="playerLocation"
+                            width="1.5" height="0.3"
+                            font-size="4rem"
+                            padding="1rem 2rem"
+                            position="3 1.8 -2.5"
+                            value="Main Courtyard">
+                    </a-gui-label>
+
+                    <a-entity
+                        visible="false"
+                        id="popUp"
+                        geometry="primitive: plane; width: 3; height: 3.5"
+                        material="color: white"
+                        text=" width: 2.8; align: left; font: https://cdn.aframe.io/fonts/Exo2SemiBold.fnt; color: white; baseline: bottom; letterSpacing: 3; lineHeight:40; value: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem iste distinctio facere error in? Natus dolorum modi, aspernatur amet praesentium eveniet, ea ex aliquam voluptatem repellat nesciunt minima non autem, labore facilis perspiciatis quis. Eius, tempore accusamus! Quos, ipsa eos aliquam vero architecto quae eligendi voluptate ex corrupti mollitia ducimus. "
+                        position="-2.7 -0.5 -2.5">
+                    </a-entity>
+
+                    <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-4 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-3 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem4" src="#gemImage" width="0.3" height="0.5" position="-2.5 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem5" src="#gemImage" width="0.3" height="0.5" position="-2 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem6" src="#gemImage" width="0.3" height="0.5" position="-1.5 1.8 -2.5" opacity="0.4"></a-image>
+                </a-entity>
+            </a-entity>
+
+            <!-- Gem -->
+            <a-obj-model popup id="gemItem" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>
+
+            <!-- Floor -->
+            <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 -25"></a-plane>  
+
+            <!-- outer wall Colliders -->
+            <!-- Front walls -->
+            <a-box static-body rotation="0 -60 0" position="-17 4 -10" material="color: grey" scale="20 10 0.5"></a-box>
+            <a-box static-body material="color: grey" scale="20 10 0.5" position="18 4 -10" rotation="0 60.5 0"></a-box>
+            <!-- Side Walls -->
+            <a-box static-body material="color: grey" scale="13 10 0.5" position="-24 4 -28" rotation="0 -85 0"></a-box>
+            <a-box static-body material="color: grey" scale="13 10 0.5" position="24 4 -28" rotation="0 82 0"></a-box>
+            <!-- Back Walls -->
+            <a-box static-body material="color: grey" scale="13 10 0.5" position="-19 4 -38" rotation="0 -170 0"></a-box>
+            <a-box static-body material="color: grey" scale="13 10 0.5" position="19 4 -38" rotation="0 170 0"></a-box>
+           
+
+            <!--towers (turrets) -->
+                <!-- outer wall towers -->
+                <a-gltf-model static-body material="color: grey" src="#turret" position="-25 0 -37" scale="1 0.85 1"></a-gltf-model>
+                <a-gltf-model static-body material="color: grey" src="#turret" position="25 0 -37" scale="1 0.85 1"></a-gltf-model>
+
+                <!-- castle front -->
+                <a-gltf-model static-body material="color: grey" src="#turret" position="-22 0 -18" scale="1 0.85 1"></a-gltf-model>
+                <a-gltf-model static-body material="color: grey" src="#turret" position="22 0 -18" scale="1 0.85 1"></a-gltf-model>
+                <a-gltf-model static-body material="color: grey" src="#turret" position="-10.5 0 1.5" scale="1 0.85 1"></a-gltf-model>
+                <a-gltf-model static-body material="color: grey" src="#turret" position="10.5 0 1.5" scale="1 0.85 1"></a-gltf-model>
+
+                <a-gltf-model id="drawBridge" src="#bridge" scale="1.2 1.7 2" position="0 0 6" rotation="0 -90 0"></a-gltf-model>
+                <a-gltf-model id="gatehouse" src="#innerGatehouse" scale="2 1.8 2.0" position="0 0 1" rotation="0 -90 0"></a-gltf-model>            
+               
+            <!-- castle front walls -->
+            <!-- <a-box static-body material="color: grey" scale="10 10 1.5" position="-11 5 -36" rotation="0 -10 0"></a-box>
+            <a-box static-body material="color: grey" scale="10 10 1.5" position="11 5 -36" rotation="0 10 0"></a-box> -->
+
+            <!-- Front Wall Models -->
+            <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="9 0 6" rotation="0 -120 0"></a-gltf-model>
+            <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-9.5 0 3.1" rotation="0 -60 0"></a-gltf-model>            
+           <!-- Middle Wall Models -->
+           <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-23.6 0 -17" rotation="0 -85 0"></a-gltf-model>
+           <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="26.4 0 -43.3" rotation="0 82 0"></a-gltf-model>            
+          
+            <!-- Back Wall Models -->
+            <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="5 0 -41" rotation="0 170 0"></a-gltf-model>
+            <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-29.8 0 -36" rotation="0 -170 0"></a-gltf-model>            
+           
+
+            <!-- front gatehouse -->
+            <!-- <a-obj-model material="color: grey" src="#gatehouse" position="0 0 -2" rotation="0 90 0" scale="0.005 0.0051 0.005"></a-obj-model> -->
+
+            <!--courtyard 1 well -->
+            <a-obj-model static-body material="color: grey" src="#well" position="-12 0 -26" rotation="0 45 0" scale="1.2 1.2 1.2"></a-obj-model>
+
+            <!-- Keep -->
+            <a-gltf-model src="#keep" position="0 0 -37" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
+
+            <!-- Pillars -->
+            <!-- <a-gltf-model src="#pillar" position="0 0 0" scale="1 1 1" rotation="0 0 0"></a-gltf-model> -->
+
+    </a-scene>
+
+    <script src="./js/scoreSystem.js"></script>  
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        let locator = document.getElementById('playerLocation');
+        let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
+        const path = window.location.pathname;
+        const page = path.split('/').pop();
+        
+        if (page == "scene1"){
+            locator.setAttribute('value', "Main Courtyard");
+            locator.setAttribute('font-family', "Enchanted")
+        } 
+
+        function changeScene(val){
+            if(val == 2){
+                socket.emit('courtyard_to_greathall') //calls server method
+            }
+        };
+
+        let socket = io(); 
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_2', function(data) {
+            window.location.replace('greatHall') //Call
+        });
+
+    </script>
+</body>
+</html>

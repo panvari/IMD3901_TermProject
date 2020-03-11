@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/scene1PositionTrigger.js"></script>
+    <script src="./js/popup.js"></script>
+    <script src="./js/closePopup.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!--GUI Library-->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
+    <title>Courtyard and Castle Entrance</title>
+
+</head>
+<body>
+    <a-scene physics="debug: false">
+
+        <a-assets>
+            <!-- Images -->
+            <img id="gemImage" src="./assets/images/gem.png">
+
+            <!-- Models -->
+            <a-asset-item id="gatehouse" src="./assets/models/Gatehouse.obj"></a-asset-item>
+            <a-asset-item id="turret" src="./assets/models/Turret.glb"></a-asset-item>
+            <a-asset-item id="well" src="./assets/models/well.obj"></a-asset-item>
+
+            <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
+            <a-asset-item id="bridge" src="./assets/models/Drawbridge.glb"></a-asset-item> 
+            <a-asset-item id="innerGatehouse" src="./assets/models/InnerGatehouse.glb"></a-asset-item>
+            <a-asset-item id="wall" src="./assets/models/Wall1.glb"></a-asset-item>
+            <a-asset-item id="keep" src="./assets/models/Keep.glb"></a-asset-item>
+            <a-asset-item id="pillar" src="./assets/models/pillar.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
+            
+            <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
+                <a-entity camera look-controls position="0 1.7 0">
+                    <a-cursor></a-cursor>
+
+                    <a-gui-label 
+                            id="playerLocation"
+                            width="1.5" height="0.3"
+                            font-size="4rem"
+                            padding="1rem 2rem"
+                            position="3 1.8 -2.5"
+                            value="Main Courtyard">
+                    </a-gui-label>
+
+                    <a-entity
+                        visible="false"
+                        id="popUp"
+                        geometry="primitive: plane; width: 3; height: 3.5"
+                        material="color: white"
+                        text=" width: 2.8; align: left; font: https://cdn.aframe.io/fonts/Exo2SemiBold.fnt; color: white; baseline: bottom; letterSpacing: 3; lineHeight:40; value: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem iste distinctio facere error in? Natus dolorum modi, aspernatur amet praesentium eveniet, ea ex aliquam voluptatem repellat nesciunt minima non autem, labore facilis perspiciatis quis. Eius, tempore accusamus! Quos, ipsa eos aliquam vero architecto quae eligendi voluptate ex corrupti mollitia ducimus. "
+                        position="-2.7 -0.5 -2.5">
+                    </a-entity>
+
+                    <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-4 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-3 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem4" src="#gemImage" width="0.3" height="0.5" position="-2.5 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem5" src="#gemImage" width="0.3" height="0.5" position="-2 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem6" src="#gemImage" width="0.3" height="0.5" position="-1.5 1.8 -2.5" opacity="0.4"></a-image>
+                </a-entity>
+            </a-entity>
+
+            <!-- Gem -->
+            <a-obj-model popup id="gemItem" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>
+
+            <!-- Floor -->
+            <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 -25"></a-plane>  
+
+    </a-scene>
+
+    <script src="./js/scoreSystem.js"></script>  
+    <script src="../server.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+        // let locator = document.getElementById('playerLocation');
+        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
+        // const path = window.location.pathname;
+        // const page = path.split('/').pop();
+        
+        // if (page == "scene1"){
+        //     locator.setAttribute('value', "Main Courtyard");
+        //     locator.setAttribute('font-family', "Enchanted")
+        // } 
+
+        function changeScene(val){
+            if(val == 2){
+                socket.emit('courtyard_to_greathall') //calls server method
+            }
+        };
+
+        let socket = io(); 
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_2', function(data) {
+            window.location.replace('greatHall') //Call
+        });
+
+    </script>
+</body>
+</html>

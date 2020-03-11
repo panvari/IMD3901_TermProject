@@ -47,12 +47,10 @@ socketIO.on('connection', (socket) => {
         socketIO.sockets.emit('scene_2');
     });
 
-    socket.on('change_to_scene1', (data) => {
-        console.log('switch to courtyard/entrance to caslte ground scene');
-        socketIO.sockets.emit('scene_1');
+    socket.on('greathall_to_throneroom', (data) => {
+        console.log('switch to great hall to throne room scene');
+        socketIO.sockets.emit('scene_3');
     });
-
-    //Start of gem server logic
 
 });
 

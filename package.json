@@ -22,6 +22,7 @@
     "aframe-gui": "^0.3.8",
     "aframe-physics-system": "^4.0.1",
     "express": "^4.17.1",
+    "socket.io": "^2.3.0",
     "socketio": "^1.0.0"
   }
 }

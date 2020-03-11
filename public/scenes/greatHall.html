@@ -23,12 +23,20 @@
             <img id="gemImage" src="./assets/images/gem.png">
 
             <!-- Models -->
+<<<<<<< HEAD
+            <a-asset-item id = "greatHall" src="./assets/models/GreatHall.glb"></a-asset-item>
+            <a-asset-item id = "chandelier" src="./assets/models/Chandelier.glb"></a-asset-item>
+            <a-asset-item id = "longTable" src="./assets/models/longTable.glb"></a-asset-item>
+            <a-asset-item id = "chair" src="./assets/models/chair.glb"></a-asset-item>
+            <a-asset-item id = "candle" src="./assets/models/candle.glb"></a-asset-item>
+            <a-asset-item id = "carpet" src="./assets/models/carpet.glb"></a-asset-item>
+            <a-asset-item id = "plate" src="./assets/models/plate.glb"></a-asset-item>
+=======
+>>>>>>> 835dffb84c5fda7ba80f78f904b41d544e21bb7f
         </a-assets>
-
-        <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
             
             <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
-                <a-entity camera look-controls position="0 1.7 0">
+                <a-entity camera look-controls position="0 3.11 0">
                     <a-cursor></a-cursor>
 
                     <a-gui-label 
@@ -57,6 +65,86 @@
                     <a-image class="gem" id="gem6" src="#gemImage" width="0.3" height="0.5" position="-1.5 1.8 -2.5" opacity="0.4"></a-image>
                 </a-entity>
             </a-entity>
+
+            <a-entity gltf-model = "#greatHall" scale = "2.5, 1, 2" position = "0, 1.41, -19" rotation = "0, -90, 0"></a-entity>
+            <a-light type="point" color="255, 237, 156" position="0 9 -3.240"></a-light>
+            <a-light type="point" color="255, 237, 156" position="0 9 -17"></a-light>
+
+            <a-entity gltf-model = "#chandelier" scale = ".3, .3, .3" position = "0, 8.336, -8" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#chandelier" scale = ".3, .3, .3" position = "0, 8.336, -16" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#chandelier" scale = ".3, .3, .3" position = "0, 8.336, -24" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#chandelier" scale = ".3, .3, .3" position = "0, 8.336, -32" rotation = "0, 0, 0"></a-entity>
+
+            <a-entity gltf-model = "#longTable" scale = ".5, .5, .5" position = "4, 1.41, -11.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#longTable" scale = ".5, .5, .5" position = "-4, 1.41, -11.5" rotation = "0, 90, 0"></a-entity>
+
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-5.451, 1.41, -4.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-5.451, 1.41, -6.0" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-5.451, 1.41, -7.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-5.451, 1.41, -9.0" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-5.451, 1.41, -10.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-5.451, 1.41, -12.0" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-5.451, 1.41, -13.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-5.451, 1.41, -15.0" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-5.451, 1.41, -16.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-5.451, 1.41, -18.0" rotation = "0, 90, 0"></a-entity>
+
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-2.546, 1.41, -4.5" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-2.546, 1.41, -6.0" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-2.546, 1.41, -7.5" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-2.546, 1.41, -9.0" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-2.546, 1.41, -10.5" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-2.546, 1.41, -12.0" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-2.546, 1.41, -13.5" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-2.546, 1.41, -15.0" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-2.546, 1.41, -16.5" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "-2.546, 1.41, -18.0" rotation = "0, -90, 0"></a-entity>
+
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "5.451, 1.41, -4.5" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "5.451, 1.41, -6.0" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "5.451, 1.41, -7.5" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "5.451, 1.41, -9.0" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "5.451, 1.41, -10.5" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "5.451, 1.41, -12.0" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "5.451, 1.41, -13.5" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "5.451, 1.41, -15.0" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "5.451, 1.41, -16.5" rotation = "0, -90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "5.451, 1.41, -18.0" rotation = "0, -90, 0"></a-entity>
+
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "2.546, 1.41, -4.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "2.546, 1.41, -6.0" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "2.546, 1.41, -7.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "2.546, 1.41, -9.0" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "2.546, 1.41, -10.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "2.546, 1.41, -12.0" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "2.546, 1.41, -13.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "2.546, 1.41, -15.0" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "2.546, 1.41, -16.5" rotation = "0, 90, 0"></a-entity>
+            <a-entity gltf-model = "#chair" scale = ".017, .017, .017" position = "2.546, 1.41, -18.0" rotation = "0, 90, 0"></a-entity>
+
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "4.070, 2.39, -5" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "4.070, 2.39, -6.5" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "4.070, 2.39, -8" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "4.070, 2.39, -9.5" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "4.070, 2.39, -11" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "4.070, 2.39, -12.5" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "4.070, 2.39, -14" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "4.070, 2.39, -15.5" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "4.070, 2.39, -17" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "4.070, 2.39, -18.5" rotation = "0, 0, 0"></a-entity>
+
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "-4.070, 2.39, -5" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "-4.070, 2.39, -6.5" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "-4.070, 2.39, -8" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "-4.070, 2.39, -9.5" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "-4.070, 2.39, -11" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "-4.070, 2.39, -12.5" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "-4.070, 2.39, -14" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "-4.070, 2.39, -15.5" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "-4.070, 2.39, -17" rotation = "0, 0, 0"></a-entity>
+            <a-entity gltf-model = "#candle" scale = ".3, .3, .3" position = "-4.070, 2.39, -18.5" rotation = "0, 0, 0"></a-entity>
+
+            <a-entity gltf-model = "#carpet" scale = "1, 1, 1" position = "0, 1.42, -13.634" rotation = "0, 0, 0"></a-entity>
 
             <!-- Gem -->
             <a-obj-model popup id="gemItem" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>

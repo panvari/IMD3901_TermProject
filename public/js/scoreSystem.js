@@ -12,6 +12,34 @@
         console.log('clicked gem1')
         gem1.setAttribute('opacity','1');
         gemItem.setAttribute('visible', 'false');
+
+        //store collection value between pages
+        window.localStorage.setItem('gem1Collected', 'true');
     });
 
-    allGems = document.querySelectorAll(".gem"); 
+    setInterval((data) => {
+        if(localStorage.getItem('gem1Collected') === 'true'){
+            gem1.setAttribute('opacity','1');
+            gemItem.setAttribute('visible', 'false');
+        }
+        // if(localStorage.getItem('gem2Collected') === 'true'){
+        //     gem2.setAttribute('opacity','1');
+        //     gemItem.setAttribute('visible', 'false');
+        // }
+        // if(localStorage.getItem('gem3Collected') === 'true'){
+        //     gem3.setAttribute('opacity','1');
+        //     gemItem.setAttribute('visible', 'false');
+        // }
+        // if(localStorage.getItem('gem4Collected') === 'true'){
+        //     gem4.setAttribute('opacity','1');
+        //     gemItem.setAttribute('visible', 'false');
+        // }
+        // if(localStorage.getItem('gem5Collected') === 'true'){
+        //     gem5.setAttribute('opacity','1');
+        //     gemItem.setAttribute('visible', 'false');
+        // }
+        // if(localStorage.getItem('gem6Collected') === 'true'){
+        //     gem6.setAttribute('opacity','1');
+        //     gemItem.setAttribute('visible', 'false');
+        // }
+    }, 1000);

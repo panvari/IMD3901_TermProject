@@ -21,7 +21,6 @@ app.get('/throneRoom', (req,res) => {
     res.sendFile(__dirname + '/public/scenes/thromeRoom.html');
 });
 
-
 //websocket stuff
 socketIO.on('connection', (socket) => {
     console.log(socket.id + ' has connected!');
@@ -40,6 +39,9 @@ socketIO.on('connection', (socket) => {
         console.log('switch to courtyard/entrance to caslte ground scene');
         socketIO.sockets.emit('scene_1');
     });
+
+    //Start of gem server logic
+
 });
 
 //finally, start server

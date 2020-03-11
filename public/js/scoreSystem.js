@@ -8,7 +8,7 @@
 
     //Update click bool variables
     gemItem = document.querySelector("#gemItem");
-    gemItem.addEventListener('click', () => {
+    gemItem.addEventListener('click', () => { //first gem event listener
         console.log('clicked gem1')
         gem1.setAttribute('opacity','1');
         gemItem.setAttribute('visible', 'false');

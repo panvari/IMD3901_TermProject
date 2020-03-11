@@ -57,3 +57,7 @@ table {
 
 
 /*begin styles*/
+
+.popup {
+	display:none;
+}

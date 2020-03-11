@@ -29,8 +29,8 @@ app.get('/greatHall', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/greatHall.html');
 });
 
-app.get('/throneRoom', (req, res) => {
-    res.sendFile(__dirname + '/public/scenes/thromeRoom.html');
+app.get('/throneroom', (req, res) => {
+    res.sendFile(__dirname + '/public/scenes/throneRoom.html');
 });
 
 //websocket stuff

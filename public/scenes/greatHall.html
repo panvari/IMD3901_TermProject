@@ -19,6 +19,7 @@
     <a-scene physics="debug: false">
 
         <a-assets>
+
             <!-- Images -->
             <img id="gemImage" src="./assets/images/gem.png">
 
@@ -29,11 +30,16 @@
             <a-asset-item id = "chair" src="./assets/models/chair.glb"></a-asset-item>
             <a-asset-item id = "candle" src="./assets/models/candle.glb"></a-asset-item>
             <a-asset-item id = "carpet" src="./assets/models/carpet.glb"></a-asset-item>
+<<<<<<< HEAD
             <a-asset-item id = "plate" src="./assets/models/Plate.glb"></a-asset-item>
             <a-asset-item id = "pillar" src="./assets/models/Pillar.glb"></a-asset-item>
             <a-asset-item id = "door" src="./assets/models/door.glb"></a-asset-item>
             <a-asset-item id = "paintingLong01" src="./assets/models/paintingLong01.glb"></a-asset-item>
             <a-asset-item id = "paintingLong02" src="./assets/models/paintingLong02.glb"></a-asset-item>
+=======
+            <a-asset-item id = "plate" src="./assets/models/plate.glb"></a-asset-item>
+
+>>>>>>> 0cef14c89a1128d37993e8c7d99bb713ac1851d2
         </a-assets>
             
             <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
@@ -58,11 +64,11 @@
                         position="-2.7 -0.5 -2.5">
                     </a-entity>
 
-                    <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-4 1.8 -2.5" opacity="0.4"></a-image>
-                    <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
-                    <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-3 1.8 -2.5" opacity="0.4"></a-image>
-                    <a-image class="gem" id="gem4" src="#gemImage" width="0.3" height="0.5" position="-2.5 1.8 -2.5" opacity="0.4"></a-image>
-                    <a-image class="gem" id="gem5" src="#gemImage" width="0.3" height="0.5" position="-2 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.1 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-2.7 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem4" src="#gemImage" width="0.3" height="0.5" position="-2.3 1.8 -2.5" opacity="0.4"></a-image>
+                    <a-image class="gem" id="gem5" src="#gemImage" width="0.3" height="0.5" position="-1.9 1.8 -2.5" opacity="0.4"></a-image>
                     <a-image class="gem" id="gem6" src="#gemImage" width="0.3" height="0.5" position="-1.5 1.8 -2.5" opacity="0.4"></a-image>
                 </a-entity>
             </a-entity>
@@ -244,12 +250,11 @@
             <a-obj-model popup id="gemItem" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>
 
             <!-- Floor -->
-            <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 -25"></a-plane>  
+            <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.3 -25"></a-plane>  
 
     </a-scene>
 
     <script src="./js/scoreSystem.js"></script>  
-    <script src="../server.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
 
@@ -264,8 +269,8 @@
         // } 
 
         function changeScene(val){
-            if(val == 2){
-                socket.emit('courtyard_to_greathall') //calls server method
+            if(val == 3){
+                socket.emit('greathall_to_throneroom') //calls server method
             }
         };
 
@@ -275,8 +280,8 @@
             console.log("connected!");
         });
 
-        socket.on('scene_2', function(data) {
-            window.location.replace('greatHall') //Call
+        socket.on('scene_3', function(data) {
+            window.location.replace('throneRoom') //Call
         });
 
     </script>

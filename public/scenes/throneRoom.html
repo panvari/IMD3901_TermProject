@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-    <script src="./js/popup.js"></script>
-    <script src="./js/closePopup.js"></script>
+    <script src="./js/gem2Popups.js"></script>
     <script src="./js/throneRoomPositionTrigger.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
@@ -25,6 +24,7 @@
         <a-assets>
             <!-- Images -->
             <img id="gemImage" src="./assets/images/gem.png">
+            <img id="kingColors" src="./assets/images/kingColorsGame.png">
 
             <!-- Models -->
             <a-asset-item id="throneRoom" src="./assets/models/GreatHall.glb"></a-asset-item>
@@ -35,6 +35,7 @@
             <a-asset-item id="throne" src="./assets/models/throne01.glb"></a-asset-item>
             <a-asset-item id="throneSmall" src="./assets/models/throne02.glb"></a-asset-item>
             <a-asset-item id="tapestry" src="./assets/models/longTapestryRed.glb"></a-asset-item>
+            <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
 
             <a-asset-item id="paintingLong01" src="./assets/models/paintingLong01.glb"></a-asset-item>
             <a-asset-item id="paintingLong02" src="./assets/models/paintingLong02.glb"></a-asset-item>
@@ -52,6 +53,10 @@
                     position="-2.7 -0.5 -2.5">
                 </a-entity>
 
+                <a-entity visible="false" id="kingColorInstructions" position="-2.2 -0.5 -2.5">
+                    <a-image src="#kingColors" width="4" height=" 3"></a-image>
+                </a-entity>
+
                 <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
                 <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.1 1.8 -2.5" opacity="0.4"></a-image>
                 <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-2.7 1.8 -2.5" opacity="0.4"></a-image>
@@ -66,7 +71,7 @@
         <a-light type="point" position="-2 3 -16"></a-light>
 
         <!-- Gem -->
-        <a-obj-model popup id="gemItem" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>
+        <a-obj-model popup id="gemItem2" material="color: green" src="#gem" position="5 -1 -15" scale="0.1 0.1 0.1"></a-obj-model>
 
         <!-- Floor -->
         <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.01 0"></a-plane>
@@ -114,7 +119,7 @@
 
     </a-scene>
 
-    <script src="./js/scoreSystem.js"></script>
+    <script src="./js/throneRoomScoreSystem.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         // let locator = document.getElementById('playerLocation');

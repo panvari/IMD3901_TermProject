@@ -5,7 +5,7 @@ AFRAME.registerComponent('player_position', {
 
     tick: function(time, timeDelta) {
 
-        console.log(this.el.getAttribute('position'));
+        // console.log(this.el.getAttribute('position'));
 
         let playerPosition = this.el.getAttribute('position');
 

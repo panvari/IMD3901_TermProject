@@ -41,7 +41,7 @@ socketIO.on('connection', (socket) => {
         console.log(socket.id + ' has disconnected');
     });
 
-    //custom events
+    //ROOM CHANGING EVENTS
     socket.on('courtyard_to_greathall', (data) => {
         console.log('switch to entrance hall');
         socketIO.sockets.emit('scene_2');
@@ -60,6 +60,17 @@ socketIO.on('connection', (socket) => {
     socket.on('greathall_to_courtyard', (data) => {
         console.log('switch from geat hall to courtyard scene');
         socketIO.sockets.emit('scene_1');
+    });
+
+    // MINI GAME CONTROLS FOR Julianna
+    socket.on('launch_mini_game1', (data) => {
+        console.log('Lunching MiniGame 1');
+        socketIO.sockets.emit('launch_minigame_1'); //Mobile listen for this call
+    });
+
+    socket.on('launch_mini_game2', (data) => {
+        console.log('Lunching MiniGame 2');
+        socketIO.sockets.emit('launch_minigame_2'); //Mobile listen for this call
     });
 
 });

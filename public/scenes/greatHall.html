@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="./js/greatHallPositionTrigger.js"></script>
-    <script src="./js/popup.js"></script>
+    <!-- <script src="./js/popup.js"></script> -->
     <script src="./js/closePopup.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
@@ -28,7 +28,7 @@
             <img id="gemImage" src="./assets/images/gem.png">
 
             <!-- Models -->
-            <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
+            <!-- <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item> -->
 
             <a-asset-item id="greatHall" src="./assets/models/GreatHall.glb"></a-asset-item>
             <a-asset-item id="chandelier" src="./assets/models/Chandelier.glb"></a-asset-item>
@@ -241,15 +241,12 @@
         <a-entity gltf-model="#paintingLong01" scale=".3, .3, .3" position="4.87, 2.5, -40" rotation="0, 0, 0"></a-entity>
         <a-entity gltf-model="#paintingLong02" scale=".3, .3, .3" position="-4.87, 2.5, -40" rotation="0, 0, 0"></a-entity>
 
-        <!-- Gem -->
-        <a-obj-model popup id="gemItem" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>
-
         <!-- Floor -->
         <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.3 -25"></a-plane>
 
     </a-scene>
 
-    <script src="./js/scoreSystem.js"></script>
+    <script src="./js/greatHallScoreSystem.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         // let locator = document.getElementById('playerLocation');

@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="./js/courtyardPositionTrigger.js"></script>
-    <script src="./js/popup.js"></script>
-    <script src="./js/closePopup.js"></script>
+    <script src="./js/gem1Popups.js"></script>
     <script src="./js/spherical-env-map.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
@@ -27,6 +26,7 @@
             <!-- Images -->
             <img id="gemImage" src="./assets/images/gem.png">
             <img id="sky" src="./assets/images/CloudySky.jpg">
+            <img id="armourGame" src="./assets/images/armourGame.png">
 
             <!-- Models -->
             <a-asset-item id="turret" src="./assets/models/Turret.glb"></a-asset-item>
@@ -58,6 +58,12 @@
                     position="-2.7 -0.5 -2.5">
                 </a-entity>
 
+                <a-entity visible="false" id="armourInstructions" position="-2.2 -0.5 -2.5">
+                    <a-image src="#armourGame" width="4" height=" 3"></a-image>
+                </a-entity>
+
+
+
                 <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
                 <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.1 1.8 -2.5" opacity="0.4"></a-image>
                 <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-2.7 1.8 -2.5" opacity="0.4"></a-image>
@@ -68,7 +74,7 @@
         </a-entity>
 
         <!-- Gem -->
-        <a-obj-model popup id="gemItem" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>
+        <a-obj-model popup id="gemItem1" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>
 
         <!-- Floor -->
         <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 -25"></a-plane>

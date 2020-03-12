@@ -4,22 +4,22 @@
     gem3 = document.querySelector('#gem3')
     gem4 = document.querySelector('#gem4')
     gem5 = document.querySelector('#gem5')
-    gem6 = document.querySelector('#gem6')   
+    gem6 = document.querySelector('#gem6')
 
     //Update click bool variables
     gemItem = document.querySelector("#gemItem");
     gemItem.addEventListener('click', () => { //first gem event listener
         console.log('clicked gem1')
-        gem1.setAttribute('opacity','1');
+        gem1.setAttribute('opacity', '1');
         gemItem.setAttribute('visible', 'false');
 
         //store collection value between pages
-        window.localStorage.setItem('gem1Collected', 'true');
+        window.sessionStorage.setItem('gem1Collected', 'true');
     });
 
     setInterval((data) => {
-        if(localStorage.getItem('gem1Collected') === 'true'){
-            gem1.setAttribute('opacity','1');
+        if (sessionStorage.getItem('gem1Collected') === 'true') {
+            gem1.setAttribute('opacity', '1');
             gemItem.setAttribute('visible', 'false');
         }
         // if(localStorage.getItem('gem2Collected') === 'true'){

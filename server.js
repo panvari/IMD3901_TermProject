@@ -48,8 +48,18 @@ socketIO.on('connection', (socket) => {
     });
 
     socket.on('greathall_to_throneroom', (data) => {
-        console.log('switch to great hall to throne room scene');
+        console.log('switch from great hall to throne room scene');
         socketIO.sockets.emit('scene_3');
+    });
+
+    socket.on('throneroom_to_greathall', (data) => {
+        console.log('switch to great hall from throne room scene');
+        socketIO.sockets.emit('scene_3_1');
+    });
+
+    socket.on('greathall_to_courtyard', (data) => {
+        console.log('switch from geat hall to courtyard scene');
+        socketIO.sockets.emit('scene_1');
     });
 
 });

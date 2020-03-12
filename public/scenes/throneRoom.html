@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-    <script src="./js/greatHallPositionTrigger.js"></script>
     <script src="./js/popup.js"></script>
     <script src="./js/closePopup.js"></script>
+    <script src="./js/throneRoomPositionTrigger.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
     <!--GUI Library-->
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <!--Environment extension-->
-    <title>Courtyard and Castle Entrance</title>
+    <title>Throne Room</title>
 
 </head>
 
@@ -128,7 +128,7 @@
         // } 
 
         function changeScene(val) {
-            if (val == 2) {
+            if (val == 3.1) {
                 socket.emit('throneroom_to_greathall') //calls server method
             }
         };
@@ -139,8 +139,8 @@
             console.log("connected!");
         });
 
-        socket.on('scene_2_1', function(data) {
-            window.location.replace('greatHall_back') //Call
+        socket.on('scene_3_1', function(data) {
+            window.location.replace('greathall') //Call
         });
     </script>
 </body>

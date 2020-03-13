@@ -79,7 +79,22 @@ a {
 	margin: 5px;
 }
 
-#buttons {
+#buttons, p, h1 {
 	text-align: center;
+}
+
+#buttons {
 	line-height: 1.5;
+}
+
+p{
+	font-size: medium;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: larger;
+	font-weight: bold;
+	font-family: "Oswald", sans-serif;
+	padding: 10px;
 }

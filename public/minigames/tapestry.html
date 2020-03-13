@@ -9,8 +9,7 @@
     <script src="./js/changeColour.js"></script>
 
     <script src="/socket.io/socket.io.js"></script> <!-- Sockets -->
-    <!-- <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> GUI Library
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script> Physics Library -->
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!-- GUI -->>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
 
     <title>Tapestry game</title>
@@ -169,30 +168,10 @@
 
     <!-- Socket Script -->
     
-    <!-- <script>
+    <script>
 
         let locator = document.getElementById('playerLocation');
         locator.setAttribute('value', 'Hello'); //change room values dynamically
-        
-
-        let playerCamera = document.getElementById('cameraRig');
-        let worldPos = new THREE.Vector3();
-
-         worldPos.setFromMatrixPosition(playerCamera.object3D.matrixWorld);
-        //  console.log(worldPos.x, worldPos.y, worldPos.z);
-        playerCamera.addEventListener('componentchanged', function (event) {
-            if (event.detail.name !== 'position') { return; }
-            console.log(event.detail.newData);
-        });
-
-        function changeScene(val){
-            if(val == 1){
-                socket.emit('change_to_scene1') //calls server method
-            }
-            if(val == 2){
-                socket.emit('change_to_scene2') //calls server method
-            }
-        };
 
         let socket = io(); 
         //default connect event
@@ -204,6 +183,6 @@
             window.location.replace('index.html')
         });
 
-    </script> -->
+    </script>
 </body>
 </html>

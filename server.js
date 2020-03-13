@@ -37,6 +37,14 @@ app.get('/throneroom', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/throneRoom.html');
 });
 
+app.get('/tapestryMini', (req, res) => {
+    res.sendFile(__dirname + '/public/minigames/tapestry.html');
+});
+
+app.get('/armourMini', (req, res) => {
+    res.sendFile(__dirname + '/public/minigames/armoury.html');
+});
+
 //websocket stuff
 socketIO.on('connection', (socket) => {
     console.log(socket.id + ' has connected!');

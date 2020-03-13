@@ -58,11 +58,60 @@ table {
 
 /*begin styles*/
 
-p, span{
+#gemImage {
+	opacity: 0.4;
+	display: inline-block;
+}
+#gems {
+	display: inline-block;
+	padding: 10px;
+}
+
+p, span, h1{
 	text-align: center;
 	font-size: medium;
 	font-family: 'Open Sans', sans-serif;
 } 
+
+h1 {
+	text-align: right;
+	display: inline-block;
+	font-size: large;
+	font-weight: bold;
+	margin-left: auto;
+}
+
+.roomText{
+	display: block;
+	padding: 50px;
+	margin-top: 30px;
+	background-color: #99ff99;
+	border-radius: 8px;
+	padding: 8px 0;
+}
+
+#different{
+	display: none;
+}
+
+#kingIcon{
+	display: block;
+	text-align: right;
+	padding: 20px;
+	margin-left: auto;
+}
+
+#roomImages{
+	display: block;
+	text-align: center;
+	border: #555;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+img .room{
+	
+}
 
 .popup {
 	position: relative;
@@ -72,9 +121,9 @@ p, span{
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-  }
+}
 
-  .popup .popuptext {
+.popup {
 	visibility: hidden;
 	width: 160px;
 	background-color: #555;
@@ -84,13 +133,10 @@ p, span{
 	padding: 8px 0;
 	position: absolute;
 	z-index: 1;
-	bottom: 125%;
-	left: 50%;
-	margin-left: -80px;
-  }
+}
 
-  .popup .show {
+.popup .show {
 	visibility: visible;
 	-webkit-animation: fadeIn 1s;
 	animation: fadeIn 1s;
-  }
+}

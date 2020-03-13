@@ -11,21 +11,59 @@
 
         <script src="/socket.io/socket.io.js"></script> <!-- Sockets -->
 
+            <!-- Socket Script -->
+
+            <script>
+
+                let socket = io(); 
+                //default connect event
+                socket.on('connect', function() {
+                    console.log("connected!");
+                });
+    
+                socket.on('launch_minigame_1', function(data) {
+                    window.location.replace('tapestry.html')
+                });
+    
+                socket.on('launch_minigame_2', function(data) {
+                    window.location.replace('armoury.html')
+                });
+    
+        </script>
+
         <title>Castle Quest</title>
     </head>
     <body>
-        <!-- <img src = "../assets/images/mobile-bg-image.jpg"> -->
+        <div id = "gems">
+            <img id="gemImage" src="./assets/images/gem.png" width = 30>
+            <img id="gemImage" src="./assets/images/gem.png" width = 30>
+            <img id="gemImage" src="./assets/images/gem.png" width = 30>
+            <img id="gemImage" src="./assets/images/gem.png" width = 30>
+            <img id="gemImage" src="./assets/images/gem.png" width = 30>
+            <img id="gemImage" src="./assets/images/gem.png" width = 30>
+        </div>
+        
 
+        <h1 id = roomTitle>Room Title</h1>
+
+<!-- TEXT ABOUT EACH ROOM -->
         <div id = "roomText">
-            <p id = "castleEntrance">
+            <p id = "castleEntrance" class = "roomText">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper nisi a lorem posuere tincidunt. 
                 Vestibulum facilisis varius fringilla. Vivamus metus lacus, sodales ac rhoncus id, sodales nec arcu.
             </p>
-            <p id = "different">
+            <p id = "different" class = "roomText">
                 Vestibulum interdum, risus in rhoncus dignissim, felis ligula tempus mauris, posuere commodo elit turpis tincidunt tortor. 
                 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
             </p>
         </div>
+
+<!-- IMAGES FOR EACH ROOM -->
+        <div id = "roomImages">
+            <img class = "room" id = "courtyard" src = "./assets/images/courtyard.png" width = 300px>
+        </div>
+
+<!-- KING'S QUOTES POPUPS -->
         <div id = kingPopups>
             <img id = "kingIcon" src = "../assets/images/king.png" width = 100px>
             <span class = "popup" id = "gameStart">
@@ -82,5 +120,6 @@
                 I hope you learned a bit about my castle along the way.
             </span>
         </div>
+
     </body>
 </html>

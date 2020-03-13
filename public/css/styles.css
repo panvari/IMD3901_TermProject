@@ -57,17 +57,17 @@ table {
 
 
 /*begin styles*/
-div{
+div {
 	padding: 25px;
 }
 
-img{
+img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-a{
+a {
     background-color:#4169e1;
 	font-family: 'Oswald', sans-serif;
 	color: white;
@@ -79,7 +79,7 @@ a{
 	margin: 5px;
 }
 
-#buttons{
+#buttons {
 	text-align: center;
 	line-height: 1.5;
 }

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/positionTriggers.js"></script>
+    <script src="./js/changeColour.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script> <!-- Sockets -->
+    <!-- <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> GUI Library
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script> Physics Library -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
+
+    <title>Tapestry game</title>
+</head>
+<body>
+    <a-scene>
+
+        <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
+
+        <a-assets>
+            <!-- Models -->
+
+        </a-assets>
+
+        <a-entity player_position id="cameraRig" position="0 1.6 0">
+            <a-camera look-controls wasd-controls="acceleration: 220" position="0 0 0">
+                <a-entity   id = 'cursor'
+                            cursor="rayOrigin:mouse;"
+                            raycaster="far:20; interval:100; objects:.clickable">
+                </a-entity>
+
+                <a-gui-label 
+                    id="playerLocation"
+                    width="1" height="0.2"
+                    font-family="Arial"
+                    font-size="50px"
+                    padding="1rem 2rem"
+                    position="2 1.5 -2"
+                    value=""
+                >
+                </a-gui-label>
+            </a-camera> 
+        </a-entity>
+
+<!-- tapestries -->
+<!-- BLUE TAPESTRY -->
+        <a-entity   id = "blueTapestry"
+                    class = "tapestry"
+                    geometry = "primitive:plane; width:2; height:4;"
+                    material = "color:#778899"
+                    rotation = "0 0 0"
+                    position = "0 2 -5"></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "-1 0 -3"
+                    material = "color:#00008b"
+                    change-blue = ""
+                    end-game = ""></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "0 0 -3"
+                    material = "color:#ff4f00"
+                    change-blue = ""
+                    end-game = ""></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "1 0 -3"
+                    material = "color:#ffffff"
+                    change-blue = ""
+                    end-game = ""></a-entity>
+
+<!-- WHITE TAPESTRY -->
+        <a-entity   id = "whiteTapestry"
+                    class = "tapestry"
+                    geometry = "primitive:plane; width:2; height:4;"
+                    material = "color:#778899"
+                    rotation = "0 90 0"
+                    position = "-5 2 0"></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "-3 0 1"
+                    material = "color:#ffffff"
+                    change-white = ""
+                    end-game = ""></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "-3 0 0"
+                    material = "color:#008000"
+                    change-white = ""
+                    end-game = ""></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "-3 0 -1"
+                    material = "color:#ffab19"
+                    change-white = ""
+                    end-game = ""></a-entity>
+
+<!-- RED TAPESTRY -->
+        <a-entity   id = "redTapestry"
+                    class = "tapestry"
+                    geometry = "primitive:plane; width:2; height:4;"
+                    material = "color:#778899"
+                    rotation = "0 -90 0"
+                    position = "5 2 0"></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "3 0 1"
+                    material = "color:#008000"
+                    change-red = ""
+                    end-game = ""></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "3 0 0"
+                    material = "color:#e60000"
+                    change-red = ""
+                    end-game = ""></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "3 0 -1"
+                    material = "color:#ff4f00"
+                    change-red = ""
+                    end-game = ""></a-entity>
+
+<!-- YELLOW TAPESTRY -->
+        <a-entity   id = "yellowTapestry"
+                    class = "tapestry"
+                    geometry = "primitive:plane; width:2; height:4;"
+                    material = "color:#778899"
+                    rotation = "0 180 0"
+                    position = "0 2 5"></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "-1 0 3"
+                    material = "color:#00008b"
+                    change-yellow = ""
+                    end-game = ""></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "0 0 3"
+                    material = "color:#ff00ff"
+                    change-yellow = ""
+                    end-game = ""></a-entity>
+
+        <a-entity   class = "clickable"
+                    geometry = "primitive:cylinder; height:0.1; radius:0.3;"
+                    position = "1 0 3"
+                    material = "color:#ffab19"
+                    change-yellow = ""
+                    end-game = ""></a-entity>
+        
+        <!-- josh models -->
+        <!-- <a-obj-model id="room" material="color: grey" src="#room" position="0 0 -10" scale="0.009 0.015 0.009"></a-obj-model> -->
+
+    </a-scene>
+
+    <!-- Socket Script -->
+    
+    <!-- <script>
+
+        let locator = document.getElementById('playerLocation');
+        locator.setAttribute('value', 'Hello'); //change room values dynamically
+        
+
+        let playerCamera = document.getElementById('cameraRig');
+        let worldPos = new THREE.Vector3();
+
+         worldPos.setFromMatrixPosition(playerCamera.object3D.matrixWorld);
+        //  console.log(worldPos.x, worldPos.y, worldPos.z);
+        playerCamera.addEventListener('componentchanged', function (event) {
+            if (event.detail.name !== 'position') { return; }
+            console.log(event.detail.newData);
+        });
+
+        function changeScene(val){
+            if(val == 1){
+                socket.emit('change_to_scene1') //calls server method
+            }
+            if(val == 2){
+                socket.emit('change_to_scene2') //calls server method
+            }
+        };
+
+        let socket = io(); 
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_1', function(data) {
+            window.location.replace('index.html')
+        });
+
+    </script> -->
+</body>
+</html>

@@ -21,20 +21,18 @@
             <br>
             <div id='buttons'>
                 <a href="/mobile" id="mobileStart">Begin Mobile</a>
-                <a href="/desktop" id="desktopStart">Begin Desktop</a>
+                <a href="/courtyard" id="desktopStart">Begin Desktop</a>
                 <a href="/about">About Castle Quest</a>
 
                 <script>
                     let x = window.matchMedia("(max-width: 640px)");
                     console.log(x.matches);
                     if(x.matches){
-                        console.log("in the if");
                         let parent = document.getElementById('buttons');
                         let child = document.getElementById("desktopStart");
                         parent.removeChild(child);
                     }
                     else{
-                        console.log("in the else");
                         let parent = document.getElementById("buttons");
                         let child = document.getElementById("mobileStart");
                         parent.removeChild(child);

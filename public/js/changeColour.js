@@ -101,7 +101,7 @@ AFRAME.registerComponent("end-game",{
         if (document.querySelector("#yellowTapestry").getAttribute("material").color == "#ffab19" && document.querySelector("#blueTapestry").getAttribute("material").color == "#00008b" && document.querySelector("#whiteTapestry").getAttribute("material").color == "#ffffff" && document.querySelector("#redTapestry").getAttribute("material").color == "#e60000"){
 
             console.log("win condition");
-            setTimeout(window.location.replace('mobile.html'), 3000);
+            setTimeout(window.location.replace('/mobile'), 3000);
             
 
         }

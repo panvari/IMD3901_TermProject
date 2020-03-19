@@ -17,6 +17,7 @@
         if (sessionStorage.getItem('gem1Collected') === 'true') {
             gem1.setAttribute('opacity', '1');
             gemItem1.setAttribute('material', 'color', 'red');
+
         }
         if (sessionStorage.getItem('gem2Collected') === 'true') {
             gem2.setAttribute('opacity', '1');

@@ -85,6 +85,14 @@ socketIO.on('connection', (socket) => {
         socketIO.sockets.emit('launch_minigame_2'); //Mobile listen for this call
     });
 
+    // socket.on('gem1', (data) => {
+    //     socketIO.sockets.emit('gem1'); //Mobile listen for this call
+    // });
+
+    // socket.on('gem2', (data) => {
+    //     socketIO.sockets.emit('gem2'); //Mobile listen for this call
+    // });
+
 });
 
 //finally, start server

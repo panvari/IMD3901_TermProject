@@ -58,7 +58,7 @@ table {
 
 /*begin styles*/
 
-#gemImage {
+.gem {
 	opacity: 0.4;
 	display: inline-block;
 }

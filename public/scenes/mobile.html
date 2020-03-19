@@ -22,12 +22,47 @@
                 });
     
                 socket.on('launch_minigame_1', function(data) {
-                    window.location.replace('tapestry.html')
+                    window.location.replace('/armourMini')
                 });
     
                 socket.on('launch_minigame_2', function(data) {
-                    window.location.replace('armoury.html')
+                    window.location.replace('/tapestryMini')
                 });
+
+                socket.on('scene_2', function(data) {
+                    document.getElementById("castleEntrance").setAttribute("style", "display:block")
+                    document.getElementById("different").setAttribute("style", "display:none")
+                    document.getElementById("roomTitle").innerHTML = "Great Hall";
+
+                });
+                socket.on('scene_3', function(data) {
+                    document.getElementById("castleEntrance").setAttribute("style", "display:none")
+                    document.getElementById("different").setAttribute("style", "display:block")
+                    document.getElementById("roomTitle").innerHTML = "Throne Room";
+
+                });
+
+                let gem1 = document.querySelector('#gem1')
+                let gem2 = document.querySelector('#gem2')
+
+                setInterval((data) => {
+                    if (sessionStorage.getItem('gem1Collected') === 'true') {
+                        gem1.setAttribute('opacity', '1');
+                    }
+                    if (sessionStorage.getItem('gem2Collected') === 'true') {
+                        gem2.setAttribute('opacity', '1');
+                        gemItem2.setAttribute('material', 'color', 'red');
+                    }
+
+                }, 1000);
+
+                // socket.on('gem1', function(data){
+                //     document.getElementById("gem1").setAttribute("opacity", "1");
+                // });
+
+                // socket.on('gem2', function(data){
+                //     document.getElementById("gem2").setAttribute("opacity", "1");
+                // });
     
         </script>
 
@@ -35,24 +70,24 @@
     </head>
     <body>
         <div id = "gems">
-            <img id="gemImage" src="./assets/images/gem.png" width = 30>
-            <img id="gemImage" src="./assets/images/gem.png" width = 30>
-            <img id="gemImage" src="./assets/images/gem.png" width = 30>
-            <img id="gemImage" src="./assets/images/gem.png" width = 30>
-            <img id="gemImage" src="./assets/images/gem.png" width = 30>
-            <img id="gemImage" src="./assets/images/gem.png" width = 30>
+            <img class = "gem" id="gem1" src="./assets/images/gem.png" width = 30>
+            <img class = "gem" id="gem2" src="./assets/images/gem.png" width = 30>
+            <img class = "gem" id="gem3" src="./assets/images/gem.png" width = 30>
+            <img class = "gem" id="gem4" src="./assets/images/gem.png" width = 30>
+            <img class = "gem" id="gem5" src="./assets/images/gem.png" width = 30>
+            <img class = "gem" id="gem6" src="./assets/images/gem.png" width = 30>
         </div>
         
 
-        <h1 id = roomTitle>Room Title</h1>
+        <h1 id = roomTitle>Courtyard</h1>
 
 <!-- TEXT ABOUT EACH ROOM -->
         <div id = "roomText">
-            <p id = "castleEntrance" class = "roomText">
+            <p id = "castleEntrance" class = "roomText" style = display:none;>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper nisi a lorem posuere tincidunt. 
                 Vestibulum facilisis varius fringilla. Vivamus metus lacus, sodales ac rhoncus id, sodales nec arcu.
             </p>
-            <p id = "different" class = "roomText">
+            <p id = "different" class = "roomText" style = display:block>
                 Vestibulum interdum, risus in rhoncus dignissim, felis ligula tempus mauris, posuere commodo elit turpis tincidunt tortor. 
                 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
             </p>

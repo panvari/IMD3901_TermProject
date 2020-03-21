@@ -34,16 +34,26 @@
             <a-asset-item id="chandelier" src="./assets/models/Chandelier.glb"></a-asset-item>
             <a-asset-item id="throne" src="./assets/models/throne01.glb"></a-asset-item>
             <a-asset-item id="throneSmall" src="./assets/models/throne02.glb"></a-asset-item>
-            <a-asset-item id="tapestry" src="./assets/models/longTapestryRed.glb"></a-asset-item>
+            <a-asset-item id="blueT" src="./assets/models/longTapestryBlue.glb"></a-asset-item>
+            <a-asset-item id="whiteT" src="./assets/models/longTapestryWhite.glb"></a-asset-item>
+            <a-asset-item id="redT" src="./assets/models/longTapestryRed.glb"></a-asset-item>
+            <a-asset-item id="yellowT" src="./assets/models/longTapestryYellow.glb"></a-asset-item>
+            <a-asset-item id="tapestry" src="./assets/models/shortTapestry.glb"></a-asset-item>
             <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
+            <a-asset-item id="stairs" src="./assets/models/throneStairs.glb"></a-asset-item>
 
             <a-asset-item id="paintingLong01" src="./assets/models/paintingLong01.glb"></a-asset-item>
             <a-asset-item id="paintingLong02" src="./assets/models/paintingLong02.glb"></a-asset-item>
             <a-asset-item id="paintingLong03" src="./assets/models/paintingLong03.glb"></a-asset-item>
+            <a-asset-item id="paintingSmall01" src="./assets/models/paintingSmall01.glb"></a-asset-item>
+            <a-asset-item id="paintingSmall02" src="./assets/models/paintingSmall02.glb"></a-asset-item>
+            <a-asset-item id="paintingSmall03" src="./assets/models/paintingSmall03.glb"></a-asset-item>
+            <a-asset-item id="paintingSmall04" src="./assets/models/paintingSmall04.glb"></a-asset-item>
+            <a-asset-item id="paintingSmall05" src="./assets/models/paintingSmall05.glb"></a-asset-item>
         </a-assets>
 
         <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
-            <a-entity camera look-controls position="0 3.11 0">
+            <a-entity camera look-controls position="0 1.7 0">
                 <a-cursor></a-cursor>
 
                 <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Throne Room">
@@ -77,45 +87,55 @@
         <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.01 0"></a-plane>
 
         <!-- Models -->
-        <a-entity gltf-model="#throneRoom" scale="1.5 2 3" position="4 0 -8" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#throneRoom" scale="1.693 2 3" position="0 0 -10.792" rotation="0 90 0"></a-entity>
 
         <a-entity gltf-model="#door" scale="2 2 1.5" position="0 0 11" rotation="0 180 0"></a-entity>
-        <a-entity gltf-model="#pillar" scale=" 0.7 1.8 0.7" position="-7 0 11" rotation="0 0 0"></a-entity>
-        <a-entity gltf-model="#pillar" scale=" 0.7 1.8 0.7" position="7 0 11" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#pillar" scale=" 0.7 1.8 0.7" position="7 0 -27" rotation="0 0 0"></a-entity>
-        <a-entity gltf-model="#pillar" scale=" 0.7 1.8 0.7" position="-7 0 -27" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="7 0 -27" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-7 0 -27" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#pillar" scale=" 0.8 2.2 0.7" position="14.5 0 4" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#pillar" scale=" 0.8 2.2 0.7" position="-14.5 0 4" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="14.5 0 4" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-14.5 0 4" rotation="0 90 0"></a-entity>
 
-        <a-entity gltf-model="#pillar" scale=" 1 2.6 0.7" position="14.5 0 -8" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#pillar" scale=" 1 2.6 0.7" position="-14.5 0 -8" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="14.5 0 -8" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-14.5 0 -8" rotation="0 90 0"></a-entity>
 
-        <a-entity gltf-model="#pillar" scale=" 0.8 2.2 0.7" position="14.5 0 -20" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#pillar" scale=" 0.8 2.2 0.7" position="-14.5 0 -20" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="14.5 0 -20" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-14.5 0 -20" rotation="0 90 0"></a-entity>
 
-        <a-entity gltf-model="#carpet" scale=" 1 1 1" position="0 0.2 -2" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 2.301 0.7" position="-4.814 1.312 -21.976" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 2.301 0.7" position="4.814 1.312 -21.976" rotation="0 0 0"></a-entity>
+        
+        <a-entity gltf-model="#pillar" scale=" 1 2.537 0.7" position="-4.814 0 8.576" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 2.537 0.7" position="4.814 0 8.576" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#chandelier" scale=".3 .3 .3" position="0 16 -8" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#carpet" scale=" 1 1 0.745" position="0 0.2 -0.633" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#throne" scale="0.9 0.9 0.9" position="0 0 -19" rotation="0, 0, 0"></a-entity>
-        <a-entity gltf-model="#throneSmall" scale="0.8 0.8 0.8" position="4 0 -19" rotation="0, 0, 0"></a-entity>
-        <a-entity gltf-model="#throneSmall" scale="0.8 0.8 0.8" position="-4 0 -19" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 14.367 -8" rotation="0, 0, 0"></a-entity>
 
-        <a-entity gltf-model="#tapestry" scale="1 0.7 1" position="-11.5 0 -26.5" rotation="0, 0, 0"></a-entity>
-        <a-entity gltf-model="#tapestry" scale="1 0.7 1" position="0 2 -26.5" rotation="0, 0, 0"></a-entity>
-        <a-entity gltf-model="#tapestry" scale="1 0.7 1" position="11.5 0 -26.5" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#stairs" scale="1.2 .9 1.2" position="0 0 -26.396" rotation="0, 0, 0"></a-entity>
 
-        <a-entity gltf-model="#tapestry" scale="1 0.7 1" position="-11.5 0 10.5" rotation="0 180, 0"></a-entity>
-        <a-entity gltf-model="#tapestry" scale="1 0.7 1" position="11.5 0 10.5" rotation="0 180 0"></a-entity>
+        <a-entity gltf-model="#throne" scale="0.9 0.9 0.9" position="-1.500 1.514 -19.488" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#throneSmall" scale="0.8 0.8 0.8" position="1.500 1.514 -19.48" rotation="0, 0, 0"></a-entity>
 
-        <a-entity gltf-model="#paintingLong01" scale=".5 .5 .5" position="15 2.5 -14" rotation="0 -90 0"></a-entity>
-        <a-entity gltf-model="#paintingLong02" scale=".5 .5 .5" position="-15 2.5 -14" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#paintingLong03" scale=".5 .5 .5" position="-15 2.5 -2" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#paintingLong03" scale=".5 .5 .5" position="15 2.5 -2" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#tapestry" scale="2.5 2.5 2" position="0 -19.362 -23.738" rotation="0, 0, 0"></a-entity>
 
+        <a-entity gltf-model="#blueT" scale=".8 .8 .8" position="-18.953 -0.129 1.279" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#redT" scale=".8 .8 .8" position="18.953 -0.129 1.279" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#whiteT" scale=".8 .8 .8" position="-18.953 -0.129 -18.112" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#yellowT" scale=".8 .8 .8" position="18.953 -0.129 -18.112" rotation="0 -90 0"></a-entity>
 
+        <a-entity gltf-model="#paintingLong01" scale=".62 .62 .62" position="18.982 2.5 6.584" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#paintingLong01" scale=".62 .62 .62" position="-18.982 2.5 6.584" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingLong02" scale=".62 .62 .62" position="9.540 2.5 -24.048" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#paintingLong03" scale=".62 .62 .62" position="-9.540 2.5 -24.048" rotation="0 0 0"></a-entity>
+
+        <a-entity gltf-model="#paintingSmall01" scale=".62 .62 .62" position="-18.982 2.5 -2.494" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall02" scale=".62 .62 .62" position="-18.982 2.5 -8.515" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall03" scale=".62 .62 .62" position="-18.982 2.5 -14.450" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall04" scale=".62 .62 .62" position="18.982 2.5 -2.494" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall02" scale=".62 .62 .62" position="18.982 2.5 -8.515" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall05" scale=".62 .62 .62" position="18.982 2.5 -14.450" rotation="0 -90 0"></a-entity>
 
     </a-scene>
 

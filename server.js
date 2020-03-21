@@ -37,6 +37,11 @@ app.get('/throneroom', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/throneRoom.html');
 });
 
+
+app.get('/weaponsRoom', (req, res) => {
+    res.sendFile(__dirname + '/public/scenes/weaponsRoom.html');
+});
+
 app.get('/tapestryMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/tapestry.html');
 });

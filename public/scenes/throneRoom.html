@@ -50,6 +50,8 @@
             <a-asset-item id="paintingSmall03" src="./assets/models/paintingSmall03.glb"></a-asset-item>
             <a-asset-item id="paintingSmall04" src="./assets/models/paintingSmall04.glb"></a-asset-item>
             <a-asset-item id="paintingSmall05" src="./assets/models/paintingSmall05.glb"></a-asset-item>
+
+            <a-asset-item id="wall" src="./assets/models/Walls.glb"></a-asset-item>
         </a-assets>
 
         <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
@@ -87,7 +89,9 @@
         <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.01 0"></a-plane>
 
         <!-- Models -->
-        <a-entity gltf-model="#throneRoom" scale="1.693 2 3" position="0 0 -10.792" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#throneRoom" scale="1.693 2 3" position="0 0 -8.074" rotation="0 90 0"></a-entity>
+
+        <a-entity gltf-model="#wall" scale="2.991 2.991 2.991" position="0 0.059 0" rotation="0 0 0"></a-entity>
 
         <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 11" rotation="0 180 0"></a-entity>
 

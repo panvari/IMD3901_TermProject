@@ -50,6 +50,10 @@ app.get('/hallway', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/hallway.html');
 });
 
+app.get('/kitchen', (req, res) => {
+    res.sendFile(__dirname + '/public/scenes/kitchen.html');
+});
+
 app.get('/tapestryMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/tapestry.html');
 });

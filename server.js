@@ -54,6 +54,10 @@ app.get('/kitchen', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/kitchen.html');
 });
 
+app.get('/tower', (req, res) => {
+    res.sendFile(__dirname + '/public/scenes/tower.html');
+});
+
 app.get('/tapestryMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/tapestry.html');
 });

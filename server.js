@@ -42,6 +42,14 @@ app.get('/weaponsRoom', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/weaponsRoom.html');
 });
 
+app.get('/guardQuarters', (req, res) => {
+    res.sendFile(__dirname + '/public/scenes/guardQuarters.html');
+});
+
+app.get('/hallway', (req, res) => {
+    res.sendFile(__dirname + '/public/scenes/hallway.html');
+});
+
 app.get('/tapestryMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/tapestry.html');
 });

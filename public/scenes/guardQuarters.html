@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/gem2Popups.js"></script>
+    <script src="./js/throneRoomPositionTrigger.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    <!--GUI Library-->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <!--Environment extension-->
+    <title>Guard Quarters</title>
+
+</head>
+
+<body>
+    <a-scene physics="debug: false">
+
+        <a-assets>
+            <!-- Images -->
+            <img id="gemImage" src="./assets/images/gem.png">
+            <img id="kingColors" src="./assets/images/kingColorsGame.png">
+
+            <!-- Models -->
+            <a-asset-item id="weaponsRoom" src="./assets/models/GreatHall.glb"></a-asset-item>
+            <a-asset-item id="door" src="./assets/models/door.glb"></a-asset-item>
+            <a-asset-item id="chandelier" src="./assets/models/Chandelier.glb"></a-asset-item>
+            <a-asset-item id="shortTable" src="./assets/models/shortTable.glb"></a-asset-item>
+            <a-asset-item id="shelf" src="./assets/models/shelf.glb"></a-asset-item>
+            <a-asset-item id="sword" src="./assets/models/sword.glb"></a-asset-item>
+            <a-asset-item id="spear" src="./assets/models/spear.glb"></a-asset-item>
+            <a-asset-item id="mace" src="./assets/models/mace.glb"></a-asset-item>
+            <a-asset-item id="bow" src="./assets/models/bow.glb"></a-asset-item>
+            <a-asset-item id="arrow" src="./assets/models/arrow.glb"></a-asset-item>
+            <a-asset-item id="helmet" src="./assets/models/Helmet.glb"></a-asset-item>
+            <a-asset-item id="chestPlate" src="./assets/models/Chestplate.glb"></a-asset-item>
+            <a-asset-item id="boot" src="./assets/models/Boot.glb"></a-asset-item>
+            <a-asset-item id="gauntlet" src="./assets/models/Gauntlet.glb"></a-asset-item>
+            <a-asset-item id="bed" src="./assets/models/Bed.glb"></a-asset-item>
+            <a-asset-item id="stool" src="./assets/models/stoolServants.glb"></a-asset-item>
+            <a-asset-item id="counter" src="./assets/models/counter.glb"></a-asset-item>
+
+        </a-assets>
+
+        <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
+            <a-entity camera look-controls position="0 2.1 9">
+                <a-cursor></a-cursor>
+
+                <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Guard Quarters">
+                </a-gui-label>
+
+                <a-entity visible="false" id="popUp" geometry="primitive: plane; width: 3; height: 3.5" material="color: white" text=" width: 2.8; align: left; font: https://cdn.aframe.io/fonts/Exo2SemiBold.fnt; color: white; baseline: bottom; letterSpacing: 3; lineHeight:40; value: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem iste distinctio facere error in? Natus dolorum modi, aspernatur amet praesentium eveniet, ea ex aliquam voluptatem repellat nesciunt minima non autem, labore facilis perspiciatis quis. Eius, tempore accusamus! Quos, ipsa eos aliquam vero architecto quae eligendi voluptate ex corrupti mollitia ducimus. "
+                    position="-2.7 -0.5 -2.5">
+                </a-entity>
+
+                <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.1 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-2.7 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem4" src="#gemImage" width="0.3" height="0.5" position="-2.3 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem5" src="#gemImage" width="0.3" height="0.5" position="-1.9 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem6" src="#gemImage" width="0.3" height="0.5" position="-1.5 1.8 -2.5" opacity="0.4"></a-image>
+            </a-entity>
+        </a-entity>
+
+        <!-- Lighting -->
+        <a-light type="point" position="-2 3 8"></a-light>
+        <a-light type="point" position="-2 3 -16"></a-light>
+
+        <!-- Floor -->
+        <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.01 0"></a-plane>
+
+        <!-- Models -->
+        <a-entity gltf-model="#weaponsRoom" scale="1 2 2" position="0 0 -1.783" rotation="0 90 0"></a-entity>
+
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 11" rotation="0 180 0"></a-entity>
+
+        <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 13.023 -4.927" rotation="0, 0, 0"></a-entity>
+
+        <!--<a-entity gltf-model="#shortTable" scale=".02 .02 .02" position="-4 0 0" rotation="0 0 0"></a-entity>-->
+
+        <!--<a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-11.899 -3.20 6.080" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-11.899 -1.2 6.080" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-11.899 1.8 6.080" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-11.899 -3.20 -4.949" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-11.899 -1.2 -4.949" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-11.899 1.8 -4.949" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="11.899 -3.20 6.080" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="11.899 -1.2 6.080" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="11.899 1.8 6.080" rotation="0, -90, 0"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="11.899 -3.20 -4.949" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="11.899 -1.2 -4.949" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="11.899 1.8 -4.949" rotation="0, -90, 0"></a-entity>
+
+        <a-entity gltf-model="#helmet" scale=".12 .12 .12" position="-12.091 2.185 5.997" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#helmet" scale=".12 .12 .12" position="-12.091 2.185 4.248" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#helmet" scale=".12 .12 .12" position="-12.091 2.185 8.111" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#helmet" scale=".12 .12 .12" position="-12.091 4.170 5.997" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#helmet" scale=".12 .12 .12" position="-12.091 4.170 4.248" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#helmet" scale=".12 .12 .12" position="-12.091 4.170 8.111" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#helmet" scale=".12 .12 .12" position="-12.091 7.145 5.997" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#helmet" scale=".12 .12 .12" position="-12.091 7.145 4.248" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#helmet" scale=".12 .12 .12" position="-12.091 7.145 8.111" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#chestPlate" scale=".27 .27 .27" position="-12.091 1.832 -4.969" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#chestPlate" scale=".27 .27 .27" position="-12.091 1.832 -6.618" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#chestPlate" scale=".27 .27 .27" position="-12.091 1.832 -3.077" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#chestPlate" scale=".27 .27 .27" position="-12.091 3.837 -4.969" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#chestPlate" scale=".27 .27 .27" position="-12.091 3.837 -6.618" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#chestPlate" scale=".27 .27 .27" position="-12.091 3.837 -3.077" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#chestPlate" scale=".27 .27 .27" position="-12.091 6.759 -4.969" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#chestPlate" scale=".27 .27 .27" position="-12.091 6.759 -6.618" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#chestPlate" scale=".27 .27 .27" position="-12.091 6.759 -3.077" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 2.1 -7.202" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 2.1 -6.561" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 2.1 -5.402" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 2.1 -4.682" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 2.1 -2.716" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 2.1 -3.363" rotation="0, 180, 0"></a-entity>
+
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 4.062 -7.202" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 4.062 -6.561" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 4.062 -5.402" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 4.062 -4.682" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 4.062 -2.716" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 4.062 -3.363" rotation="0, 180, 0"></a-entity>
+
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 6.996 -7.202" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 6.996 -6.561" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 6.996 -5.402" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 6.996 -4.682" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 6.996 -2.716" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#boot" scale=".36 .36 .36" position="12.091 6.996 -3.363" rotation="0, 180, 0"></a-entity>
+
+        <a-entity gltf-model="#gauntlet" scale=".2 .16 .2" position="12.091 3.804 3.695" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale="-.2 .16 .2" position="12.091 3.804 4.562" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale=".2 .16 .2" position="12.091 3.804 5.640" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale="-.2 .16 .2" position="12.091 3.804 6.490" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale=".2 .16 .2" position="12.091 3.804 7.494" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale="-.2 .16 .2" position="12.091 3.804 8.348" rotation="0, 90, 180"></a-entity>
+
+        <a-entity gltf-model="#gauntlet" scale=".2 .16 .2" position="12.091 5.779 3.695" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale="-.2 .16 .2" position="12.091 5.779 4.562" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale=".2 .16 .2" position="12.091 5.779 5.640" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale="-.2 .16 .2" position="12.091 5.779 6.490" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale=".2 .16 .2" position="12.091 5.779 7.494" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale="-.2 .16 .2" position="12.091 5.779 8.348" rotation="0, 90, 180"></a-entity>
+
+        <a-entity gltf-model="#gauntlet" scale=".2 .16 .2" position="12.091 8.792 3.695" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale="-.2 .16 .2" position="12.091 8.792 4.562" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale=".2 .16 .2" position="12.091 8.792 5.640" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale="-.2 .16 .2" position="12.091 8.792 6.490" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale=".2 .16 .2" position="12.091 8.792 7.494" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#gauntlet" scale="-.2 .16 .2" position="12.091 8.792 8.348" rotation="0, 90, 180"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1 1 1" position="0 0.335 -9.706" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1 1 1" position="6.336 -1.109 -9.706" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1 1 1" position="-6.336 -1.109 -9.706" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#sword" scale="1.325 1.325 1.325" position="0 6.416 -9.313" rotation="0, 0, 180"></a-entity>
+        <a-entity gltf-model="#sword" scale="1.325 1.325 1.325" position="1 6.416 -9.313" rotation="0, 0, 180"></a-entity>
+        <a-entity gltf-model="#sword" scale="1.325 1.325 1.325" position="2 6.416 -9.313" rotation="0, 0, 180"></a-entity>
+        <a-entity gltf-model="#sword" scale="1.325 1.325 1.325" position="-1 6.416 -9.313" rotation="0, 0, 180"></a-entity>
+        <a-entity gltf-model="#sword" scale="1.325 1.325 1.325" position="-2 6.416 -9.313" rotation="0, 0, 180"></a-entity>
+
+        <a-entity gltf-model="#mace" scale=".5 .5 .5" position="-6.375 0.672 -9.303" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#mace" scale=".5 .5 .5" position="-5.139 0.672 -9.303" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#mace" scale=".5 .5 .5" position="-7.652 0.672 -9.303" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#mace" scale=".5 .5 .5" position="-8.841 0.672 -9.303" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#mace" scale=".5 .5 .5" position="-3.872 0.672 -9.303" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="6.375 0.672 -9.303" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="5.139 0.672 -9.303" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="7.652 0.672 -9.303" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="8.841 0.672 -9.303" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="3.872 0.672 -9.303" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#shortTable" scale=".018 .018 0.018" position="-5.999 0 0" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#shortTable" scale=".018 .018 0.018" position="-3.369 0 0" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#shortTable" scale=".018 .018 0.018" position="5.999 0 0" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#shortTable" scale=".018 .018 0.018" position="3.369 0 0" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bow" scale="0.544 0.427 0.544" position="-8.639 1.674 0.422" rotation="90, 90, 0"></a-entity>
+        <a-entity gltf-model="#bow" scale="0.544 0.427 0.544" position="-8.639 1.674 -0.803" rotation="90, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#bow" scale="0.544 0.427 0.544" position="0.751 1.674 0.422" rotation="90, 90, 0"></a-entity>
+        <a-entity gltf-model="#bow" scale="0.544 0.427 0.544" position="0.751 1.674 -0.803" rotation="90, 90, 0"></a-entity>
+        -->
+
+        <a-entity gltf-model="#bed" scale="1 1 1" position="0 0 0" rotation="0, 0, 0"></a-entity>
+
+    </a-scene>
+
+    <!--<script src="./js/throneRoomScoreSystem.js"></script>-->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script>
+        // let locator = document.getElementById('playerLocation');
+        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
+        // const path = window.location.pathname;
+        // const page = path.split('/').pop();
+
+        // if (page == "scene1"){
+        //     locator.setAttribute('value', "Main Courtyard");
+        //     locator.setAttribute('font-family', "Enchanted")
+        // } 
+
+        function changeScene(val) {
+            if (val == 3.1) {
+                socket.emit('throneroom_to_greathall') //calls server method
+            }
+        };
+
+        let socket = io();
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_3_1', function(data) {
+            window.location.replace('greathall') //Call
+        });
+    </script> -->
+</body>
+
+</html>

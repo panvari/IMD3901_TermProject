@@ -41,10 +41,13 @@
             <a-asset-item id="fence" src="./assets/models/fence.glb"></a-asset-item>
             <a-asset-item id="tower" src="./assets/models/RoofedTurret.glb"></a-asset-item>
             <a-asset-item id="door" src="./assets/models/door.glb"></a-asset-item>
+            <a-asset-item id="floor" src="./assets/models/Walls.glb"></a-asset-item>
+            <a-asset-item id="table" src="./assets/models/shortTable.glb"></a-asset-item>
+            <a-asset-item id="chair" src="./assets/models/chair.glb"></a-asset-item>
 
         </a-assets>
 
-        <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
+        <a-entity environment="preset: threetowers; dressingAmount: 0" position = "0 0 -28.245"></a-entity>
         <!-- Lighting  -->
         <a-light type="ambient" color="#222"></a-light>
 
@@ -105,6 +108,8 @@
         <!-- LIGHTING -->
         <a-light type="point" position="0 -10 0"></a-light>
         <a-light type="point" position="0 10 0"></a-light>
+        <a-light type="point" position="25.204 25.204 -70"></a-light>
+        <a-light type="point" position="20 25.204 -70"></a-light>
 
         <!-- Outside Area area -->
 
@@ -153,6 +158,23 @@
         <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="11.621 0 -78.954" rotation="0 90 0"></a-entity>
         <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="17.436 0 -90.611" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="17.436 0 -92.205" rotation="0 180 0"></a-entity>
+
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="37.926 -1.196 -65.373" rotation="0 -90 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="37.926 -1.196 -60.051" rotation="0 -90 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="21.638 -1.196 -60.051" rotation="0 -90 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="21.638 -1.196 -65.3732" rotation="0 -90 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="18.576 -1.196 -57.701" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="24.144 -1.196 -57.701" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="29.573 -1.196 -57.701" rotation="0 0 0"></a-gltf-model>
+    
+        <a-entity gltf-model="#floor" scale="1.186 1 0.755" position="26.896 0.442 -60.218" rotation="0 0 0"></a-entity>
+        <a-gltf-model id="fences" src="#fence" scale="2.810 5.076 1" position="19.163 3.182 -71.721" rotation="90 0 0"></a-gltf-model>
+    
+        <a-entity gltf-model="#table" scale=".018 .018 0.018" position="25.292 0.448 -60.361" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#table" scale=".018 .018 0.018" position="27.989 0.448 -60.361" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#chair" scale=".018 .018 0.018" position="23.173 0.448 -60.361" rotation="0, 130.049, 0"></a-entity>
+        <a-entity gltf-model="#chair" scale=".018 .018 0.018" position="30.156 0.448 -60.361" rotation="0, -130.049, 0"></a-entity>
     </a-scene>
 
     <script src="./js/scoreSystem.js"></script>

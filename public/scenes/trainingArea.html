@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/courtyardPositionTrigger.js"></script>
+    <script src="./js/gem1Popups.js"></script>
+    <script src="./js/spherical-env-map.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    <!--GUI Library-->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <!--Environment extension-->
+    <title>Training Area</title>
+
+</head>
+
+<body>
+    <a-scene physics="debug: false" inspector="url: https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+
+        <a-assets>
+            <!-- Images -->
+            <img id="gemImage" src="./assets/images/gem.png">
+            <img id="sky" src="./assets/images/CloudySky.jpg">
+            <img id="armourGame" src="./assets/images/armourGame.png">
+
+            <!-- Models -->
+            <a-asset-item id="turret" src="./assets/models/Turret.glb"></a-asset-item>
+            <a-asset-item id="gem" src="./assets/models/gem.obj"></a-asset-item>
+            <a-asset-item id="bridge" src="./assets/models/Drawbridge.glb"></a-asset-item>
+            <a-asset-item id="innerGatehouse" src="./assets/models/InnerGatehouse.glb"></a-asset-item>
+            <a-asset-item id="wall" src="./assets/models/Wall1.glb"></a-asset-item>
+            <a-asset-item id="keep" src="./assets/models/Keep.glb"></a-asset-item>
+            <a-asset-item id="pillar" src="./assets/models/pillar.glb"></a-asset-item>
+            <a-asset-item id="well" src="./assets/models/well.glb"></a-asset-item>
+            <a-asset-item id="trapDoor" src="./assets/models/shortTable.glb"></a-asset-item>
+            <a-asset-item id="fence" src="./assets/models/fence.glb"></a-asset-item>
+            <a-asset-item id="tower" src="./assets/models/RoofedTurret.glb"></a-asset-item>
+            <a-asset-item id="door" src="./assets/models/door.glb"></a-asset-item>
+            <a-asset-item id="dummy" src="./assets/models/trainingDummy.glb"></a-asset-item>
+            <a-asset-item id="target" src="./assets/models/Target.glb"></a-asset-item>
+            <a-asset-item id="shelf" src="./assets/models/shelf.glb"></a-asset-item>
+            <a-asset-item id="sword" src="./assets/models/sword.glb"></a-asset-item>
+            <a-asset-item id="spear" src="./assets/models/spear.glb"></a-asset-item>
+            <a-asset-item id="mace" src="./assets/models/mace.glb"></a-asset-item>
+            <a-asset-item id="bow" src="./assets/models/bow.glb"></a-asset-item>
+            <a-asset-item id="arrow" src="./assets/models/arrow.glb"></a-asset-item>
+
+        </a-assets>
+
+        <a-entity environment="preset: threetowers; dressingAmount: 0" position = "0 0 -46.470"></a-entity>
+        
+        <!-- Lighting  -->
+        <a-light type="ambient" position = "25.204 25.204 -70" color="#222"></a-light>
+        <a-light type="point" position="25.204 25.204 -70"></a-light>
+        <a-light type="point" position="20 25.204 -70"></a-light>
+
+        <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
+            <a-entity camera look-controls position="17.436 2.8 -95" rotation = "0 0 0">
+                <a-cursor></a-cursor>
+
+                <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Training Area">
+                </a-gui-label>
+
+                <a-entity visible="false" id="popUp" geometry="primitive: plane; width: 3; height: 3.5" material="color: white" text=" width: 2.8; align: left; font: https://cdn.aframe.io/fonts/Exo2SemiBold.fnt; color: white; baseline: bottom; letterSpacing: 3; lineHeight:40; value: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem iste distinctio facere error in? Natus dolorum modi, aspernatur amet praesentium eveniet, ea ex aliquam voluptatem repellat nesciunt minima non autem, labore facilis perspiciatis quis. Eius, tempore accusamus! Quos, ipsa eos aliquam vero architecto quae eligendi voluptate ex corrupti mollitia ducimus. "
+                    position="-2.7 -0.5 -2.5">
+                </a-entity>
+
+                <a-entity visible="false" id="armourInstructions" position="-2.2 -0.5 -2.5">
+                    <a-image src="#armourGame" width="4" height=" 3"></a-image>
+                </a-entity>
+
+                <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.1 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-2.7 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem4" src="#gemImage" width="0.3" height="0.5" position="-2.3 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem5" src="#gemImage" width="0.3" height="0.5" position="-1.9 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem6" src="#gemImage" width="0.3" height="0.5" position="-1.5 1.8 -2.5" opacity="0.4"></a-image>
+            </a-entity>
+        </a-entity>
+
+        <!-- Floor -->
+        <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 -25"></a-plane>
+
+        <a-gltf-model src="#keep" position="0 0 -37" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model src="#keep" position="-19.117 0 -79.858" scale="2 2.5 2" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model src="#keep" position="-19.117 0 -104.060" scale="2 2.5 2" rotation="0 0 0"></a-gltf-model>
+
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="38.861 0 -91.357" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="38.861 0 -115.360" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="39.858 0 -114.555" rotation="0 90 0"></a-gltf-model>
+    
+        <a-entity gltf-model="#tower" scale=" .01 .01 .01" position="44.982 0 -71.372" rotation="0 0 0"></a-entity>
+    
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="17.436 0 -92.205" rotation="0 180 0"></a-entity>
+
+        <a-gltf-model static-body material="color: grey" src="#turret" position="39.765 0 -115.360" scale="1 0.85 1"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="39.765 0 -90.164" scale="1 0.85 1"></a-gltf-model>
+    
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="33.310 -1.196 -105.273" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="29.758 -1.196 -114.237" rotation="0 -90 0"></a-gltf-model>
+
+        <a-gltf-model src="#dummy" scale=".8 .8 .8" position="29.758 -.950 -111.269" rotation="0 -24.835 0"></a-gltf-model>
+        <a-gltf-model src="#dummy" scale=".8 .8 .8" position="35.828 -.950 -110.549" rotation="0 -47.434 0"></a-gltf-model>
+        <a-gltf-model src="#dummy" scale=".8 .8 .8" position="35.705 -.950 -104.818" rotation="0 -63.167 0"></a-gltf-model>
+
+        <a-gltf-model src="#target" scale=".5 .5 .5" position="36.988 0 -97.828" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model src="#target" scale=".5 .5 .5" position="38.469 4.453 -97.838" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model src="#target" scale=".5 .5 .5" position="24.407 0 -112.205" rotation="0 48.830 0"></a-gltf-model>
+
+        <a-entity gltf-model="#shelf" scale="1 1 1" position="11.541 -1.109 -109.862" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1 1 1" position="11.541 -1.109 -103.871" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1 1 1" position="11.541 -1.109 -97.805" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#sword" scale="1.325 1.325 1.325" position="11.802 6.416 -112.038" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#sword" scale="1.325 1.325 1.325" position="11.802 6.416 -111.015" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#sword" scale="1.325 1.325 1.325" position="11.802 6.416 -109.862" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#sword" scale="1.325 1.325 1.325" position="11.802 6.416 -108.794" rotation="0, 90, 180"></a-entity>
+        <a-entity gltf-model="#sword" scale="1.325 1.325 1.325" position="11.802 6.416 -107.774" rotation="0, 90, 180"></a-entity>
+
+        <a-entity gltf-model="#mace" scale=".5 .5 .5" position="11.857 0.672 -100.254" rotation="0,  90, 0"></a-entity>
+        <a-entity gltf-model="#mace" scale=".5 .5 .5" position="11.857 0.672 -99.117" rotation="0,  90, 0"></a-entity>
+        <a-entity gltf-model="#mace" scale=".5 .5 .5" position="11.857 0.672 -97.883" rotation="0,  90, 0"></a-entity>
+        <a-entity gltf-model="#mace" scale=".5 .5 .5" position="11.857 0.672 -96.710" rotation="0,  90, 0"></a-entity>
+        <a-entity gltf-model="#mace" scale=".5 .5 .5" position="11.857 0.672 -95.469" rotation="0,  90, 0"></a-entity>
+
+        <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="11.976 0.672 -106.153" rotation="0,  90, 0"></a-entity>
+        <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="11.976 0.672 -104.924" rotation="0,  90, 0"></a-entity>
+        <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="11.976 0.672 -103.817" rotation="0,  90, 0"></a-entity>
+        <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="11.976 0.672 -102.661" rotation="0,  90, 0"></a-entity>
+        <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="11.976 0.672 -101.618" rotation="0,  90, 0"></a-entity>
+
+        <a-entity gltf-model="#bow" scale="0.544 0.427 0.544" position="14.982 -1.234 -111.090" rotation="-30,  0, 0"></a-entity>
+        <a-entity gltf-model="#bow" scale="0.544 0.427 0.544" position="17.192 -1.234 -111.090" rotation="-30,  0, 0"></a-entity>
+        <a-entity gltf-model="#bow" scale="0.544 0.427 0.544" position="18.963 -1.234 -111.090" rotation="-30,  0, 0"></a-entity>
+        <a-entity gltf-model="#bow" scale="0.544 0.427 0.544" position="20.940-1.234 -111.090" rotation="-30,  0, 0"></a-entity>
+    </a-scene>
+
+    <script src="./js/scoreSystem.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        let locator = document.getElementById('playerLocation');
+        let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
+        const path = window.location.pathname;
+        const page = path.split('/').pop();
+
+        if (page == "scene1") {
+            locator.setAttribute('value', "Main Courtyard");
+            locator.setAttribute('font-family', "Enchanted")
+        }
+
+        function changeScene(val) {
+            if (val == 2) {
+                socket.emit('courtyard_to_greathall') //calls server method
+            }
+        };
+
+        let socket = io();
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_2', function(data) {
+            window.location.replace('greatHall') //Call
+        });
+    </script>
+</body>
+
+</html>

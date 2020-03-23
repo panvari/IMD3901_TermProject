@@ -62,6 +62,10 @@ app.get('/innerCourtyard', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/innerCourtyard.html');
 });
 
+app.get('/trainingArea', (req, res) => {
+    res.sendFile(__dirname + '/public/scenes/trainingArea.html');
+});
+
 app.get('/tapestryMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/tapestry.html');
 });

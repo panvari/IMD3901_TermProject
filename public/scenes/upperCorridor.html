@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/gem2Popups.js"></script>
+    <script src="./js/throneRoomPositionTrigger.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    <!--GUI Library-->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <!--Environment extension-->
+    <title>Upper Corridor</title>
+
+</head>
+
+<body>
+    <a-scene physics="debug: false">
+
+        <a-assets>
+            <!-- Images -->
+            <img id="gemImage" src="./assets/images/gem.png">
+            <img id="kingColors" src="./assets/images/kingColorsGame.png">
+
+            <!-- Models -->
+            <a-asset-item id="throneRoom" src="./assets/models/GreatHall.glb"></a-asset-item>
+            <a-asset-item id="door" src="./assets/models/door.glb"></a-asset-item>
+            <a-asset-item id="pillar" src="./assets/models/Pillar.glb"></a-asset-item>
+            <a-asset-item id="carpet" src="./assets/models/carpet.glb"></a-asset-item>
+            <a-asset-item id="chandelier" src="./assets/models/Chandelier.glb"></a-asset-item>
+            <a-asset-item id="blueT" src="./assets/models/longTapestryBlue.glb"></a-asset-item>
+            <a-asset-item id="whiteT" src="./assets/models/longTapestryWhite.glb"></a-asset-item>
+            <a-asset-item id="redT" src="./assets/models/longTapestryRed.glb"></a-asset-item>
+            <a-asset-item id="yellowT" src="./assets/models/longTapestryYellow.glb"></a-asset-item>
+
+            <a-asset-item id="paintingLong01" src="./assets/models/paintingLong01.glb"></a-asset-item>
+            <a-asset-item id="paintingLong02" src="./assets/models/paintingLong02.glb"></a-asset-item>
+            <a-asset-item id="paintingLong03" src="./assets/models/paintingLong03.glb"></a-asset-item>
+            <a-asset-item id="paintingSmall01" src="./assets/models/paintingSmall01.glb"></a-asset-item>
+            <a-asset-item id="paintingSmall02" src="./assets/models/paintingSmall02.glb"></a-asset-item>
+            <a-asset-item id="paintingSmall03" src="./assets/models/paintingSmall03.glb"></a-asset-item>
+            <a-asset-item id="paintingSmall04" src="./assets/models/paintingSmall04.glb"></a-asset-item>
+            <a-asset-item id="paintingSmall05" src="./assets/models/paintingSmall05.glb"></a-asset-item>
+
+            <a-asset-item id="wall" src="./assets/models/Walls.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
+            <a-entity camera look-controls position="0 2.8 7">
+                <a-cursor></a-cursor>
+
+                <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Upper Corridor">
+                </a-gui-label>
+
+                <a-entity visible="false" id="popUp" geometry="primitive: plane; width: 3; height: 3.5" material="color: white" text=" width: 2.8; align: left; font: https://cdn.aframe.io/fonts/Exo2SemiBold.fnt; color: white; baseline: bottom; letterSpacing: 3; lineHeight:40; value: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem iste distinctio facere error in? Natus dolorum modi, aspernatur amet praesentium eveniet, ea ex aliquam voluptatem repellat nesciunt minima non autem, labore facilis perspiciatis quis. Eius, tempore accusamus! Quos, ipsa eos aliquam vero architecto quae eligendi voluptate ex corrupti mollitia ducimus. "
+                    position="-2.7 -0.5 -2.5">
+                </a-entity>
+
+                <a-entity visible="false" id="kingColorInstructions" position="-2.2 -0.5 -2.5">
+                    <a-image src="#kingColors" width="4" height=" 3"></a-image>
+                </a-entity>
+
+                <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.1 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-2.7 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem4" src="#gemImage" width="0.3" height="0.5" position="-2.3 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem5" src="#gemImage" width="0.3" height="0.5" position="-1.9 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem6" src="#gemImage" width="0.3" height="0.5" position="-1.5 1.8 -2.5" opacity="0.4"></a-image>
+            </a-entity>
+        </a-entity>
+
+        <!-- Lighting -->
+        <a-light type="point" position="-2 3 8"></a-light>
+        <a-light type="point" position="-2 3 -16"></a-light>
+
+        <!-- Gem -->
+        <a-obj-model popup id="gemItem2" material="color: green" src="#gem" position="5 -1 -15" scale="0.1 0.1 0.1"></a-obj-model>
+
+        <!-- Floor -->
+        <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.01 0"></a-plane>
+
+        <!-- Models -->
+        <a-entity gltf-model="#throneRoom" scale="1.714 1.753 1.146" position="0 0 -10.907" rotation="0 90 0"></a-entity>
+
+        <a-entity gltf-model="#wall" scale="2.525 2.525 3.284" position="0 0.059 -10.098" rotation="0 0 0"></a-entity>
+
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 11" rotation="0 180 0"></a-entity>
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 -24.432" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="7.335 0 -1.760" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="-7.335 0 -1.760" rotation="0 90 0"></a-entity>
+
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="4.786 0 4" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-4.786 0 4" rotation="0 90 0"></a-entity>
+
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="4.786 0 -8" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-4.786 0 -8" rotation="0 90 0"></a-entity>
+
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="4.786 0 -17.793" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-4.786 0 -17.793" rotation="0 90 0"></a-entity>
+
+        <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="-4.786 0 -22.596" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="4.786 0 -22.596" rotation="0 0 0"></a-entity>
+        
+        <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="-4.786 0 8.576" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="4.786 0 8.576" rotation="0 0 0"></a-entity>
+
+        <a-entity gltf-model="#carpet" scale=" 1.674 1 1.183" position="0 0.2 -6.649" rotation="0 0 0"></a-entity>
+
+        <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 14.367 -8" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#paintingLong01" scale=".62 .62 .62" position="-7.160 2.5 -13.298" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingLong02" scale=".62 .62 .62" position="7.160 2.5 -13.298" rotation="0 -90 0"></a-entity>
+
+        <a-entity gltf-model="#paintingSmall01" scale=".62 .62 .62" position="-7.160 2.5 6.205" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall02" scale=".62 .62 .62" position="-7.160 2.5 -20.455" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall03" scale=".62 .62 .62" position="7.160 2.5 6.205" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall04" scale=".62 .62 .62" position="7.160 2.5 -20.455" rotation="0 -90 0"></a-entity>
+
+    </a-scene>
+
+    <script src="./js/throneRoomScoreSystem.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // let locator = document.getElementById('playerLocation');
+        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
+        // const path = window.location.pathname;
+        // const page = path.split('/').pop();
+
+        // if (page == "scene1"){
+        //     locator.setAttribute('value', "Main Courtyard");
+        //     locator.setAttribute('font-family', "Enchanted")
+        // } 
+
+        function changeScene(val) {
+            if (val == 3.1) {
+                socket.emit('throneroom_to_greathall') //calls server method
+            }
+        };
+
+        let socket = io();
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_3_1', function(data) {
+            window.location.replace('greathall') //Call
+        });
+    </script>
+</body>
+
+</html>

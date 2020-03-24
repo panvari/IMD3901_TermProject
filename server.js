@@ -74,6 +74,11 @@ app.get('/upperCorridor', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/upperCorridor.html');
 });
 
+app.get('/sleepingChambers', (req, res) => {
+    res.sendFile(__dirname + '/public/scenes/sleepingChambers.html');
+});
+
+
 app.get('/tapestryMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/tapestry.html');
 });

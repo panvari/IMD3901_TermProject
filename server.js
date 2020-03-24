@@ -46,6 +46,10 @@ app.get('/guardQuarters', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/guardQuarters.html');
 });
 
+app.get('/servantQuarters', (req, res) => {
+    res.sendFile(__dirname + '/public/scenes/servantQuarters.html');
+});
+
 app.get('/hallway', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/hallway.html');
 });

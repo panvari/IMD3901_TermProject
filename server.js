@@ -78,6 +78,9 @@ app.get('/sleepingChambers', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/sleepingChambers.html');
 });
 
+app.get('/greatChambers', (req, res) => {
+    res.sendFile(__dirname + '/public/scenes/greatChambers.html');
+});
 
 app.get('/tapestryMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/tapestry.html');

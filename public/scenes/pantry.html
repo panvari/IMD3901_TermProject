@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/gem2Popups.js"></script>
+    <script src="./js/throneRoomPositionTrigger.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+    <!--GUI Library-->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <!--Environment extension-->
+    <title>Pantry</title>
+
+</head>
+
+<body>
+    <a-scene physics="debug: false">
+
+        <a-assets>
+            <!-- Images -->
+            <img id="gemImage" src="./assets/images/gem.png">
+            <img id="kingColors" src="./assets/images/kingColorsGame.png">
+
+            <!-- Models -->
+            <a-asset-item id="kitchen" src="./assets/models/GreatHall.glb"></a-asset-item>
+            <a-asset-item id="door" src="./assets/models/door.glb"></a-asset-item>
+            <a-asset-item id="chandelier" src="./assets/models/Chandelier.glb"></a-asset-item>
+            <a-asset-item id="shortTable" src="./assets/models/shortTableServants.glb"></a-asset-item>
+            <a-asset-item id="shelf" src="./assets/models/shelf.glb"></a-asset-item>
+            <a-asset-item id="counter" src="./assets/models/counter.glb"></a-asset-item>
+            <a-asset-item id="cauldron" src="./assets/models/cauldron.glb"></a-asset-item>
+            <a-asset-item id="stove" src="./assets/models/stove.glb"></a-asset-item>
+            <a-asset-item id="chair" src="./assets/models/chair.glb"></a-asset-item>
+            <a-asset-item id="stool" src="./assets/models/stoolServants.glb"></a-asset-item>
+            <a-asset-item id="pot" src="./assets/models/Pot.glb"></a-asset-item>
+            <a-asset-item id="plate" src="./assets/models/Plate.glb"></a-asset-item>
+            <a-asset-item id="knife" src="./assets/models/Knife.glb"></a-asset-item>
+            <a-asset-item id="bread" src="./assets/models/Bread.glb"></a-asset-item>
+            <a-asset-item id="bucket" src="./assets/models/Bucket.glb"></a-asset-item>
+            <a-asset-item id="ham" src="./assets/models/Ham.glb"></a-asset-item>
+            <a-asset-item id="milk" src="./assets/models/Milk.glb"></a-asset-item>
+            <a-asset-item id="cheese" src="./assets/models/Cheese.glb"></a-asset-item>
+            <a-asset-item id="cabbage" src="./assets/models/Cabbage.glb"></a-asset-item>
+            <a-asset-item id="potato" src="./assets/models/Potato.glb"></a-asset-item>
+            <a-asset-item id="wall" src="./assets/models/Walls.glb"></a-asset-item>
+            <a-asset-item id="apple" src="./assets/models/Apple.glb"></a-asset-item>
+            <a-asset-item id="pear" src="./assets/models/Pear.glb"></a-asset-item>
+            <a-asset-item id="strawberry" src="./assets/models/Strawberry.glb"></a-asset-item>
+            <a-asset-item id="bucketApples" src="./assets/models/BucketApples.glb"></a-asset-item>
+            <a-asset-item id="bucketPears" src="./assets/models/BucketPears.glb"></a-asset-item>
+            <a-asset-item id="bucketStrawberries" src="./assets/models/BucketStrawberries.glb"></a-asset-item>
+            <a-asset-item id="bucketPotatoes" src="./assets/models/BucketPotatoes.glb"></a-asset-item>
+            <a-asset-item id="bucketCabbages" src="./assets/models/BucketCabbages.glb"></a-asset-item>
+
+        </a-assets>
+
+        <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
+            <a-entity camera look-controls position="0 2.8 9">
+                <a-cursor></a-cursor>
+
+                <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Pantry">
+                </a-gui-label>
+
+                <a-entity visible="false" id="popUp" geometry="primitive: plane; width: 3; height: 3.5" material="color: white" text=" width: 2.8; align: left; font: https://cdn.aframe.io/fonts/Exo2SemiBold.fnt; color: white; baseline: bottom; letterSpacing: 3; lineHeight:40; value: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem iste distinctio facere error in? Natus dolorum modi, aspernatur amet praesentium eveniet, ea ex aliquam voluptatem repellat nesciunt minima non autem, labore facilis perspiciatis quis. Eius, tempore accusamus! Quos, ipsa eos aliquam vero architecto quae eligendi voluptate ex corrupti mollitia ducimus. "
+                    position="-2.7 -0.5 -2.5">
+                </a-entity>
+
+                <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.1 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-2.7 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem4" src="#gemImage" width="0.3" height="0.5" position="-2.3 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem5" src="#gemImage" width="0.3" height="0.5" position="-1.9 1.8 -2.5" opacity="0.4"></a-image>
+                <a-image class="gem" id="gem6" src="#gemImage" width="0.3" height="0.5" position="-1.5 1.8 -2.5" opacity="0.4"></a-image>
+            </a-entity>
+        </a-entity>
+
+        <!-- Lighting -->
+        <a-light type="point" position="-2 3 8"></a-light>
+        <a-light type="point" position="-2 3 -16"></a-light>
+
+        <!-- Floor -->
+        <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.01 0"></a-plane>
+
+        <!-- Models -->
+        <a-entity gltf-model="#kitchen" scale="1.132 1.288 1.013" position="0 0 -3.400" rotation="0 90 0"></a-entity>
+
+        <a-entity gltf-model="#wall" scale="2.525 2.525 2.525" position="0 0.059 0" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#wall" scale="2.525 2.525 2.525" position="0 7.713 0" rotation="0 -180.000 -180.000"></a-entity>
+
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 11" rotation="0 180 0"></a-entity>
+
+        <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 5.314 0.515" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 -3.679 0" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 -1.966 0" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 -0.317 0" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 1.214 0" rotation="0, -90, 0"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 -3.679 7.032" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 -1.966 7.032" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 -0.317 7.032" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 1.214 7.032" rotation="0, -90, 0"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 -3.679 -7.032" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 -1.966 -7.032" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 -0.317 -7.032" rotation="0, -90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="5.706 1.214 -7.032" rotation="0, -90, 0"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 -3.679 0" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 -1.966 0" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 -0.317 0" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 1.214 0" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 -3.679 7.032" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 -1.966 7.032" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 -0.317 7.032" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 1.214 7.032" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 -3.679 -7.032" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 -1.966 -7.032" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 -0.317 -7.032" rotation="0, 90, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="-5.706 1.214 -7.032" rotation="0, 90, 0"></a-entity>
+
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="0 -3.679 -11.675" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="0 -1.966 -11.675" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="0 -0.317 -11.675" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#shelf" scale="1.2 1.2 1.2" position="0 1.214 -11.675" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 1.178 0" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 1.178 1.971" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 1.178 -1.971" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 2.902 0" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 2.902 1.971" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 2.902 -1.971" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 4.522 0" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 4.522 1.971" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 4.522 -1.971" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 6.062 0" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 6.062 1.971" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketApples" scale="2.5 2.5 2.5" position="5.704 6.062 -1.971" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 1.178 7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 1.178 9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 1.178 4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 2.902 7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 2.902 9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 2.902 4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 4.522 7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 4.522 9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 4.522 4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 6.062 7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 6.062 9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketStrawberries" scale="2.5 2.5 2.5" position="5.704 6.062 4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 1.178 -7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 1.178 -9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 1.178 -4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 2.902 -7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 2.902 -9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 2.902 -4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 4.522 -7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 4.522 -9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 4.522 -4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 6.062 -7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 6.062 -9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPears" scale="2.5 2.5 2.5" position="5.704 6.062 -4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 1.178 0" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 1.178 1.971" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 1.178 -1.971" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 2.902 0" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 2.902 1.971" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 2.902 -1.971" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 4.522 0" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 4.522 1.971" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 4.522 -1.971" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 6.062 0" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 6.062 1.971" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketCabbages" scale="2.5 2.5 2.5" position="-5.704 6.062 -1.971" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 1.178 7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 1.178 9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 1.178 4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 2.902 7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 2.902 9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 2.902 4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 4.522 7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 4.522 9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 4.522 4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 6.062 7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 6.062 9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 6.062 4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 1.178 -7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 1.178 -9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 1.178 -4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 2.902 -7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 2.902 -9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 2.902 -4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 4.522 -7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 4.522 -9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 4.522 -4.877" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 6.062 -7.010" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 6.062 -9.049" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bucketPotatoes" scale="2.5 2.5 2.5" position="-5.704 6.062 -4.877" rotation="0, 0, 0"></a-entity>
+    
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="0 1.686 -11.674" rotation="0, 45.000, 0"></a-entity>
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="1.902 1.686 -11.674" rotation="0, 45.000, 0"></a-entity>
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="-1.902 1.686 -11.674" rotation="0, 45.000, 0"></a-entity>
+
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="0 3.371 -11.674" rotation="0, 45.000, 0"></a-entity>
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="1.902 3.371 -11.674" rotation="0, 45.000, 0"></a-entity>
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="-1.902 3.371 -11.674" rotation="0, 45.000, 0"></a-entity>
+
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="0 5.023 -11.674" rotation="0, 45.000, 0"></a-entity>
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="1.902 5.023 -11.674" rotation="0, 45.000, 0"></a-entity>
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="-1.902 5.023 -11.674" rotation="0, 45.000, 0"></a-entity>
+
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="0 6.561 -11.674" rotation="0, 45.000, 0"></a-entity>
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="1.902 6.561 -11.674" rotation="0, 45.000, 0"></a-entity>
+        <a-entity gltf-model="#bread" scale="0.059 0.059 0.038" position="-1.902 6.561 -11.674" rotation="0, 45.000, 0"></a-entity>
+    </a-scene>
+
+    <!--<script src="./js/throneRoomScoreSystem.js"></script>-->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script>
+        // let locator = document.getElementById('playerLocation');
+        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
+        // const path = window.location.pathname;
+        // const page = path.split('/').pop();
+
+        // if (page == "scene1"){
+        //     locator.setAttribute('value', "Main Courtyard");
+        //     locator.setAttribute('font-family', "Enchanted")
+        // } 
+
+        function changeScene(val) {
+            if (val == 3.1) {
+                socket.emit('throneroom_to_greathall') //calls server method
+            }
+        };
+
+        let socket = io();
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_3_1', function(data) {
+            window.location.replace('greathall') //Call
+        });
+    </script> -->
+</body>
+
+</html>

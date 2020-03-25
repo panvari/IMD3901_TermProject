@@ -55,7 +55,7 @@
         </a-assets>
 
         <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
-            <a-entity camera look-controls position="0 2.8 7">
+            <a-entity camera look-controls position="0 2.8 0">
                 <a-cursor></a-cursor>
 
                 <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Throne Room">
@@ -79,11 +79,11 @@
         </a-entity>
 
         <!-- Lighting -->
-        <a-light type="point" position="-2 3 8"></a-light>
-        <a-light type="point" position="-2 3 -16"></a-light>
+        <a-light type="point" position="-2 7 8"></a-light>
+        <a-light type="point" position="-2 7 -16"></a-light>
 
         <!-- Gem -->
-        <a-obj-model popup id="gemItem2" material="color: green" src="#gem" position="5 -1 -15" scale="0.1 0.1 0.1"></a-obj-model>
+        <a-obj-model popup id="gemItem2" material="color: green" src="#gem" position="7 -1 -13" scale="0.1 0.1 0.1"></a-obj-model>
 
         <!-- Floor -->
         <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.01 0"></a-plane>
@@ -109,7 +109,7 @@
 
         <a-entity gltf-model="#pillar" scale=" 1 2.301 0.7" position="-4.814 1.312 -21.976" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#pillar" scale=" 1 2.301 0.7" position="4.814 1.312 -21.976" rotation="0 0 0"></a-entity>
-        
+
         <a-entity gltf-model="#pillar" scale=" 1 2.537 0.7" position="-4.814 0 8.576" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#pillar" scale=" 1 2.537 0.7" position="4.814 0 8.576" rotation="0 0 0"></a-entity>
 
@@ -141,19 +141,37 @@
         <a-entity gltf-model="#paintingSmall02" scale=".62 .62 .62" position="18.982 2.5 -8.515" rotation="0 -90 0"></a-entity>
         <a-entity gltf-model="#paintingSmall05" scale=".62 .62 .62" position="18.982 2.5 -14.450" rotation="0 -90 0"></a-entity>
 
+
+        <a-box visible="false" static-body position="0 6.184 14" scale="41 18 1"></a-box>
+        <a-box visible="false" static-body position="19.6 6 -3.2" scale="1 -13.7 40"></a-box>
+        <a-box visible="false" static-body position="-19.6 6 -3.2" scale="1 -13.7 40"></a-box>
+        <a-box visible="false" static-body position="0 5.8 -22" scale="41 18 1"></a-box>
+
+        <a-box visible="false" static-body position="14.5 5 -8" scale="0.5 11 0.5" rotation="0 0 0"></a-box>
+        <a-box visible="false" static-body position="14.5 5.7 3.85" scale="0.5 11 0.5" rotation="0 0 0"></a-box>
+        <a-box visible="false" static-body position="4.8 4.6 8.5" scale="0.5 11 0.5" rotation="0 0 0"></a-box>
+        <a-box visible="false" static-body position="-4.7 4.6 8.5" scale="0.5 11 0.5" rotation="0 0 0"></a-box>
+        <a-box visible="false" static-body position="-14.5 5.7 3.85" scale="0.5 11 0.5" rotation="0 0 0"></a-box>
+        <a-box visible="false" static-body position="-14.5 5 -8" scale="0.5 11 0.5" rotation="0 0 0"></a-box>
+        <a-box visible="false" static-body position="-14.5 5 -20" scale="0.5 11 0.5" rotation="0 0 0"></a-box>
+        <a-box visible="false" static-body position=" 14.5 5 -20 " scale="0.5 11 0.5 " rotation="0 0 0 "></a-box>
+
+        <a-box visible="false" static-body position="0 3 -17 " scale="8.5 6.7 9 " rotation="0 0 0 "></a-box>
+        <a-box visible="false" static-body position="-4.6 3 -20 " scale="8.5 6.7 8.9 " rotation="0 -44 0 "></a-box>
+        <a-box visible="false" static-body position="4.6 3 -20 " scale="8.5 6.7 8.9 " rotation="0 44 0 "></a-box>
     </a-scene>
 
-    <script src="./js/throneRoomScoreSystem.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/throneRoomScoreSystem.js "></script>
+    <script src="/socket.io/socket.io.js "></script>
     <script>
         // let locator = document.getElementById('playerLocation');
         // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
         // const path = window.location.pathname;
         // const page = path.split('/').pop();
 
-        // if (page == "scene1"){
-        //     locator.setAttribute('value', "Main Courtyard");
-        //     locator.setAttribute('font-family', "Enchanted")
+        // if (page == "scene1 "){
+        //     locator.setAttribute('value', "Main Courtyard ");
+        //     locator.setAttribute('font-family', "Enchanted ")
         // } 
 
         function changeScene(val) {
@@ -165,7 +183,7 @@
         let socket = io();
         //default connect event
         socket.on('connect', function() {
-            console.log("connected!");
+            console.log("connected! ");
         });
 
         socket.on('scene_3_1', function(data) {

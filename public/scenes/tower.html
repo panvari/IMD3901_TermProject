@@ -47,12 +47,12 @@
 
         </a-assets>
 
-        <a-entity environment="preset: threetowers; dressingAmount: 0" position = "0 0 -28.245"></a-entity>
+        <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
         <!-- Lighting  -->
         <a-light type="ambient" color="#222"></a-light>
 
         <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
-            <a-entity camera look-controls position="42.982 21.7 -71.372">
+            <a-entity camera look-controls position="0 21.7 0">
                 <a-cursor></a-cursor>
 
                 <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Tower">
@@ -77,104 +77,47 @@
             </a-entity>
         </a-entity>
 
-        <!-- Gem -->
-        <a-obj-model popup id="gemItem1" material="color: green" src="#gem" position="5 -1 -25" scale="0.1 0.1 0.1"></a-obj-model>
-
         <!-- Floor -->
         <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 -25"></a-plane>
 
-        <!-- outer wall Colliders -->
-        <!-- Front walls -->
-        <a-box static-body rotation="0 -60 0" position="-17 4 -10" material="color: grey" scale="20 10 0.5"></a-box>
-        <a-box static-body material="color: grey" scale="20 10 0.5" position="18 4 -10" rotation="0 60.5 0"></a-box>
-        <!-- Side Walls -->
-        <a-box static-body material="color: grey" scale="13 10 0.5" position="-24 4 -28" rotation="0 -85 0"></a-box>
-        <a-box static-body material="color: grey" scale="13 10 0.5" position="24 4 -28" rotation="0 82 0"></a-box>
-        <!-- Back Walls -->
-        <a-box static-body material="color: grey" scale="13 10 0.5" position="-19 4 -38" rotation="0 -170 0"></a-box>
-        <a-box static-body material="color: grey" scale="13 10 0.5" position="19 4 -38" rotation="0 170 0"></a-box>
-        <!--towers (turrets) -->
-        <!-- outer wall towers -->
-        <a-gltf-model static-body material="color: grey" src="#turret" position="-25 0 -37" scale="1 0.85 1"></a-gltf-model>
-        <a-gltf-model static-body material="color: grey" src="#turret" position="25 0 -37" scale="1 0.85 1"></a-gltf-model>
-
-        <!-- castle front -->
-        <a-gltf-model static-body material="color: grey" src="#turret" position="-22 0 -18" scale="1 0.85 1"></a-gltf-model>
-        <a-gltf-model static-body material="color: grey" src="#turret" position="22 0 -18" scale="1 0.85 1"></a-gltf-model>
-        <a-gltf-model static-body material="color: grey" src="#turret" position="-10.5 0 1.5" scale="1 0.85 1"></a-gltf-model>
-        <a-gltf-model static-body material="color: grey" src="#turret" position="10.5 0 1.5" scale="1 0.85 1"></a-gltf-model>
-        <a-gltf-model id="drawBridge" src="#bridge" scale="1.2 1.7 2" position="0 0 6" rotation="0 -90 0"></a-gltf-model>
-
         <!-- LIGHTING -->
-        <a-light type="point" position="0 -10 0"></a-light>
-        <a-light type="point" position="0 10 0"></a-light>
-        <a-light type="point" position="25.204 25.204 -70"></a-light>
-        <a-light type="point" position="20 25.204 -70"></a-light>
+        <a-light type="point" position="5.579 25.204 -2.032"></a-light>
+        <a-light type="point" position="0 25.204 0"></a-light>
 
-        <!-- Outside Area area -->
-
-        <a-gltf-model static-body material="color: grey" src="#turret" position="-2.5 -1 -16.5" scale="0.12 0.12 0.12"></a-gltf-model>
-        <a-gltf-model static-body material="color: grey" src="#turret" position="2.5 -1 -16.5" scale="0.12 0.12 0.12"></a-gltf-model>
-
-        <!-- Front Wall Models -->
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="9 0 6" rotation="0 -120 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-9.5 0 3.1" rotation="0 -60 0"></a-gltf-model>
-        <!-- Middle Wall Models -->
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-23.6 0 -17" rotation="0 -85 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="26.4 0 -43.3" rotation="0 82 0"></a-gltf-model>
-
-        <!-- Back Wall Models -->
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="5 0 -41" rotation="0 170 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-29.8 0 -36" rotation="0 -170 0"></a-gltf-model>
-
-
-        <!-- front gatehouse -->
-        <a-gltf-model material="color: grey" src="#innerGatehouse" position="0 0 2" rotation="0 -90 0" scale="2 1.8 2"></a-gltf-model>
-
-        <!--courtyard 1 well -->
-        <a-gltf-model spherical-map static-body src="#well" position="-12 0 -26" rotation="0 45 0" scale="1.2 1.2 1.2"></a-gltf-model>
-
-        <!-- Keep -->
-        <a-gltf-model src="#keep" position="0 0 -37" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
-        <a-gltf-model src="#keep" position="-19.117 0 -79.858" scale="2 2.5 2" rotation="0 0 0"></a-gltf-model>
-        <a-gltf-model src="#keep" position="-19.117 0 -104.060" scale="2 2.5 2" rotation="0 0 0"></a-gltf-model>
-
-        <!--Tower View-->
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="9.527 0 -49.644" rotation="0 170 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="46.880 0 -69.957" rotation="0 70.806 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="48.172 0 -66.781" rotation="0 -70.806 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="38.861 0 -91.357" rotation="0 0 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="38.861 0 -115.360" rotation="0 0 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="39.858 0 -114.555" rotation="0 90 0"></a-gltf-model>
-
-        <a-gltf-model static-body material="color: grey" src="#turret" position="37.029 0 -44.511" scale="1 0.85 1"></a-gltf-model>
-        <a-gltf-model static-body material="color: grey" src="#turret" position="39.765 0 -115.360" scale="1 0.85 1"></a-gltf-model>
-        <a-gltf-model static-body material="color: grey" src="#turret" position="39.765 0 -90.164" scale="1 0.85 1"></a-gltf-model>
+        <a-entity gltf-model="#tower" scale=" .01 .01 .01" position="0 0 0" rotation="0 0 0"></a-entity>
+        
+        <a-entity gltf-model="#trapDoor" scale=".01 .01 0.01" position="0 19.269 2.2" rotation="0, 0, 0"></a-entity>
     
-        <a-entity gltf-model="#tower" scale=" .01 .01 .01" position="44.982 0 -71.372" rotation="0 0 0"></a-entity>
+        <a-gltf-model src="#keep" position="0 0 60.056" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model src="#keep" position="41.892 0 41.231" scale="2 2.5 2" rotation="0 180 0"></a-gltf-model>
+        <a-gltf-model src="#keep" position="-22.857 0 60.056" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model src="#keep" position="-45.490 0 60.056" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
 
-        <a-entity gltf-model="#trapDoor" scale=".01 .01 0.01" position="46.339 19.269 -71.372" rotation="0, 0, 0"></a-entity>
-    
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="11.621 0 -78.954" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="17.436 0 -90.611" rotation="0 0 0"></a-entity>
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="17.436 0 -92.205" rotation="0 180 0"></a-entity>
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 29.523" rotation="0 180 0"></a-entity>
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="-18.093 0 21.369" rotation="0 90 0"></a-entity>
 
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="37.926 -1.196 -65.373" rotation="0 -90 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="37.926 -1.196 -60.051" rotation="0 -90 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="21.638 -1.196 -60.051" rotation="0 -90 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="21.638 -1.196 -65.3732" rotation="0 -90 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="18.576 -1.196 -57.701" rotation="0 0 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="24.144 -1.196 -57.701" rotation="0 0 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="29.573 -1.196 -57.701" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="19.085 0 6.067" rotation="0 72.574 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="21.958 0 9.926" rotation="0 -26.893 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="3.361 0 -3.394" rotation="0 26.903 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-19.085 0 7.723" rotation="0 90.000 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-49.728 0 8.004" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-19.579 0 8.934" rotation="0 0 0"></a-gltf-model>
     
-        <a-entity gltf-model="#floor" scale="1.186 1 0.755" position="26.896 0.442 -60.218" rotation="0 0 0"></a-entity>
-        <a-gltf-model id="fences" src="#fence" scale="2.810 5.076 1" position="19.163 3.182 -71.721" rotation="90 0 0"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="-19.085 0 9.697" scale="1 0.85 1"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="18.135 0 9.697" scale="1 0.85 1"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="-48.763 0 9.697" scale="1 0.85 1"></a-gltf-model>
     
-        <a-entity gltf-model="#table" scale=".018 .018 0.018" position="25.292 0.448 -60.361" rotation="0, 0, 0"></a-entity>
-        <a-entity gltf-model="#table" scale=".018 .018 0.018" position="27.989 0.448 -60.361" rotation="0, 0, 0"></a-entity>
 
-        <a-entity gltf-model="#chair" scale=".018 .018 0.018" position="23.173 0.448 -60.361" rotation="0, 130.049, 0"></a-entity>
-        <a-entity gltf-model="#chair" scale=".018 .018 0.018" position="30.156 0.448 -60.361" rotation="0, -130.049, 0"></a-entity>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="4.880 -1.196 18.261" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="7.232 -1.196 20.978" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="7.232 -1.196 15.286" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="4.880 -1.196 6.702" rotation="0 0 0"></a-gltf-model>
+
+        <a-entity gltf-model="#table" scale=".018 .018 0.018" position="7.120 0 14.127" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#table" scale=".018 .018 0.018" position="7.120 0 16.703" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#chair" scale=".025 .025 .025" position="7.120 0 11.665" rotation="0, -30.344, 0"></a-entity>
+        <a-entity gltf-model="#chair" scale=".025 .025 .025" position="7.120 0 19.174" rotation="0, -135.474, 0"></a-entity>
     </a-scene>
 
     <script src="./js/scoreSystem.js"></script>

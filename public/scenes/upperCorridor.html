@@ -104,7 +104,7 @@
 
         <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="-4.786 0 -31.396" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="4.786 0 -31.396" rotation="0 0 0"></a-entity>
-        
+
         <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="-4.786 0 -.224" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="4.786 0 -.224" rotation="0 0 0"></a-entity>
 
@@ -124,21 +124,35 @@
         <a-entity text="value: Great Chambers; align: center; color:#785236;" position="-6.896 4.684 -10.626" scale="7 7 1" rotation="0 90 0"></a-entity>
         <a-entity text="value: Sleeping Chambers; align: center; color:#785236;" position="6.896 4.684 -10.626" scale="7 7 1" rotation="0 -90 0"></a-entity>
         <a-entity text="value: Throne Room; align: center; color:#785236;" position="0 4.684 -32.806" scale="7 7 1" rotation="0 0 0"></a-entity>
+
+        <!-- Physics -->
+        <!-- walls -->
+        <a-box static-body visible="false" position="0 5.8 2.6" scale="20 12.6 1"></a-box>
+        <a-box static-body visible="false" position="0 5.8 -33" scale="20 12.6 1"></a-box>
+        <a-box static-body visible="false" position="-7.5 5.8 -16.5" scale="0.5 12.6 50"></a-box>
+        <a-box static-body visible="false" position="7.6 5.8 -16.5" scale="0.5 12.6 50"></a-box>
+        <!-- Pillars -->
+        <a-box static-body visible="false" position="4.7 0 -0.2" scale="0.4 12 0.5"></a-box>
+        <a-box static-body visible="false" position="-4.7 0 -0.2" scale="0.4 12 0.5"></a-box>
+
+        <a-box static-body visible="false" position="4.7 0 -4.8" scale="0.4 12 0.5"></a-box>
+        <a-box static-body visible="false" position="-4.7 0 -4.8" scale="0.4 12 0.5"></a-box>
+
+        <a-box static-body visible="false" position="4.7 0 -16.8" scale="0.4 12 0.5"></a-box>
+        <a-box static-body visible="false" position="-4.7 0 -16.8" scale="0.4 12 0.5"></a-box>
+
+        <a-box static-body visible="false" position="4.7 0 -26.6" scale="0.4 12 0.5"></a-box>
+        <a-box static-body visible="false" position="-4.7 0 -26.6" scale="0.4 12 0.5"></a-box>
+
+        <a-box static-body visible="false" position="4.7 0 -31.4" scale="0.4 12 0.5"></a-box>
+        <a-box static-body visible="false" position="-4.7 0 -31.4" scale="0.4 12 0.5"></a-box>
+
+
     </a-scene>
 
     <script src="./js/throneRoomScoreSystem.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        // let locator = document.getElementById('playerLocation');
-        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
-        // const path = window.location.pathname;
-        // const page = path.split('/').pop();
-
-        // if (page == "scene1"){
-        //     locator.setAttribute('value', "Main Courtyard");
-        //     locator.setAttribute('font-family', "Enchanted")
-        // } 
-
         function changeScene(val) {
             if (val == 3.1) {
                 socket.emit('throneroom_to_greathall') //calls server method

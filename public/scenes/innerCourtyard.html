@@ -48,13 +48,12 @@
         </a-assets>
 
         <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
-        <!-- Lighting  -->
-        <a-light type="ambient" position = "25.204 25.204 -70" color="#222"></a-light>
-        <a-light type="point" position="25.204 25.204 -70"></a-light>
-        <a-light type="point" position="20 25.204 -70"></a-light>
+        <a-light type="ambient" position = "5.579 25.204 -2.032" color="#222"></a-light>
+        <a-light type="point" position="5.579 25.204 -2.032"></a-light>
+        <a-light type="point" position="5.579 25.204 -10.032"></a-light>
 
         <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
-            <a-entity camera look-controls position="16 2.8 -78.954" rotation = "0 0 0">
+            <a-entity camera look-controls position="0 2.8 0" rotation = "0 0 0">
                 <a-cursor></a-cursor>
 
                 <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Inner Courtyard">
@@ -82,46 +81,38 @@
         <!-- Floor -->
         <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.2 -25"></a-plane>
 
+        <a-gltf-model src="#keep" position="0 0 32.733" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model src="#keep" position="22.857 0 32.733" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model src="#keep" position="-22.857 0 32.733" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
 
-        <!-- Keep -->
-        <a-gltf-model src="#keep" position="0 0 -37" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
-        <a-gltf-model src="#keep" position="-19.117 0 -79.858" scale="2 2.5 2" rotation="0 0 0"></a-gltf-model>
-        <a-gltf-model src="#keep" position="-19.117 0 -104.060" scale="2 2.5 2" rotation="0 0 0"></a-gltf-model>
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="-18.093 0 -5.954" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#door" scale="1 1 1.899" position="0 0 -23.135" rotation="0 0 0"></a-entity>
 
-        <!--Courtyard-->
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="9.527 0 -49.644" rotation="0 170 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="46.880 0 -69.957" rotation="0 70.806 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="48.172 0 -66.781" rotation="0 -70.806 0"></a-gltf-model>
-        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="38.861 0 -91.357" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="19.085 0 -21.256" rotation="0 72.574 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="21.958 0 -17.397" rotation="0 -26.893 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="0 0 -28.701" rotation="0 26.903 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-19.085 0 -21.256" rotation="0 90.000 0"></a-gltf-model>
     
-        <a-gltf-model static-body material="color: grey" src="#turret" position="37.029 0 -44.511" scale="1 0.85 1"></a-gltf-model>
-        <a-gltf-model static-body material="color: grey" src="#turret" position="39.765 0 -115.360" scale="1 0.85 1"></a-gltf-model>
-        <a-gltf-model static-body material="color: grey" src="#turret" position="39.765 0 -90.164" scale="1 0.85 1"></a-gltf-model>
-    
-        <a-entity gltf-model="#tower" scale=" .01 .01 .01" position="44.982 0 -71.372" rotation="0 0 0"></a-entity>
-    
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="11.621 0 -78.954" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="17.436 0 -90.611" rotation="0 0 0"></a-entity>
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="17.436 0 -92.205" rotation="0 180 0"></a-entity>
-        <a-entity gltf-model="#door" scale="1.4 1.4 2.693" position="40.936 0 -71.178" rotation="0 -90 0"></a-entity>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="-19.085 0 -17.626" scale="1 0.85 1"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="18.135 0 -17.636" scale="1 0.85 1"></a-gltf-model>
+        
+        <a-entity gltf-model="#tower" scale=" .01 .01 .01" position="0 0 -27.323" rotation="0 0 0"></a-entity>
 
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="37.926 -1.196 -65.373" rotation="0 -90 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="37.926 -1.196 -60.051" rotation="0 -90 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="21.638 -1.196 -60.051" rotation="0 -90 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="21.638 -1.196 -65.3732" rotation="0 -90 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="18.576 -1.196 -57.701" rotation="0 0 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="24.144 -1.196 -57.701" rotation="0 0 0"></a-gltf-model>
-        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="29.573 -1.196 -57.701" rotation="0 0 0"></a-gltf-model>
-    
-        <a-entity gltf-model="#floor" scale="1.186 1 0.755" position="26.896 0.442 -60.218" rotation="0 0 0"></a-entity>
-        <a-gltf-model id="fences" src="#fence" scale="2.810 5.076 1" position="19.163 3.182 -71.721" rotation="90 0 0"></a-gltf-model>
-    
-        <a-entity gltf-model="#table" scale=".018 .018 0.018" position="25.292 0.448 -60.361" rotation="0, 0, 0"></a-entity>
-        <a-entity gltf-model="#table" scale=".018 .018 0.018" position="27.989 0.448 -60.361" rotation="0, 0, 0"></a-entity>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="4.880 -1.196 -9.062" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="7.232 -1.196 -6.468" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="7.232 -1.196 -12.037" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="4.880 -1.196 -20.621" rotation="0 0 0"></a-gltf-model>
 
-        <a-entity gltf-model="#chair" scale=".018 .018 0.018" position="23.173 0.448 -60.361" rotation="0, 130.049, 0"></a-entity>
-        <a-entity gltf-model="#chair" scale=".018 .018 0.018" position="30.156 0.448 -60.361" rotation="0, -130.049, 0"></a-entity>
+        <a-entity gltf-model="#table" scale=".018 .018 0.018" position="7.120 0 -13.196" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#table" scale=".018 .018 0.018" position="7.120 0 -10.620" rotation="0, 0, 0"></a-entity>
+
+        <a-entity gltf-model="#chair" scale=".025 .025 .025" position="7.120 0 -15.658" rotation="0, -30.344, 0"></a-entity>
+        <a-entity gltf-model="#chair" scale=".025 .025 .025" position="7.120 0 -8.149" rotation="0, -135.474, 0"></a-entity>
     
+        <a-entity text="value: Inside Castle; align: center; color:#785236;" position="0 4.684 1.762" scale="7 7 1" rotation="0 180 0"></a-entity>
+        <a-entity text="value: Training Area; align: center; color:#785236;" position="-17.628 4.684 -5.972" scale="7 7 1" rotation="0 90 0"></a-entity>
+        <a-entity text="value: Tower; align: center; color:#785236;" position="0 4.684 -22.542" scale="7 7 1" rotation="0 0 0"></a-entity>
     </a-scene>
 
     <script src="./js/scoreSystem.js"></script>

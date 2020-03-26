@@ -43,7 +43,7 @@
         </a-assets>
 
         <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
-            <a-entity camera look-controls position="0 2.8 9">
+            <a-entity camera look-controls position="0 2.8 0">
                 <a-cursor></a-cursor>
 
                 <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Great Chambers">
@@ -70,42 +70,29 @@
         <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.01 0"></a-plane>
 
         <!-- Models -->
-        <a-entity gltf-model="#weaponsRoom" scale="1.053 2 1.391" position="0 0 -2.297" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#weaponsRoom" scale="1.053 2 1.391" position="0 0 -11.09" rotation="0 90 0"></a-entity>
 
         <a-entity gltf-model="#wall" scale="3.254 3.254 3.254" position="0 0.059 -6.045" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 11" rotation="0 180 0"></a-entity>
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
 
-        <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 12.192 1.014" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 12.192 -7.786" rotation="0, 0, 0"></a-entity>
+        
+        <a-entity gltf-model="#bed" scale="0.775 0.775 0.775" position="0 0 -14.736" rotation="0, 0, 0"></a-entity>
 
-        <a-entity gltf-model="#bed" scale="0.775 0.775 0.775" position="0 0 -5.936" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#table" scale=".015 .033 .015" position="6.715 0 -18.316" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#table" scale=".015 .033 .015" position="-6.715 0 -18.316" rotation="0, 0, 0"></a-entity>
 
-        <a-entity gltf-model="#table" scale=".015 .033 .015" position="6.715 0 -9.516" rotation="0, 0, 0"></a-entity>
-        <a-entity gltf-model="#table" scale=".015 .033 .015" position="-6.715 0 -9.516" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#candle" scale="0.620 0.620 0.620" position="6.715 2.439 -18.316" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#candle" scale="0.620 0.620 0.620" position="-6.715 2.439 -18.316" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#candle" scale="0.620 0.620 0.620" position="6.715 2.439 -9.516" rotation="0 0 0"></a-entity>
-        <a-entity gltf-model="#candle" scale="0.620 0.620 0.620" position="-6.715 2.439 -9.516" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall01" scale="1.064 1.064 1.064" position="-8.620 0 -4.702" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall03" scale="1.064 1.064 1.064" position="8.620 0 -4.702" rotation="0 -90 0"></a-entity>
 
-        <a-entity gltf-model="#paintingSmall01" scale="1.064 1.064 1.064" position="-8.620 0 4.098" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#paintingSmall03" scale="1.064 1.064 1.064" position="8.620 0 4.098" rotation="0 -90 0"></a-entity>
-
-        <a-entity gltf-model="#tapestry" scale="1.029 1.029 1.029" position="6.715 -6.162 -10.339" rotation="0, 0, 0"></a-entity>
-        <a-entity gltf-model="#tapestry" scale="1.029 1.029 1.029" position="-6.715 -6.162 -10.339" rotation="0, 0, 0"></a-entity>
-
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-        <a-box static-body visible="false" position="0 1 0" scale="1 1 1" rotation="0 0 0"></a-box>
-
+        <a-entity gltf-model="#tapestry" scale="1.029 1.029 1.029" position="6.715 -6.162 -19.139" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#tapestry" scale="1.029 1.029 1.029" position="-6.715 -6.162 -19.139" rotation="0, 0, 0"></a-entity>
+    
+        <a-entity text="value: Upper Corridor; align: center; color:#785236;" position="0 4.684 1.762" scale="7 7 1" rotation="0 180 0"></a-entity>
     </a-scene>
 
     <!--<script src="./js/throneRoomScoreSystem.js"></script>-->

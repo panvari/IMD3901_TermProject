@@ -120,7 +120,7 @@ socketIO.on('connection', (socket) => {
 
     socket.on('greathall_to_courtyard', (data) => {
         console.log('switch from geat hall to courtyard scene');
-        socketIO.sockets.emit('scene_1');
+        socketIO.sockets.emit('courtyard');
     });
 
     // MINI GAME CONTROLS FOR Julianna

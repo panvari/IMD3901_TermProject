@@ -64,7 +64,12 @@ table {
 }
 #gems {
 	display: inline-block;
-	padding: 10px;
+	padding: 5px;
+	margin-left: 20px;
+}
+
+img.gem{
+	vertical-align: middle;
 }
 
 p, span, h1{
@@ -78,16 +83,17 @@ h1 {
 	display: inline-block;
 	font-size: large;
 	font-weight: bold;
-	margin-left: auto;
+	margin-left: 5px;
 }
 
 .roomText{
 	display: block;
-	padding: 50px;
-	margin-top: 30px;
+	margin-top: 10px;
 	background-color: #99ff99;
-	border-radius: 8px;
-	padding: 8px 0;
+	border-radius: 20px;
+	padding: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 #different{
@@ -105,12 +111,11 @@ h1 {
 	display: block;
 	text-align: center;
 	border: #555;
-	border-radius: 10px;
-	padding: 20px;
+	margin-top: 10px;
 }
 
-img .room{
-	
+img.room{
+	border-radius: 20px;
 }
 
 .popup {

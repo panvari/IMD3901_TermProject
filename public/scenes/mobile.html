@@ -29,17 +29,544 @@
                     window.location.replace('/tapestryMini')
                 });
 
-                socket.on('scene_2', function(data) {
-                    document.getElementById("castleEntrance").setAttribute("style", "display:block")
-                    document.getElementById("different").setAttribute("style", "display:none")
-                    document.getElementById("roomTitle").innerHTML = "Great Hall";
+                socket.on('courtyard', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("mainCourtyard").setAttribute("style", "display:block")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
 
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("mainCourtyardIMG").setAttribute("style", "display:center")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Outer Courtyard";
                 });
-                socket.on('scene_3', function(data) {
-                    document.getElementById("castleEntrance").setAttribute("style", "display:none")
-                    document.getElementById("different").setAttribute("style", "display:block")
-                    document.getElementById("roomTitle").innerHTML = "Throne Room";
 
+                socket.on('greatHall', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:block")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:center")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Great Hall";
+                });
+
+                socket.on('greatChambers', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:block")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:center")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Great Chambers";
+                });
+
+                socket.on('guardQuarters', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:block")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:center")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Guard Quarters";
+                });
+
+                socket.on('hallway', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:block")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:center")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Hallway";
+                });
+
+                socket.on('innerCourtyard', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:block")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:center")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Inner Courtyard";
+                });
+
+                socket.on('kitchen', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:block")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:center")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Kitchen";
+                });
+
+                socket.on('pantry', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:block")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:center")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Pantry";
+                });
+
+                socket.on('servantQuarters', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:block")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:center")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Servant Quarters";
+                });
+
+                socket.on('sleepingChambers', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:block")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:center")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Sleeping Chambers";
+                });
+
+                socket.on('throneRoom', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:block")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:block")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Throne Room";
+                });
+
+                socket.on('tower', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:block")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:center")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Tower";
+                });
+
+                socket.on('trainingArea', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:block")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:center")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Training Area";
+                });
+
+                socket.on('upperCorridor', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:block")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:none")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:center")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:none")
+
+                    document.getElementById("roomTitle").innerHTML = "Upper Corridor";
+                });
+
+                socket.on('weaponsRoom', function(data) {
+                    document.getElementById("greatChambers").setAttribute("style", "display:none")
+                    document.getElementById("greatHall").setAttribute("style", "display:none")
+                    document.getElementById("guardQuarters").setAttribute("style", "display:none")
+                    document.getElementById("hallway").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("kitchen").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyard").setAttribute("style", "display:none")
+                    document.getElementById("pantry").setAttribute("style", "display:none")
+                    document.getElementById("servantQuarters").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambers").setAttribute("style", "display:none")
+                    document.getElementById("throneRoom").setAttribute("style", "display:none")
+                    document.getElementById("tower").setAttribute("style", "display:none")
+                    document.getElementById("trainingArea").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridor").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoom").setAttribute("style", "display:block")
+
+                    document.getElementById("greatChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("greatHallIMG").setAttribute("style", "display:none")
+                    document.getElementById("guardQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("hallwayIMG").setAttribute("style", "display:none")
+                    document.getElementById("innerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("kitchenIMG").setAttribute("style", "display:none")
+                    document.getElementById("outerCourtyardIMG").setAttribute("style", "display:none")
+                    document.getElementById("pantryIMG").setAttribute("style", "display:none")
+                    document.getElementById("servantQuartersIMG").setAttribute("style", "display:none")
+                    document.getElementById("sleepingChambersIMG").setAttribute("style", "display:none")
+                    document.getElementById("throneRoomIMG").setAttribute("style", "display:none")
+                    document.getElementById("towerIMG").setAttribute("style", "display:none")
+                    document.getElementById("trainingAreaIMG").setAttribute("style", "display:none")
+                    document.getElementById("upperCorridorIMG").setAttribute("style", "display:none")
+                    document.getElementById("weaponsRoomIMG").setAttribute("style", "display:center")
+
+                    document.getElementById("roomTitle").innerHTML = "Weapons Room"$;
                 });
 
                 let gem1 = document.querySelector('#gem1')
@@ -70,32 +597,112 @@
     </head>
     <body>
         <div id = "gems">
-            <img class = "gem" id="gem1" src="./assets/images/gem.png" width = 30>
-            <img class = "gem" id="gem2" src="./assets/images/gem.png" width = 30>
-            <img class = "gem" id="gem3" src="./assets/images/gem.png" width = 30>
-            <img class = "gem" id="gem4" src="./assets/images/gem.png" width = 30>
-            <img class = "gem" id="gem5" src="./assets/images/gem.png" width = 30>
-            <img class = "gem" id="gem6" src="./assets/images/gem.png" width = 30>
+            <img class = "gem" id="gem1" src="./assets/images/gem.png" width = 20>
+            <img class = "gem" id="gem2" src="./assets/images/gem.png" width = 20>
+            <img class = "gem" id="gem3" src="./assets/images/gem.png" width = 20>
+            <img class = "gem" id="gem4" src="./assets/images/gem.png" width = 20>
+            <img class = "gem" id="gem5" src="./assets/images/gem.png" width = 20>
+            <img class = "gem" id="gem6" src="./assets/images/gem.png" width = 20>
         </div>
         
 
-        <h1 id = roomTitle>Courtyard</h1>
+        <h1 id = roomTitle>Outer Courtyard</h1>
 
 <!-- TEXT ABOUT EACH ROOM -->
         <div id = "roomText">
-            <p id = "castleEntrance" class = "roomText" style = display:none;>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris semper nisi a lorem posuere tincidunt. 
-                Vestibulum facilisis varius fringilla. Vivamus metus lacus, sodales ac rhoncus id, sodales nec arcu.
+            <p id = "outerCourtyard" class = "roomText" style = display:block>
+                Medieval castles were built during the Middle Ages in Europe and 
+                the Middle East to provide protection for royalty from invaders.
             </p>
-            <p id = "different" class = "roomText" style = display:block>
-                Vestibulum interdum, risus in rhoncus dignissim, felis ligula tempus mauris, posuere commodo elit turpis tincidunt tortor. 
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+            <p id = "greatHall" class = "roomText" style = display:none;>
+                During the medieval times the great hall was the centrepiece of 
+                the castle, and where everyone dined together.
+            </p>
+            <p id = "kitchen" class = "roomText" style = display:none>
+                The kitchen was built next to the great hall so that food could 
+                be delivered quickly to the king and members of the royal family 
+                before it got cold.
+            </p>
+            <p id = "pantry" class = "roomText" style = display:none>
+                Almost all the food was grown or caught on the king's estate, and 
+                it was kept in a storeroom called the pantry. Meat and fish were 
+                the central dishes and people ate food with their fingers off bread 
+                plates called trenchers.
+            </p>
+            <p id = "weaponsRoom" class = "roomText" style = display:none>
+                Medieval weapons were used by both Medieval Knights and their their 
+                foot soldiers and archers support. The common most weapons included 
+                swords, maces, sprears, and longbows.
+            </p>
+            <p id = "guardQuarters" class = "roomText" style = display:none>
+                The castle guards were considered the gatekeepers of the castle, and 
+                were responsible for guarding different castle gates so that enemies 
+                could not get into the castle.
+            </p>
+            <p id = "guardQuarters" class = "roomText" style = display:none>
+                The castle guards were considered the gatekeepers of the castle, and 
+                were responsible for guarding different castle gates so that enemies 
+                could not get into the castle.
+            </p>
+            <p id = "servantQuarters" class = "roomText" style = display:none>
+                Castles housed any number of servants who served the royal family. 
+                From priests and entertainers, to cooks and weavers, castles provided 
+                work for many different people.
+            </p>
+            <p id = "hallway" class = "roomText" style = display:none>
+                Cats and dogs were kept in castles to help kill rats and keep them from 
+                eating the grain stores.
+            </p>
+            <p id = "innerCourtyard" class = "roomText" style = display:none>
+                Often times attacking armies would wait outside and try to starve out 
+                the people living in the castle instead of attacking them. This is 
+                called a siege. Many castles were built on a spring so they would 
+                have water during a siege.
+            </p>
+            <p id = "tower" class = "roomText" style = display:none>
+                Originally towers were built with square tops, but later were replaced 
+                by round towers that offered better defense and visibility.
+            </p>
+            <p id = "trainingArea" class = "roomText" style = display:none>
+                The knights were heavily armored and well trained soldiers who rode on horseback. Only 
+                the wealthiest nobles could afford to be a knight. They needed very expensive armor, 
+                weapons, and a powerful war horse.
+            </p>
+            <p id = "upperCorridor" class = "roomText" style = display:none>
+                The word 'castle' is derived from the Latin word 'castrum' meaning 'Fortified place'.
+            </p>
+            <p id = "sleepingChambers" class = "roomText" style = display:none>
+                The sleeping chambers was for sleeping and private quarters and used by the kings's family. 
+                It also became a private sitting room favoured by the family.
+            </p>
+            <p id = "greatChambers" class = "roomText" style = display:none>
+                The room in the castle called the Great Chamber, was a large bedroom 
+                and used by the king and queen of the castle.
+            </p>
+            <p id = "throneRoom" class = "roomText" style = display:none>
+                In the throne room is where the king would look over official ceremonies, 
+                hold council, grant audiences, receive honor, award high honors, and perform other 
+                official functions. 
             </p>
         </div>
 
 <!-- IMAGES FOR EACH ROOM -->
         <div id = "roomImages">
-            <img class = "room" id = "courtyard" src = "./assets/images/courtyard.png" width = 300px>
+            <img class = "room" id = "outerCourtyardIMG" src = "./assets/images/courtyard.png" width = 330px style = display:center>
+            <img class = "room" id = "greatChambersIMG" src = "./assets/images/greatChambers.png" width = 330px style = display:none>
+            <img class = "room" id = "greatHallIMG" src = "./assets/images/greatHall.png" width = 330px style = display:none>
+            <img class = "room" id = "guardQuartersIMG" src = "./assets/images/guardQuarters.png" width = 330px style = display:none>
+            <img class = "room" id = "hallwayIMG" src = "./assets/images/hallway.png" width = 330px style = display:none>
+            <img class = "room" id = "innerCourtyardIMG" src = "./assets/images/innerCourtyard.png" width = 330px style = display:none>
+            <img class = "room" id = "kitchenIMG" src = "./assets/images/kitchen.png" width = 330px style = display:none>
+            <img class = "room" id = "pantryIMG" src = "./assets/images/pantry.png" width = 330px style = display:none>
+            <img class = "room" id = "servantQuartersIMG" src = "./assets/images/servantQuarters.png" width = 330px style = display:none>
+            <img class = "room" id = "sleepingChambersIMG" src = "./assets/images/sleepingChambers.png" width = 330px style = display:none>
+            <img class = "room" id = "throneRoomIMG" src = "./assets/images/throneRoom.png" width = 330px style = display:none>
+            <img class = "room" id = "towerIMG" src = "./assets/images/tower.png" width = 330px style = display:none>
+            <img class = "room" id = "trainingAreaIMG" src = "./assets/images/trainingArea.png" width = 330px style = display:none>
+            <img class = "room" id = "upperCorridorIMG" src = "./assets/images/upperCorridor.png" width = 330px style = display:none>
+            <img class = "room" id = "weaponsRoomIMG" src = "./assets/images/weaponsRoom.png" width = 330px style = display:none>
         </div>
 
 <!-- KING'S QUOTES POPUPS -->

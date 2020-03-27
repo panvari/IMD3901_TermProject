@@ -77,7 +77,7 @@
         <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
 
         <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 12.192 -7.786" rotation="0, 0, 0"></a-entity>
-        
+
         <a-entity gltf-model="#bed" scale="0.775 0.775 0.775" position="0 0 -14.736" rotation="0, 0, 0"></a-entity>
 
         <a-entity gltf-model="#table" scale=".015 .033 .015" position="6.715 0 -18.316" rotation="0, 0, 0"></a-entity>
@@ -91,23 +91,22 @@
 
         <a-entity gltf-model="#tapestry" scale="1.029 1.029 1.029" position="6.715 -6.162 -19.139" rotation="0, 0, 0"></a-entity>
         <a-entity gltf-model="#tapestry" scale="1.029 1.029 1.029" position="-6.715 -6.162 -19.139" rotation="0, 0, 0"></a-entity>
-    
+
         <a-entity text="value: Upper Corridor; align: center; color:#785236;" position="0 4.684 1.762" scale="7 7 1" rotation="0 180 0"></a-entity>
+
+
+        <!-- Physics -->
+        <a-box static-body visible="false" position="6.7 3 -18.3" scale="2 6 2"></a-box>
+        <a-box static-body visible="false" position="-6.7 3 -18.3" scale="2 6 2"></a-box>
+        <a-box static-body visible="false" position="0 3.2 -15.2" scale="6.8 7.1 9"></a-box>
+        <a-box static-body visible="false" position="0 4.5 3" scale="19.2 10 0.7"></a-box>
+        <a-box static-body visible="false" position="-9.1 5.3 -10" scale="0.5 13 26"></a-box>
+        <a-box static-body visible="false" position="9.1 5.3 10" scale="0.5 13 26"></a-box>
     </a-scene>
 
     <!--<script src="./js/throneRoomScoreSystem.js"></script>-->
     <script src="/socket.io/socket.io.js"></script>
-    <!-- <script>
-        // let locator = document.getElementById('playerLocation');
-        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
-        // const path = window.location.pathname;
-        // const page = path.split('/').pop();
-
-        // if (page == "scene1"){
-        //     locator.setAttribute('value', "Main Courtyard");
-        //     locator.setAttribute('font-family', "Enchanted")
-        // } 
-
+    <script>
         function changeScene(val) {
             if (val == 3.1) {
                 socket.emit('throneroom_to_greathall') //calls server method
@@ -123,7 +122,7 @@
         socket.on('scene_3_1', function(data) {
             window.location.replace('greathall') //Call
         });
-    </script> -->
+    </script>
 </body>
 
 </html>

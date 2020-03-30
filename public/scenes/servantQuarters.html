@@ -69,7 +69,7 @@
         <a-entity gltf-model="#wall" scale="3.254 3.254 3.254" position="0 8.299 -6.045" rotation="0 -180.000 -180.000"></a-entity>
 
         <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
-        
+
         <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 -12.52" rotation="0, 180, 0"></a-entity>
         <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 -8.232" rotation="0, 180, 0"></a-entity>
         <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 -3.91" rotation="0, 180, 0"></a-entity>
@@ -123,13 +123,22 @@
         <a-entity gltf-model="#candle" scale=".3 .3 .3" position="11.778 2.889 -21.780" rotation="0 0 0"></a-entity>
 
         <!-- Lighting -->
-        <a-light type="point" position="-11.778 2.889 9.340" intensity = ".35"></a-light>
-        <a-light type="point" position="-11.778 2.889 -8.260" intensity = ".35"></a-light>
+        <a-light type="point" position="-11.778 2.889 9.340" intensity=".35"></a-light>
+        <a-light type="point" position="-11.778 2.889 -8.260" intensity=".35"></a-light>
 
-        <a-light type="point" position="11.778 2.889 9.340" intensity = ".35"></a-light>
-        <a-light type="point" position="11.778 2.889 -8.260" intensity = ".35"></a-light>
+        <a-light type="point" position="11.778 2.889 9.340" intensity=".35"></a-light>
+        <a-light type="point" position="11.778 2.889 -8.260" intensity=".35"></a-light>
 
         <a-entity text="value: Great Hall; align: center; color:#785236;" position="0 4.684 1.762" scale="7 7 1" rotation="0 180 0"></a-entity>
+
+        <a-box static-body visible="false" position="0 3 3" scale="27 11 1"></a-box>
+        <a-box static-body visible="false" position="0 3 -33" scale="27 11 1"></a-box>
+        <a-box static-body visible="false" position="13 3 -13.5" scale="0.7 17 50"></a-box>
+        <a-box static-body visible="false" position="-13 3 -13.5" scale="0.7 17 50"></a-box>
+        <a-box static-body visible="false" position="0.3 2.3 -28.2" scale="4.6 3.7 2.2"></a-box>
+        <a-box static-body visible="false" position="9.5 2.4 -10.5" scale="5.9 5.6 23.65"></a-box>
+        <a-box static-body visible="false" position="-9.5 2.4 -10.5" scale="5.9 5.6 23.65"></a-box>
+
     </a-scene>
 
     <!--<script src="./js/throneRoomScoreSystem.js"></script>-->

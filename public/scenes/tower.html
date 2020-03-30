@@ -66,8 +66,6 @@
                     <a-image src="#armourGame" width="4" height=" 3"></a-image>
                 </a-entity>
 
-
-
                 <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
                 <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.1 1.8 -2.5" opacity="0.4"></a-image>
                 <a-image class="gem" id="gem3" src="#gemImage" width="0.3" height="0.5" position="-2.7 1.8 -2.5" opacity="0.4"></a-image>
@@ -85,9 +83,9 @@
         <a-light type="point" position="0 25.204 0"></a-light>
 
         <a-entity gltf-model="#tower" scale=" .01 .01 .01" position="0 0 0" rotation="0 0 0"></a-entity>
-        
+
         <a-entity gltf-model="#trapDoor" scale=".01 .01 0.01" position="0 19.269 2.2" rotation="0, 0, 0"></a-entity>
-    
+
         <a-gltf-model src="#keep" position="0 0 60.056" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
         <a-gltf-model src="#keep" position="41.892 0 41.231" scale="2 2.5 2" rotation="0 180 0"></a-gltf-model>
         <a-gltf-model src="#keep" position="-22.857 0 60.056" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
@@ -102,11 +100,11 @@
         <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-19.085 0 7.723" rotation="0 90.000 0"></a-gltf-model>
         <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-49.728 0 8.004" rotation="0 90 0"></a-gltf-model>
         <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-19.579 0 8.934" rotation="0 0 0"></a-gltf-model>
-    
+
         <a-gltf-model static-body material="color: grey" src="#turret" position="-19.085 0 9.697" scale="1 0.85 1"></a-gltf-model>
         <a-gltf-model static-body material="color: grey" src="#turret" position="18.135 0 9.697" scale="1 0.85 1"></a-gltf-model>
         <a-gltf-model static-body material="color: grey" src="#turret" position="-48.763 0 9.697" scale="1 0.85 1"></a-gltf-model>
-    
+
 
         <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="4.880 -1.196 18.261" rotation="0 0 0"></a-gltf-model>
         <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="7.232 -1.196 20.978" rotation="0 90 0"></a-gltf-model>
@@ -118,23 +116,20 @@
 
         <a-entity gltf-model="#chair" scale=".025 .025 .025" position="7.120 0 11.665" rotation="0, -30.344, 0"></a-entity>
         <a-entity gltf-model="#chair" scale=".025 .025 .025" position="7.120 0 19.174" rotation="0, -135.474, 0"></a-entity>
-    
+
         <a-entity text="value: Inner Courtyard; align: center; color:#be7150;" position="0 20.177 2.171" scale="5 5 1" rotation="-90 180 0"></a-entity>
+
+        <a-box static-body position="-0.420 21 3.8" scale="10 2 0.5"></a-box>
+        <a-box static-body position="-0.420 21 -3.8" scale="10 2 0.5"></a-box>
+        <a-box static-body position="-3.85 21 0.13" scale="0.45 2 10.8"></a-box>
+        <a-box static-body position="3.85 21 0.13" scale="0.45 2 10.8"></a-box>
+
+
     </a-scene>
 
     <script src="./js/scoreSystem.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        let locator = document.getElementById('playerLocation');
-        let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
-        const path = window.location.pathname;
-        const page = path.split('/').pop();
-
-        if (page == "scene1") {
-            locator.setAttribute('value', "Main Courtyard");
-            locator.setAttribute('font-family', "Enchanted")
-        }
-
         function changeScene(val) {
             if (val == 2) {
                 socket.emit('courtyard_to_greathall') //calls server method

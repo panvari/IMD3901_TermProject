@@ -84,7 +84,7 @@
 
         <a-entity gltf-model="#tower" scale=" .01 .01 .01" position="0 0 0" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#trapDoor" scale=".01 .01 0.01" position="0 19.269 2.2" rotation="0, 0, 0"></a-entity>
+        <a-entity onclick="changeScene('inner_courtyard')" gltf-model="#trapDoor" scale=".01 .01 0.01" position="0 19.269 2.2" rotation="0, 0, 0"></a-entity>
 
         <a-gltf-model src="#keep" position="0 0 60.056" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
         <a-gltf-model src="#keep" position="41.892 0 41.231" scale="2 2.5 2" rotation="0 180 0"></a-gltf-model>
@@ -131,8 +131,8 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         function changeScene(val) {
-            if (val == 2) {
-                socket.emit('courtyard_to_greathall') //calls server method
+            if (val == 'inner_courtyard') {
+                socket.emit('inner_courtyard') //calls server method
             }
         };
 
@@ -142,8 +142,8 @@
             console.log("connected!");
         });
 
-        socket.on('scene_2', function(data) {
-            window.location.replace('greatHall') //Call
+        socket.on('inner_courtyard', function(data) {
+            window.location.replace('innercourtyard') //Call
         });
     </script>
 </body>

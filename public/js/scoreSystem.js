@@ -1,6 +1,10 @@
     //UI Gems
     gem1 = document.querySelector('#gem1')
     gem2 = document.querySelector('#gem2')
+        // gem3 = document.querySelector('#gem3')
+        // gem4 = document.querySelector('#gem4')
+        // gem5 = document.querySelector('#gem5')
+        // gem6 = document.querySelector('#gem6')
 
     //Update click bool variables
     gemItem1 = document.querySelector("#gemItem1");

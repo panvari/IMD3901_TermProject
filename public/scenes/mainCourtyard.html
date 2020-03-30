@@ -148,20 +148,23 @@
         <!-- Keep -->
         <a-gltf-model src="#keep" position="0 0 -37" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
 
+
+        <a-box static-body visible="false" position="-2.4 0.7 -28.5" scale="0.3 3 24"></a-box>
+        <a-box static-body visible="false" position="2.4 0.7 -28.5" scale="0.3 3 24"></a-box>
     </a-scene>
 
     <script src="./js/scoreSystem.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        let locator = document.getElementById('playerLocation');
-        let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
-        const path = window.location.pathname;
-        const page = path.split('/').pop();
+        // let locator = document.getElementById('playerLocation');
+        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
+        // const path = window.location.pathname;
+        // const page = path.split('/').pop();
 
-        if (page == "scene1") {
-            locator.setAttribute('value', "Main Courtyard");
-            locator.setAttribute('font-family', "Enchanted")
-        }
+        // if (page == "scene1") {
+        //     locator.setAttribute('value', "Main Courtyard");
+        //     locator.setAttribute('font-family', "Enchanted")
+        // }
 
         function changeScene(val) {
             if (val == 2) {

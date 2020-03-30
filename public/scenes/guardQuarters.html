@@ -81,7 +81,7 @@
         <a-entity gltf-model="#wall" scale="2.525 2.525 2.525" position="0 0.059 0" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#wall" scale="2.525 2.525 2.525" position="0 12.887 0" rotation="0 -180.000 -180.000"></a-entity>
 
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
+        <a-entity onclick="changeScene('great_hall')" gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
 
         <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 9.929 -8.8" rotation="0, 0, 0"></a-entity>
         <a-entity gltf-model="#shelf" scale="1 1 1" position="0 0.335 -18.506" rotation="0, 0, 0"></a-entity>
@@ -105,7 +105,7 @@
         <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="7.652 0.672 -18.103" rotation="0, 0, 0"></a-entity>
         <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="8.841 0.672 -18.103" rotation="0, 0, 0"></a-entity>
         <a-entity gltf-model="#spear" scale="1.091 1.091 1.091" position="3.872 0.672 -18.103" rotation="0, 0, 0"></a-entity>
-        
+
         <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 -12.52" rotation="0, 180, 0"></a-entity>
         <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 -8.232" rotation="0, 180, 0"></a-entity>
         <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 -3.902" rotation="0, 180, 0"></a-entity>
@@ -165,24 +165,27 @@
         <a-entity gltf-model="#chestPlate" scale=".27 .27 .27" position="12.091 2.684 -13.207" rotation="0, -90, 0"></a-entity>
 
         <a-entity text="value: Great Hall; align: center; color:#785236;" position="0 4.684 1.762" scale="7 7 1" rotation="0 180 0"></a-entity>
+
+        <!-- Physics -->
+        <a-box static-body visible="false" position="0 5.2 2.8" scale="30 10 1"></a-box>
+        <a-box static-body visible="false" position="0 5.2 -19" scale="30 10 1"></a-box>
+        <a-box static-body visible="false" position="-13.5 5.2 -8.6" scale="1 10.5 26"></a-box>
+        <a-box static-body visible="false" position="13.5 5.2 -8.6" scale="1 10.5 26"></a-box>
+        <a-box static-body visible="false" position="-9 2.55 -5.3" scale="6.4 7 18"></a-box>
+        <a-box static-body visible="false" position="9 2.55 -5.3" scale="6.4 7 18"></a-box>
+        <a-box static-body visible="false" position="6.5 2.5 -19" scale="6.4 7.2 0.7"></a-box>
+        <a-box static-body visible="false" position="0 2.5 -19" scale="6.4 7.2 0.7"></a-box>
+        <a-box static-body visible="false" position="-6.5 2.5 -19" scale="6.4 7.2 0.7"></a-box>
+
+
     </a-scene>
 
     <!--<script src="./js/throneRoomScoreSystem.js"></script>-->
     <script src="/socket.io/socket.io.js"></script>
-    <!-- <script>
-        // let locator = document.getElementById('playerLocation');
-        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
-        // const path = window.location.pathname;
-        // const page = path.split('/').pop();
-
-        // if (page == "scene1"){
-        //     locator.setAttribute('value', "Main Courtyard");
-        //     locator.setAttribute('font-family', "Enchanted")
-        // } 
-
+    <script>
         function changeScene(val) {
-            if (val == 3.1) {
-                socket.emit('throneroom_to_greathall') //calls server method
+            if (val == 'great_hall') {
+                socket.emit('great_hall') //calls server method
             }
         };
 
@@ -192,10 +195,10 @@
             console.log("connected!");
         });
 
-        socket.on('scene_3_1', function(data) {
+        socket.on('great_hall', function(data) {
             window.location.replace('greathall') //Call
         });
-    </script> -->
+    </script>
 </body>
 
 </html>

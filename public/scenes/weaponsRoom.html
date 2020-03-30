@@ -78,7 +78,7 @@
         <a-entity gltf-model="#wall" scale="2.525 2.525 2.525" position="0 0.059 0" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#wall" scale="2.525 2.525 2.525" position="0 12.887 0" rotation="0 -180.000 -180.000"></a-entity>
 
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
+        <a-entity onclick="changeScene('great_hall')" gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
 
         <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 9.929 -8.8" rotation="0, 0, 0"></a-entity>
 
@@ -214,8 +214,8 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         function changeScene(val) {
-            if (val == 4.1) {
-                socket.emit('weaponroom_to_greathall') //calls server method
+            if (val == "great_hall") {
+                socket.emit('great_hall') //calls server method
             }
         };
 
@@ -225,7 +225,7 @@
             console.log("connected!");
         });
 
-        socket.on('scene_4_1', function(data) {
+        socket.on('great_hall', function(data) {
             window.location.replace('greathall') //Call
         });
     </script>

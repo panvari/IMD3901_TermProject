@@ -48,12 +48,12 @@
         </a-assets>
 
         <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
-        <a-light type="ambient" position = "5.579 25.204 -2.032" color="#222"></a-light>
+        <a-light type="ambient" position="5.579 25.204 -2.032" color="#222"></a-light>
         <a-light type="point" position="5.579 25.204 -2.032"></a-light>
         <a-light type="point" position="5.579 25.204 -10.032"></a-light>
 
         <a-entity id="cameraRig" player_position location movement-controls kinematic-body>
-            <a-entity camera look-controls position="0 2.8 0" rotation = "0 0 0">
+            <a-entity camera look-controls position="0 2.8 0" rotation="0 0 0">
                 <a-cursor></a-cursor>
 
                 <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Inner Courtyard">
@@ -85,18 +85,18 @@
         <a-gltf-model src="#keep" position="22.857 0 32.733" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
         <a-gltf-model src="#keep" position="-22.857 0 32.733" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
 
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="-18.093 0 -5.954" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#door" scale="1 1 1.899" position="0 0 -23.135" rotation="0 0 0"></a-entity>
+        <a-entity onclick="changeScene('hallway')" gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
+        <a-entity onclick="changeScene('training_area')" gltf-model="#door" scale="1.4 1.4 1.4" position="-18.093 0 -5.954" rotation="0 90 0"></a-entity>
+        <a-entity onclick="changeScene('tower')" gltf-model="#door" scale="1 1 1.899" position="0 0 -23.135" rotation="0 0 0"></a-entity>
 
         <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="19.085 0 -21.256" rotation="0 72.574 0"></a-gltf-model>
         <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="21.958 0 -17.397" rotation="0 -26.893 0"></a-gltf-model>
         <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="0 0 -28.701" rotation="0 26.903 0"></a-gltf-model>
         <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-19.085 0 -21.256" rotation="0 90.000 0"></a-gltf-model>
-    
+
         <a-gltf-model static-body material="color: grey" src="#turret" position="-19.085 0 -17.626" scale="1 0.85 1"></a-gltf-model>
         <a-gltf-model static-body material="color: grey" src="#turret" position="18.135 0 -17.636" scale="1 0.85 1"></a-gltf-model>
-        
+
         <a-entity gltf-model="#tower" scale=" .01 .01 .01" position="0 0 -27.323" rotation="0 0 0"></a-entity>
 
         <a-gltf-model id="fences" src="#fence" scale="1 1 1" position="4.880 -1.196 -9.062" rotation="0 0 0"></a-gltf-model>
@@ -109,28 +109,38 @@
 
         <a-entity gltf-model="#chair" scale=".025 .025 .025" position="7.120 0 -15.658" rotation="0, -30.344, 0"></a-entity>
         <a-entity gltf-model="#chair" scale=".025 .025 .025" position="7.120 0 -8.149" rotation="0, -135.474, 0"></a-entity>
-    
+
         <a-entity text="value: Inside Castle; align: center; color:#785236;" position="0 4.684 1.762" scale="7 7 1" rotation="0 180 0"></a-entity>
         <a-entity text="value: Training Area; align: center; color:#785236;" position="-17.628 4.684 -5.972" scale="7 7 1" rotation="0 90 0"></a-entity>
         <a-entity text="value: Tower; align: center; color:#785236;" position="0 4.684 -22.542" scale="7 7 1" rotation="0 0 0"></a-entity>
+
+        <!-- Physics -->
+        <a-box static-body visible="false" position="13.7 3.5 -5.1" scale="-1.2 12.5 25" rotation="0 -17.5 0"></a-box>
+        <a-box static-body visible="false" position="11.5 3.5 -22" scale="-1.2 12.5 25" rotation="0 62 0"></a-box>
+        <a-box static-body visible="false" position="-9.6 6.3 -24" scale="-1.2 12.5 19.3" rotation="0 -63 0"></a-box>
+        <a-box static-body visible="false" position="-19.3 3.7 -5.5" scale="-1.2 12.5 19.3" rotation="0 0.037 0"></a-box>
+        <a-box static-body visible="false" position="-2.3 5 2.6" scale="29 12 0.5"></a-box>
+
+        <a-box static-body visible="false" position="7.5 1.7 -6" scale="5.5 4.1 0.5"></a-box>
+        <a-box static-body visible="false" position="7.5 1.7 -17.645" scale="5.5 4.1 0.5"></a-box>
+        <a-box static-body visible="false" position="10.3 1.7 -11.8" scale="0.4 4.1 11.5"></a-box>
+        <a-box static-body visible="false" position="7.45 2.2 -11.7" scale="3.6 4.3 8.6"></a-box>
+
+
     </a-scene>
 
     <script src="./js/scoreSystem.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        let locator = document.getElementById('playerLocation');
-        let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
-        const path = window.location.pathname;
-        const page = path.split('/').pop();
-
-        if (page == "scene1") {
-            locator.setAttribute('value', "Main Courtyard");
-            locator.setAttribute('font-family', "Enchanted")
-        }
-
         function changeScene(val) {
-            if (val == 2) {
-                socket.emit('courtyard_to_greathall') //calls server method
+            if (val == 'hallway') {
+                socket.emit('hallway') //calls server method
+            }
+            if (val == 'training_area') {
+                socket.emit('training_area') //calls server method
+            }
+            if (val == 'tower') {
+                socket.emit('tower') //calls server method
             }
         };
 
@@ -140,8 +150,14 @@
             console.log("connected!");
         });
 
-        socket.on('scene_2', function(data) {
-            window.location.replace('greatHall') //Call
+        socket.on('hallway', function(data) {
+            window.location.replace('hallway') //Call
+        });
+        socket.on('training_area', function(data) {
+            window.location.replace('trainingarea') //Call
+        });
+        socket.on('tower', function(data) {
+            window.location.replace('tower') //Call
         });
     </script>
 </body>

@@ -88,10 +88,10 @@
 
         <a-entity gltf-model="#wall" scale="2.525 2.525 3.284" position="0 0.059 -10.098" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 -33.232" rotation="0 0 0"></a-entity>
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="7.335 0 -10.56" rotation="0 -90 0"></a-entity>
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="-7.335 0 -10.56" rotation="0 90 0"></a-entity>
+        <a-entity onclick="changeScene('great_hall')" gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
+        <a-entity onclick="changeScene('throne_room')" gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 -32" rotation="0 0 0"></a-entity>
+        <a-entity onclick="changeScene('sleeping_quarters')" gltf-model="#door" scale="1.4 1.4 1.4" position="7.335 0 -10.56" rotation="0 -90 0"></a-entity>
+        <a-entity onclick="changeScene('great_chambers')" gltf-model="#door" scale="1.4 1.4 1.4" position="-7.335 0 -10.56" rotation="0 90 0"></a-entity>
 
         <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="4.786 0 -4.8" rotation="0 90 0"></a-entity>
         <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-4.786 0 -4.8" rotation="0 90 0"></a-entity>
@@ -154,8 +154,18 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         function changeScene(val) {
-            if (val == 3.1) {
-                socket.emit('throneroom_to_greathall') //calls server method
+            if (val == "great_hall") {
+                console.log('calling socket')
+                socket.emit('great_hall') //calls server method
+            }
+            if (val == "throne_room") {
+                socket.emit('throne_room') //calls server method
+            }
+            if (val == "sleeping_quarters") {
+                socket.emit('sleeping_quarters') //calls server method
+            }
+            if (val == "great_chambers") {
+                socket.emit('great_chambers') //calls server method
             }
         };
 
@@ -165,8 +175,18 @@
             console.log("connected!");
         });
 
-        socket.on('scene_3_1', function(data) {
-            window.location.replace('greathall') //Call
+        socket.on('great_hall', function(data) {
+            window.location.replace('greathall')
+        });
+        socket.on('throne_room', function(data) {
+            console.log('replacing scene')
+            window.location.replace('throneroom')
+        });
+        socket.on('sleeping_quarters', function(data) {
+            window.location.replace('sleepingchambers')
+        });
+        socket.on('great_chambers', function(data) {
+            window.location.replace('greatchambers')
         });
     </script>
 </body>

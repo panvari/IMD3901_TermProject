@@ -25,7 +25,7 @@ app.get('/about', function(req, res) {
     res.sendFile(__dirname + '/public/scenes/about.html');
 });
 
-app.get('/courtyard', (req, res) => {
+app.get('/maincourtyard', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/mainCourtyard.html');
 });
 
@@ -103,24 +103,53 @@ socketIO.on('connection', (socket) => {
     });
 
     //ROOM CHANGING EVENTS
-    socket.on('courtyard_to_greathall', (data) => {
-        console.log('switch to entrance hall');
-        socketIO.sockets.emit('scene_2');
+    socket.on('great_hall', (data) => {
+        socketIO.sockets.emit('great_hall');
     });
 
-    socket.on('greathall_to_throneroom', (data) => {
-        console.log('switch from great hall to throne room scene');
-        socketIO.sockets.emit('scene_3');
+    socket.on('kitchen', (data) => {
+        socketIO.sockets.emit('kitchen');
     });
 
-    socket.on('throneroom_to_greathall', (data) => {
-        console.log('switch to great hall from throne room scene');
-        socketIO.sockets.emit('scene_3_1');
+    socket.on('pantry', (data) => {
+        socketIO.sockets.emit('pantry');
     });
 
-    socket.on('greathall_to_courtyard', (data) => {
-        console.log('switch from geat hall to courtyard scene');
-        socketIO.sockets.emit('courtyard');
+    socket.on('upper_corridor', (data) => {
+        socketIO.sockets.emit('upper_corridor');
+    });
+    socket.on('great_chambers', (data) => {
+        socketIO.sockets.emit('great_chambers');
+    });
+    socket.on('guard_quarters', (data) => {
+        socketIO.sockets.emit('guard_quarters');
+    });
+    socket.on('hallway', (data) => {
+        socketIO.sockets.emit('hallway');
+    });
+    socket.on('inner_courtyard', (data) => {
+        socketIO.sockets.emit('inner_courtyard');
+    });
+    socket.on('main_courtyard', (data) => {
+        socketIO.sockets.emit('main_courtyard');
+    });
+    socket.on('servant_quarters', (data) => {
+        socketIO.sockets.emit('servant_quarters');
+    });
+    socket.on('sleeping_quarters', (data) => {
+        socketIO.sockets.emit('sleeping_quarters');
+    });
+    socket.on('throne_room', (data) => {
+        socketIO.sockets.emit('throne_room');
+    });
+    socket.on('tower', (data) => {
+        socketIO.sockets.emit('tower');
+    });
+    socket.on('training_area', (data) => {
+        socketIO.sockets.emit('training_area');
+    });
+    socket.on('weapons_room', (data) => {
+        socketIO.sockets.emit('weapons_room');
     });
 
     // MINI GAME CONTROLS FOR Julianna

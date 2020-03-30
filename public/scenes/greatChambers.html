@@ -74,7 +74,7 @@
 
         <a-entity gltf-model="#wall" scale="3.254 3.254 3.254" position="0 0.059 -6.045" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
+        <a-entity onclick="changeScene('upper_corridor')" gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
 
         <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 12.192 -7.786" rotation="0, 0, 0"></a-entity>
 
@@ -108,8 +108,8 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         function changeScene(val) {
-            if (val == 3.1) {
-                socket.emit('throneroom_to_greathall') //calls server method
+            if (val == 'upper_corridor') {
+                socket.emit('upper_corridor') //calls server method
             }
         };
 
@@ -119,8 +119,8 @@
             console.log("connected!");
         });
 
-        socket.on('scene_3_1', function(data) {
-            window.location.replace('greathall') //Call
+        socket.on('upper_corridor', function(data) {
+            window.location.replace('uppercorridor') //Call
         });
     </script>
 </body>

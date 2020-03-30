@@ -91,7 +91,7 @@
         <a-entity gltf-model="#longTable" scale=".5 .5 .5" position="4 1.41 -11.5" rotation="0 90 0"></a-entity>
         <a-entity gltf-model="#longTable" scale=".5 .5 .5" position="-4 1.41 -11.5" rotation="0 90 0"></a-entity>
 
-        <a-entity gltf-model="#chair" scale=".017 .017 .017" position="-5.451 1.41 -4.5" rotation="0 90 0"></a-entity>
+        <!-- <a-entity gltf-model="#chair" scale=".017 .017 .017" position="-5.451 1.41 -4.5" rotation="0 90 0"></a-entity>
         <a-entity gltf-model="#chair" scale=".017 .017 .017" position="-5.451 1.41 -6.0" rotation="0 90 0"></a-entity>
         <a-entity gltf-model="#chair" scale=".017 .017 .017" position="-5.451 1.41 -7.5" rotation="0 90 0"></a-entity>
         <a-entity gltf-model="#chair" scale=".017 .017 .017" position="-5.451 1.41 -9.0" rotation="0 90 0"></a-entity>
@@ -228,22 +228,22 @@
         <a-entity gltf-model="#plate" scale=".028 .06 .028" position="1.5 2.568 -24.068" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#plate" scale=".028 .06 .028" position="3 2.568 -24.068" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#plate" scale=".028 .06 .028" position="-1.5 2.568 -24.068" rotation="0 0 0"></a-entity>
-        <a-entity gltf-model="#plate" scale=".028 .06 .028" position="-3 2.568 -24.068" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#plate" scale=".028 .06 .028" position="-3 2.568 -24.068" rotation="0 0 0"></a-entity> -->
 
         <a-entity gltf-model="#candle" scale=".3 .3 .3" position=".75 2.39 -23.292" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#candle" scale=".3 .3 .3" position="2.25 2.39 -23.292" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#candle" scale=".3 .3 .3" position="-.75 2.39 -23.292" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#candle" scale=".3 .3 .3" position="-2.25 2.39 -23.292" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#door" scale="1 1 1" position="0 1.41 4.335" rotation="0 180 0"></a-entity>
-        <a-entity gltf-model="#door" scale=".8 .8 .8" position="-12.876 1.41 -30.186" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#door" scale=".8 .8 .8" position="-12.876 1.41 -15.202" rotation="0 90 0"></a-entity>
-        <a-entity gltf-model="#door" scale=".8 .8 .8" position="12.876 1.41 -30.186" rotation="0 -90 0"></a-entity>
-        <a-entity gltf-model="#door" scale=".8 .8 .8" position="12.876 1.41 -4.955" rotation="0 -90 0"></a-entity>
-        <a-entity gltf-model="#door" scale=".8 .8 .8" position="12.876 1.41 -15.202" rotation="0 -90 0"></a-entity>
-        <a-entity gltf-model="#door" scale=".8 .8 .8" position="0 8.555 -43.107" rotation="0 0 0"></a-entity>
+        <a-entity onclick="changeScene('main_courtyard')" gltf-model="#door" scale="1 1 1" position="0 1.41 4.335" rotation="0 180 0"></a-entity>
+        <a-entity onclick="changeScene('weapons_room')" gltf-model="#door" scale=".8 .8 .8" position="-12.876 1.41 -30.186" rotation="0 90 0"></a-entity>
+        <a-entity onclick="changeScene('kitchen')" gltf-model="#door" scale=".8 .8 .8" position="-12.876 1.41 -15.202" rotation="0 90 0"></a-entity>
+        <a-entity onclick="changeScene('guard_quarters')" gltf-model="#door" scale=".8 .8 .8" position="12.876 1.41 -30.186" rotation="0 -90 0"></a-entity>
+        <a-entity onclick="changeScene('servant_quarters')" gltf-model="#door" scale=".8 .8 .8" position="12.876 1.41 -4.955" rotation="0 -90 0"></a-entity>
+        <a-entity onclick="changeScene('hallway')" gltf-model="#door" scale=".8 .8 .8" position="12.876 1.41 -15.202" rotation="0 -90 0"></a-entity>
+        <a-entity onclick="changeScene('upper_corridor')" gltf-model="#door" scale=".8 .8 .8" position="0 8.555 -43.107" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#blueT" scale=".6 .6 .6" position="-12.583 1.925 0.697" rotation="0 90 0"></a-entity>
+        <!-- <a-entity gltf-model="#blueT" scale=".6 .6 .6" position="-12.583 1.925 0.697" rotation="0 90 0"></a-entity>
         <a-entity gltf-model="#blueT" scale=".6 .6 .6" position="12.583 1.925 0.697" rotation="0 -90 0"></a-entity>
 
         <a-entity gltf-model="#whiteT" scale=".6 .6 .6" position="-12.583 1.925 -9.973" rotation="0 90 0"></a-entity>
@@ -259,47 +259,53 @@
 
         <a-entity gltf-model="#tapestry" scale="1 1 1" position="6.791 -4.679 -42.704" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#tapestry" scale="1 1 1" position="-6.791 -4.679 -42.704" rotation="0 0 0"></a-entity>
-
+        -->
         <a-entity text="value: Outer Courtyard; align: center; color:#785236;" position="0 5.293 3.998" scale="7 7 1" rotation="0 180 0"></a-entity>
         <a-entity text="value: Kitchen; align: center; color:#785236;" position="-12.624 4.166 -15.187" scale="5 5 1" rotation="0 90 0"></a-entity>
         <a-entity text="value: Weapons Room; align: center; color:#785236;" position="-12.624 4.166 -30.177" scale="5 5 1" rotation="0 90 0"></a-entity>
         <a-entity text="value: Servant Quarters; align: center; color:#785236;" position="12.624 4.166 -4.979" scale="5 5 1" rotation="0 -90 0"></a-entity>
         <a-entity text="value: Guard Quarters; align: center; color:#785236;" position="12.624 4.166 -30.177" scale="5 5 1" rotation="0 -90 0"></a-entity>
-        <a-entity text="value: Hallway to Outside; align: center; color:#785236;" position="12.624 4.166 -15.187" scale="5 5 1" rotation="0 -90 0"></a-entity>
+        <a-entity text="value: Hallway to Outside; align: center; color:#785236;" position="12.624 4.166 -15.187" scale="5 5 1" rotation="0 -90 0"></a-entity> -->
 
         <!-- Floor -->
         <a-plane static-body material="color: grey" width="1000" height="1000" rotation="-90 0 0" position="0 -0.3 -25"></a-plane>
 
-        <a-box static-body position="0 8.941 4.952" scale="29 19 1" material="color:grey"></a-box>
-        <a-box static-body position="13.5 9.027 -18" scale="1 19.5 55" material="color:grey"></a-box>
-        <a-box static-body position="-13.5 8.7 -20" scale="1 19.5 56" material="color:grey"></a-box>
-        <a-box static-body position="-0.7 7.9 -43.8" scale="31.7 -17.3 1" material="color:grey"></a-box>
-        <a-box static-body visible="false" position="4.112 2.65 -11.25" scale="3.8 3.16 16.218" material="color:grey"></a-box>
-        <a-box static-body visible="false" position="-4.1 2.845 -11.3" scale="3.8 3.85 16.339" material="color:grey"></a-box>
-        <a-box static-body visible="false" position="0 2.212 -26.2" scale="8.8 2.7 3.2" material="color:grey"></a-box>
-        <a-box static-body visible="false" position="0 3.330 -39.5" scale="7.8 6 13.5" material="color:grey"></a-box>
+        <a-box static-body visible="false" position="0 8.941 4.952" scale="29 19 1" material="color:grey"></a-box>
+        <a-box static-body visible="false" position="13.5 9.027 -18" scale="1 19.5 55" material="color:grey"></a-box>
+        <a-box static-body visible="false" position="-13.5 8.7 -20" scale="1 19.5 56" material="color:grey"></a-box>
+        <a-box static-body visible="false" position="-0.7 7.9 -43.8" scale="31.7 -17.3 1" material="color:grey"></a-box>
+        <a-box static-body visible="false" visible="false" position="4.112 2.65 -11.25" scale="3.8 3.16 16.218" material="color:grey"></a-box>
+        <a-box static-body visible="false" visible="false" position="-4.1 2.845 -11.3" scale="3.8 3.85 16.339" material="color:grey"></a-box>
+        <a-box static-body visible="false" visible="false" position="0 2.212 -26.2" scale="8.8 2.7 3.2" material="color:grey"></a-box>
+        <a-box static-body visible="false" visible="false" position="0 3.330 -39.5" scale="7.8 6 13.5" material="color:grey"></a-box>
 
     </a-scene>
 
     <script src="./js/greatHallScoreSystem.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        // let locator = document.getElementById('playerLocation');
-        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
-        // const path = window.location.pathname;
-        // const page = path.split('/').pop();
-
-        // if (page == "scene1"){
-        //     locator.setAttribute('value', "Main Courtyard");
-        //     locator.setAttribute('font-family', "Enchanted")
-        // } 
-
         function changeScene(val) {
-            if (val == 3) {
-                socket.emit('greathall_to_throneroom') //calls server method
+            if (val == 'main_courtyard') {
+                // console.log('clicked')
+                socket.emit('main_courtyard')
             }
-            if (val == 1) {
-                socket.emit('greathall_to_courtyard') //calls server method
+            if (val == 'weapons_room') {
+                socket.emit('weapons_room')
+            }
+            if (val == 'kitchen') {
+                socket.emit('kitchen')
+            }
+            if (val == 'guard_quarters') {
+                socket.emit('guard_quarters')
+            }
+            if (val == 'servant_quarters') {
+                socket.emit('servant_quarters')
+            }
+            if (val == 'hallway') {
+                socket.emit('hallway')
+            }
+            if (val == 'upper_corridor') {
+                socket.emit('upper_corridor')
             }
         };
 
@@ -309,12 +315,32 @@
             console.log("connected!");
         });
 
-        socket.on('scene_3', function(data) {
-            window.location.replace('throneRoom') //goto thronroom
+        socket.on('upper_corridor', function(data) {
+            window.location.replace('uppercorridor') //goto thronroom
         });
 
-        socket.on('scene_1', function(data) {
-            window.location.replace('courtyard') //goto courtyard
+        socket.on('main_courtyard', function(data) {
+            window.location.replace('maincourtyard') //goto courtyard
+        });
+
+        socket.on('weapons_room', function(data) {
+            window.location.replace('weaponswroom') //goto courtyard
+        });
+
+        socket.on('kitchen', function(data) {
+            window.location.replace('kitchen') //goto courtyard
+        });
+
+        socket.on('guard_quarters', function(data) {
+            window.location.replace('guardquarters') //goto courtyard
+        });
+
+        socket.on('servant_quarters', function(data) {
+            window.location.replace('servantquarters') //goto courtyard
+        });
+
+        socket.on('hallway', function(data) {
+            window.location.replace('hallway') //goto courtyard
         });
     </script>
 </body>

@@ -68,7 +68,7 @@
         <a-entity gltf-model="#wall" scale="3.254 3.254 3.254" position="0 0.059 -6.045" rotation="0 0 0"></a-entity>
         <a-entity gltf-model="#wall" scale="3.254 3.254 3.254" position="0 8.299 -6.045" rotation="0 -180.000 -180.000"></a-entity>
 
-        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
+        <a-entity onclick="changeScene('great_hall')" gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
 
         <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 -12.52" rotation="0, 180, 0"></a-entity>
         <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 -8.232" rotation="0, 180, 0"></a-entity>
@@ -143,20 +143,10 @@
 
     <!--<script src="./js/throneRoomScoreSystem.js"></script>-->
     <script src="/socket.io/socket.io.js"></script>
-    <!-- <script>
-        // let locator = document.getElementById('playerLocation');
-        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
-        // const path = window.location.pathname;
-        // const page = path.split('/').pop();
-
-        // if (page == "scene1"){
-        //     locator.setAttribute('value', "Main Courtyard");
-        //     locator.setAttribute('font-family', "Enchanted")
-        // } 
-
+    <script>
         function changeScene(val) {
-            if (val == 3.1) {
-                socket.emit('throneroom_to_greathall') //calls server method
+            if (val == 'great_hall') {
+                socket.emit('great_hall') //calls server method
             }
         };
 
@@ -166,10 +156,10 @@
             console.log("connected!");
         });
 
-        socket.on('scene_3_1', function(data) {
+        socket.on('great_hall', function(data) {
             window.location.replace('greathall') //Call
         });
-    </script> -->
+    </script>
 </body>
 
 </html>

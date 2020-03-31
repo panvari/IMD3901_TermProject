@@ -29,7 +29,7 @@
                     window.location.replace('/tapestryMini')
                 });
 
-                socket.on('main_courtyard', function(data) {
+                socket.on('main_courtyardMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -65,7 +65,7 @@
                     document.getElementById("roomTitle").innerHTML = "Outer Courtyard";
                 });
 
-                socket.on('great_hall', function(data) {
+                socket.on('great_hallMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:block")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -101,7 +101,7 @@
                     document.getElementById("roomTitle").innerHTML = "Great Hall";
                 });
 
-                socket.on('great_chambers', function(data) {
+                socket.on('great_chambersMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:block")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -137,7 +137,7 @@
                     document.getElementById("roomTitle").innerHTML = "Great Chambers";
                 });
 
-                socket.on('guard_quarters', function(data) {
+                socket.on('guard_quartersMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:block")
@@ -173,7 +173,7 @@
                     document.getElementById("roomTitle").innerHTML = "Guard Quarters";
                 });
 
-                socket.on('hallway', function(data) {
+                socket.on('hallwayMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -209,7 +209,7 @@
                     document.getElementById("roomTitle").innerHTML = "Hallway";
                 });
 
-                socket.on('inner_courtyard', function(data) {
+                socket.on('inner_courtyardMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -245,7 +245,7 @@
                     document.getElementById("roomTitle").innerHTML = "Inner Courtyard";
                 });
 
-                socket.on('kitchen', function(data) {
+                socket.on('kitchenMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -281,7 +281,7 @@
                     document.getElementById("roomTitle").innerHTML = "Kitchen";
                 });
 
-                socket.on('pantry', function(data) {
+                socket.on('pantryMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -317,7 +317,7 @@
                     document.getElementById("roomTitle").innerHTML = "Pantry";
                 });
 
-                socket.on('servant_quarters', function(data) {
+                socket.on('servant_quartersMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -353,7 +353,7 @@
                     document.getElementById("roomTitle").innerHTML = "Servant Quarters";
                 });
 
-                socket.on('sleeping_quarters', function(data) {
+                socket.on('sleeping_quartersMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -389,7 +389,7 @@
                     document.getElementById("roomTitle").innerHTML = "Sleeping Chambers";
                 });
 
-                socket.on('throne_room', function(data) {
+                socket.on('throne_roomMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -425,7 +425,7 @@
                     document.getElementById("roomTitle").innerHTML = "Throne Room";
                 });
 
-                socket.on('tower', function(data) {
+                socket.on('towerMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -461,7 +461,7 @@
                     document.getElementById("roomTitle").innerHTML = "Tower";
                 });
 
-                socket.on('training_area', function(data) {
+                socket.on('training_areaMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -497,7 +497,7 @@
                     document.getElementById("roomTitle").innerHTML = "Training Area";
                 });
 
-                socket.on('upper_corridor', function(data) {
+                socket.on('upper_corridorMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -533,7 +533,7 @@
                     document.getElementById("roomTitle").innerHTML = "Upper Corridor";
                 });
 
-                socket.on('weapons_room', function(data) {
+                socket.on('weapons_roomMobile', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")

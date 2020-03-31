@@ -105,51 +105,66 @@ socketIO.on('connection', (socket) => {
     //ROOM CHANGING EVENTS
     socket.on('great_hall', (data) => {
         socketIO.sockets.emit('great_hall');
+        socketIO.sockets.emit('great_hallMobile');
     });
 
     socket.on('kitchen', (data) => {
         socketIO.sockets.emit('kitchen');
+        socketIO.sockets.emit('kitchenMobile');
     });
 
     socket.on('pantry', (data) => {
         socketIO.sockets.emit('pantry');
+        socketIO.sockets.emit('pantryMobile');
     });
 
     socket.on('upper_corridor', (data) => {
         socketIO.sockets.emit('upper_corridor');
+        socketIO.sockets.emit('upper_corridorMobile');
     });
     socket.on('great_chambers', (data) => {
         socketIO.sockets.emit('great_chambers');
+        socketIO.sockets.emit('great_chambersMobile');
     });
     socket.on('guard_quarters', (data) => {
         socketIO.sockets.emit('guard_quarters');
+        socketIO.sockets.emit('guard_quartersMobile');
     });
     socket.on('hallway', (data) => {
         socketIO.sockets.emit('hallway');
+        socketIO.sockets.emit('hallwayMobile');
     });
     socket.on('inner_courtyard', (data) => {
         socketIO.sockets.emit('inner_courtyard');
+        socketIO.sockets.emit('inner_courtyardMobile');
     });
     socket.on('main_courtyard', (data) => {
         socketIO.sockets.emit('main_courtyard');
+        socketIO.sockets.emit('main_courtyardMobile');
     });
     socket.on('servant_quarters', (data) => {
         socketIO.sockets.emit('servant_quarters');
+        socketIO.sockets.emit('servant_quartersMobile');
     });
     socket.on('sleeping_quarters', (data) => {
         socketIO.sockets.emit('sleeping_quarters');
+        socketIO.sockets.emit('sleeping_quartersMobile');
     });
     socket.on('throne_room', (data) => {
         socketIO.sockets.emit('throne_room');
+        socketIO.sockets.emit('throne_roomMobile');
     });
     socket.on('tower', (data) => {
         socketIO.sockets.emit('tower');
+        socketIO.sockets.emit('towerMobile');
     });
     socket.on('training_area', (data) => {
         socketIO.sockets.emit('training_area');
+        socketIO.sockets.emit('training_areaMobile');
     });
     socket.on('weapons_room', (data) => {
         socketIO.sockets.emit('weapons_room');
+        socketIO.sockets.emit('weapons_roomMobile');
     });
 
     // MINI GAME CONTROLS FOR Julianna

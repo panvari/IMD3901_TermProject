@@ -29,7 +29,7 @@
                     window.location.replace('/tapestryMini')
                 });
 
-                socket.on('courtyard', function(data) {
+                socket.on('main_courtyard', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -65,7 +65,7 @@
                     document.getElementById("roomTitle").innerHTML = "Outer Courtyard";
                 });
 
-                socket.on('greatHall', function(data) {
+                socket.on('great_hall', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:block")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -101,7 +101,7 @@
                     document.getElementById("roomTitle").innerHTML = "Great Hall";
                 });
 
-                socket.on('greatChambers', function(data) {
+                socket.on('great_chambers', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:block")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -137,7 +137,7 @@
                     document.getElementById("roomTitle").innerHTML = "Great Chambers";
                 });
 
-                socket.on('guardQuarters', function(data) {
+                socket.on('guard_quarters', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:block")
@@ -209,7 +209,7 @@
                     document.getElementById("roomTitle").innerHTML = "Hallway";
                 });
 
-                socket.on('innerCourtyard', function(data) {
+                socket.on('inner_courtyard', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -317,7 +317,7 @@
                     document.getElementById("roomTitle").innerHTML = "Pantry";
                 });
 
-                socket.on('servantQuarters', function(data) {
+                socket.on('servant_quarters', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -353,7 +353,7 @@
                     document.getElementById("roomTitle").innerHTML = "Servant Quarters";
                 });
 
-                socket.on('sleepingChambers', function(data) {
+                socket.on('sleeping_quarters', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -389,7 +389,7 @@
                     document.getElementById("roomTitle").innerHTML = "Sleeping Chambers";
                 });
 
-                socket.on('throneRoom', function(data) {
+                socket.on('throne_room', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -461,7 +461,7 @@
                     document.getElementById("roomTitle").innerHTML = "Tower";
                 });
 
-                socket.on('trainingArea', function(data) {
+                socket.on('training_area', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -497,7 +497,7 @@
                     document.getElementById("roomTitle").innerHTML = "Training Area";
                 });
 
-                socket.on('upperCorridor', function(data) {
+                socket.on('upper_corridor', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -533,7 +533,7 @@
                     document.getElementById("roomTitle").innerHTML = "Upper Corridor";
                 });
 
-                socket.on('weaponsRoom', function(data) {
+                socket.on('weapons_room', function(data) {
                     document.getElementById("greatChambers").setAttribute("style", "display:none")
                     document.getElementById("greatHall").setAttribute("style", "display:none")
                     document.getElementById("guardQuarters").setAttribute("style", "display:none")
@@ -707,7 +707,7 @@
 
 <!-- KING'S QUOTES POPUPS -->
         <div id = kingPopups>
-            <img id = "kingIcon" src = "../assets/images/king.png" width = 100px>
+            <img id = "kingIcon" src = "../assets/images/king.png" width = 75px>
             <span class = "popup" id = "gameStart">
                 Finally, you’re here! My advisors tell me that you will be able to help. 
                 Somehow, I’ve lost all the gems on my crown, and I believe they may be scattered around the castle. 

@@ -151,24 +151,16 @@
 
         <a-box static-body visible="false" position="-2.4 0.7 -28.5" scale="0.3 3 24"></a-box>
         <a-box static-body visible="false" position="2.4 0.7 -28.5" scale="0.3 3 24"></a-box>
+
+        <a-box onclick="changeScene('great_hall')" static-body visible="false" position="0 2.9 -39.5" scale="4 5.3 1"></a-box>
     </a-scene>
 
     <script src="./js/scoreSystem.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        // let locator = document.getElementById('playerLocation');
-        // let themeFont = new FontFace('Enchanted', 'url(../fonts/EnchantedLand.otf)');
-        // const path = window.location.pathname;
-        // const page = path.split('/').pop();
-
-        // if (page == "scene1") {
-        //     locator.setAttribute('value', "Main Courtyard");
-        //     locator.setAttribute('font-family', "Enchanted")
-        // }
-
         function changeScene(val) {
-            if (val == 2) {
-                socket.emit('courtyard_to_greathall') //calls server method
+            if (val == 'great_hall') {
+                socket.emit('great_hall') //calls server method
             }
         };
 
@@ -178,8 +170,8 @@
             console.log("connected!");
         });
 
-        socket.on('scene_2', function(data) {
-            window.location.replace('greatHall') //Call
+        socket.on('great_hall', function(data) {
+            window.location.replace('greathall') //Call
         });
     </script>
 </body>

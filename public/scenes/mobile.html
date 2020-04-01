@@ -572,16 +572,46 @@
                 let gem1 = document.querySelector('#gem1')
                 let gem2 = document.querySelector('#gem2')
 
-                setInterval((data) => {
-                    if (sessionStorage.getItem('gem1Collected') === 'true') {
-                        gem1.setAttribute('opacity', '1');
-                    }
-                    if (sessionStorage.getItem('gem2Collected') === 'true') {
-                        gem2.setAttribute('opacity', '1');
-                        gemItem2.setAttribute('material', 'color', 'red');
-                    }
+                //setInterval((data) => {
+                    //if (sessionStorage.getItem('gem1Collected') === 'true') {
+                       // gem1.setAttribute('opacity', '1');
+                    //}
+                    //if (sessionStorage.getItem('gem2Collected') === 'true') {
+                     //   gem2.setAttribute('opacity', '1');
+                    //    gemItem2.setAttribute('material', 'color', 'red');
+                    //}
+                   // if (sessionStorage.getItem('gem3Collected') === 'true') {
+                      //  gem3.setAttribute('opacity', '1');
+                   // }
+                    //if (sessionStorage.getItem('gem4Collected') === 'true') {
+                     //   document.getElementById("gem4").setAttribute("style", "opacity:1")
+                    //}
 
-                }, 1000);
+               // }, 1000);
+
+               socket.on('gem1Mobile', function(data) {
+                    gem1.setAttribute('opacity', '1');
+                });
+
+               socket.on('gem2Mobile', function(data) {
+                    gem2.setAttribute('opacity', '1');
+                });
+
+               socket.on('gem3Mobile', function(data) {
+                    gem3.setAttribute('opacity', '1');
+                });
+
+                socket.on('gem4Mobile', function(data) {
+                    gem4.setAttribute('opacity', '1');
+                });
+
+                socket.on('gem5Mobile', function(data) {
+                    gem5.setAttribute('opacity', '1');
+                });
+
+                socket.on('gem6Mobile', function(data) {
+                    gem6.setAttribute('opacity', '1');
+                });
 
                 // socket.on('gem1', function(data){
                 //     document.getElementById("gem1").setAttribute("opacity", "1");

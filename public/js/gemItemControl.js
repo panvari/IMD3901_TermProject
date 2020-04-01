@@ -16,6 +16,7 @@ AFRAME.registerComponent('weaponsgem', {
                 window.sessionStorage.setItem('gem2Collected', 'true');
                 gemNoise.play();
                 socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
+                socket.emit('gem1Mobile')
             } else if (counter % 2 == 1) {
                 armourInstructions.setAttribute('visible', 'false');
             }
@@ -42,6 +43,7 @@ AFRAME.registerComponent('traininggem', {
                 window.sessionStorage.setItem('gem5Collected', 'true');
                 gemNoise.play();
                 socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
+                socket.emit('gem5Mobile')
             } else if (counter % 2 == 1) {
                 trainingInstructions.setAttribute('visible', 'false');
             }
@@ -68,6 +70,7 @@ AFRAME.registerComponent('servantsgem', { //DONE
                 window.sessionStorage.setItem('gem1Collected', 'true');
                 gemNoise.play();
                 socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
+                socket.emit('gem1Mobile')
             } else if (counter % 2 == 1) {
                 servantsInstructions.setAttribute('visible', 'false');
             }
@@ -94,6 +97,7 @@ AFRAME.registerComponent('pantrygem', { // DONE
                 window.sessionStorage.setItem('gem3Collected', 'true');
                 gemNoise.play();
                 socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
+                socket.emit('gem3Mobile')
             } else if (counter % 2 == 1) {
                 pantryInstructions.setAttribute('visible', 'false');
             }
@@ -119,7 +123,9 @@ AFRAME.registerComponent('towergem', { //DONE
                 towerGem.setAttribute('material', 'color', 'red');
                 window.sessionStorage.setItem('gem4Collected', 'true');
                 gemNoise.play();
-                socket.emit('launch_tower_MiniGame') //Call Minigame 1 for mobile
+                socket.emit('launch_tower_MiniGame')
+                socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
+                socket.emit('gem4Mobile')
             } else if (counter % 2 == 1) {
                 towerInstructions.setAttribute('visible', 'false');
             }
@@ -146,6 +152,7 @@ AFRAME.registerComponent('thronegem', {
                 window.sessionStorage.setItem('gem6Collected', 'true');
                 gemNoise.play();
                 socket.emit('launch_Minigame') //Call Minigame for mobile
+                socket.emit('gem6Mobile')
             } else if (counter % 2 == 1) {
                 kingColorInstructions.setAttribute('visible', 'false');
             }

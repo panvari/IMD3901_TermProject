@@ -14,7 +14,7 @@ AFRAME.registerComponent('popup', {
                 // popUp.setAttribute('visible', 'true')
                 instructions2.setAttribute('visible', 'true');
                 gemNoise.play();
-                socket.emit('launch_mini_game2') //Call Minigame 1 for mobile
+                socket.emit('launch_mini_game2') //Call Minigame 2 for mobile
             } else if (counter % 2 == 1) {
                 // popUp.setAttribute('visible', 'false');
                 instructions2.setAttribute('visible', 'false');

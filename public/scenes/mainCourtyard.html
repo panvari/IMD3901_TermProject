@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-    <script src="./js/courtyardPositionTrigger.js"></script>
-    <script src="./js/gem1Popups.js"></script>
     <script src="./js/spherical-env-map.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
@@ -26,7 +24,7 @@
             <!-- Images -->
             <img id="gemImage" src="./assets/images/gem.png">
             <img id="sky" src="./assets/images/CloudySky.jpg">
-            <img id="armourGame" src="./assets/images/armourGame.png">
+
 
             <!-- Models -->
             <a-asset-item id="turret" src="./assets/models/Turret.glb"></a-asset-item>
@@ -58,11 +56,9 @@
                     position="-2.7 -0.5 -2.5">
                 </a-entity>
 
-                <a-entity visible="false" id="armourInstructions" position="-2.2 -0.5 -2.5">
+                <!-- <a-entity visible="false" id="armourInstructions" position="-2.2 -0.5 -2.5">
                     <a-image src="#armourGame" width="4" height=" 3"></a-image>
-                </a-entity>
-
-
+                </a-entity> -->
 
                 <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
                 <a-image class="gem" id="gem2" src="#gemImage" width="0.3" height="0.5" position="-3.1 1.8 -2.5" opacity="0.4"></a-image>
@@ -155,6 +151,7 @@
         <a-box onclick="changeScene('great_hall')" static-body visible="false" position="0 2.9 -39.5" scale="4 5.3 1"></a-box>
     </a-scene>
 
+    <script src="./js/gemItemControl.js"></script>
     <script src="./js/scoreSystem.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>

@@ -13,7 +13,7 @@ AFRAME.registerComponent('weaponsgem', {
             if (counter % 2 == 0) {
                 weaponRoomGem.setAttribute('material', 'color', 'red')
                 armourInstructions.setAttribute('visible', 'true');
-                window.sessionStorage.setItem('gem2Collected', 'true');
+                window.sessionStorage.setItem('gem1Collected', 'true');
                 gemNoise.play();
                 socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
                 socket.emit('gem1Mobile')
@@ -67,10 +67,10 @@ AFRAME.registerComponent('servantsgem', { //DONE
             if (counter % 2 == 0) {
                 servantsInstructions.setAttribute('visible', 'true');
                 servantsGem.setAttribute('material', 'color', 'red')
-                window.sessionStorage.setItem('gem1Collected', 'true');
+                window.sessionStorage.setItem('gem3Collected', 'true');
                 gemNoise.play();
                 socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
-                socket.emit('gem1Mobile')
+                socket.emit('gem3Mobile')
             } else if (counter % 2 == 1) {
                 servantsInstructions.setAttribute('visible', 'false');
             }
@@ -94,10 +94,10 @@ AFRAME.registerComponent('pantrygem', { // DONE
             if (counter % 2 == 0) {
                 pantryInstructions.setAttribute('visible', 'true');
                 pantryGem.setAttribute('material', 'color', 'red');
-                window.sessionStorage.setItem('gem3Collected', 'true');
+                window.sessionStorage.setItem('gem2Collected', 'true');
                 gemNoise.play();
                 socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
-                socket.emit('gem3Mobile')
+                socket.emit('gem2Mobile')
             } else if (counter % 2 == 1) {
                 pantryInstructions.setAttribute('visible', 'false');
             }

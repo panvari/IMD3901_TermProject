@@ -167,6 +167,30 @@ socketIO.on('connection', (socket) => {
         socketIO.sockets.emit('weapons_roomMobile');
     });
 
+    socket.on('gem1Mobile', (data) => {
+        socketIO.sockets.emit('gem1Change');
+    });
+
+    socket.on('gem2Mobile', (data) => {
+        socketIO.sockets.emit('gem2Change');
+    });
+
+    socket.on('gem3Mobile', (data) => {
+        socketIO.sockets.emit('gem3Change');
+    });
+
+    socket.on('gem4Mobile', (data) => {
+        socketIO.sockets.emit('gem4Change');
+    });
+
+    socket.on('gem5Mobile', (data) => {
+        socketIO.sockets.emit('gem5Change');
+    });
+
+    socket.on('gem6Mobile', (data) => {
+        socketIO.sockets.emit('gem6Change');
+    });
+
     // MINI GAME CONTROLS FOR Julianna
     socket.on('launch_mini_game1', (data) => {
         console.log('Lunching MiniGame 1');

@@ -589,28 +589,28 @@
 
                // }, 1000);
 
-               socket.on('gem1Mobile', function(data) {
-                    gem1.setAttribute('opacity', '1');
+                socket.on('gem1Change', function(data) {
+                    document.getElementById("gem1").setAttribute("style", "opacity:1")
                 });
 
-               socket.on('gem2Mobile', function(data) {
-                    gem2.setAttribute('opacity', '1');
+                socket.on('gem2Change', function(data) {
+                    document.getElementById("gem2").setAttribute("style", "opacity:1")
                 });
 
-               socket.on('gem3Mobile', function(data) {
-                    gem3.setAttribute('opacity', '1');
+                socket.on('gem3Change', function(data) {
+                    document.getElementById("gem3").setAttribute("style", "opacity:1")
                 });
 
-                socket.on('gem4Mobile', function(data) {
-                    gem4.setAttribute('opacity', '1');
+                socket.on('gem4Change', function(data) {
+                    document.getElementById("gem4").setAttribute("style", "opacity:1")
                 });
 
-                socket.on('gem5Mobile', function(data) {
-                    gem5.setAttribute('opacity', '1');
+                socket.on('gem5Change', function(data) {
+                    document.getElementById("gem5").setAttribute("style", "opacity:1")
                 });
 
-                socket.on('gem6Mobile', function(data) {
-                    gem6.setAttribute('opacity', '1');
+                socket.on('gem6Change', function(data) {
+                    document.getElementById("gem6").setAttribute("style", "opacity:1")
                 });
 
                 // socket.on('gem1', function(data){
@@ -627,12 +627,12 @@
     </head>
     <body>
         <div id = "gems">
-            <img class = "gem" id="gem1" src="./assets/images/gem.png" width = 20>
-            <img class = "gem" id="gem2" src="./assets/images/gem.png" width = 20>
-            <img class = "gem" id="gem3" src="./assets/images/gem.png" width = 20>
-            <img class = "gem" id="gem4" src="./assets/images/gem.png" width = 20>
-            <img class = "gem" id="gem5" src="./assets/images/gem.png" width = 20>
-            <img class = "gem" id="gem6" src="./assets/images/gem.png" width = 20>
+            <img class = "gem" id="gem1" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
+            <img class = "gem" id="gem2" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
+            <img class = "gem" id="gem3" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
+            <img class = "gem" id="gem4" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
+            <img class = "gem" id="gem5" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
+            <img class = "gem" id="gem6" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
         </div>
         
 
@@ -751,7 +751,7 @@
                 and properly guarded.
             </span>
 
-            <span class = "popup" id = "guardRoom">
+            <span class = "popup" id = "weaponsRoom">
                 Amazing, you found one of the gems! My advisors were right about you after all. Now, if I can recall correctly, 
                 after making sure that the castle would be safe I started feeling really hungry, so I went to make sure my meal 
                 was being prepared.

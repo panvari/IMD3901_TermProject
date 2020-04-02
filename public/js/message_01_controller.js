@@ -9,6 +9,7 @@ function messageOneController(){
     }
 
     message.setAttribute('visible', 'true');
+    socket.emit('message01Mobile')
     console.log('Showing Kings message!')
 
     setInterval(() => {

@@ -594,6 +594,7 @@
                 });
 
                 socket.on('message01', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:block")
                     document.getElementById("message01").setAttribute("style", "display:inline")
                     document.getElementById("message02").setAttribute("style", "display:none")
                     document.getElementById("message03").setAttribute("style", "display:none")
@@ -607,6 +608,7 @@
                 });
 
                 socket.on('message02', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:block")
                     document.getElementById("message01").setAttribute("style", "display:none")
                     document.getElementById("message02").setAttribute("style", "display:inline")
                     document.getElementById("message03").setAttribute("style", "display:none")
@@ -620,6 +622,7 @@
                 });
 
                 socket.on('message03', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:block")
                     document.getElementById("message01").setAttribute("style", "display:none")
                     document.getElementById("message02").setAttribute("style", "display:none")
                     document.getElementById("message03").setAttribute("style", "display:inline")
@@ -633,6 +636,7 @@
                 });
 
                 socket.on('message04', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:block")
                     document.getElementById("message01").setAttribute("style", "display:none")
                     document.getElementById("message02").setAttribute("style", "display:none")
                     document.getElementById("message03").setAttribute("style", "display:none")
@@ -646,6 +650,7 @@
                 });
 
                 socket.on('message05', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:block")
                     document.getElementById("message01").setAttribute("style", "display:none")
                     document.getElementById("message02").setAttribute("style", "display:none")
                     document.getElementById("message03").setAttribute("style", "display:none")
@@ -659,6 +664,7 @@
                 });
 
                 socket.on('message06', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:block")
                     document.getElementById("message01").setAttribute("style", "display:none")
                     document.getElementById("message02").setAttribute("style", "display:none")
                     document.getElementById("message03").setAttribute("style", "display:none")
@@ -672,6 +678,7 @@
                 });
 
                 socket.on('message07', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:block")
                     document.getElementById("message01").setAttribute("style", "display:none")
                     document.getElementById("message02").setAttribute("style", "display:none")
                     document.getElementById("message03").setAttribute("style", "display:none")
@@ -685,6 +692,7 @@
                 });
 
                 socket.on('message08', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:block")
                     document.getElementById("message01").setAttribute("style", "display:none")
                     document.getElementById("message02").setAttribute("style", "display:none")
                     document.getElementById("message03").setAttribute("style", "display:none")
@@ -698,6 +706,7 @@
                 });
 
                 socket.on('message09', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:block")
                     document.getElementById("message01").setAttribute("style", "display:none")
                     document.getElementById("message02").setAttribute("style", "display:none")
                     document.getElementById("message03").setAttribute("style", "display:none")
@@ -711,6 +720,7 @@
                 });
 
                 socket.on('message10', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:block")
                     document.getElementById("message01").setAttribute("style", "display:none")
                     document.getElementById("message02").setAttribute("style", "display:none")
                     document.getElementById("message03").setAttribute("style", "display:none")
@@ -721,6 +731,20 @@
                     document.getElementById("message08").setAttribute("style", "display:none")
                     document.getElementById("message09").setAttribute("style", "display:none")
                     document.getElementById("message10").setAttribute("style", "display:inline")
+                });
+
+                socket.on('messageOff', function(data) {
+                    document.getElementById("kingIcon").setAttribute("style", "display:none")
+                    document.getElementById("message01").setAttribute("style", "display:none")
+                    document.getElementById("message02").setAttribute("style", "display:none")
+                    document.getElementById("message03").setAttribute("style", "display:none")
+                    document.getElementById("message04").setAttribute("style", "display:none")
+                    document.getElementById("message05").setAttribute("style", "display:none")
+                    document.getElementById("message06").setAttribute("style", "display:none")
+                    document.getElementById("message07").setAttribute("style", "display:none")
+                    document.getElementById("message08").setAttribute("style", "display:none")
+                    document.getElementById("message09").setAttribute("style", "display:none")
+                    document.getElementById("message10").setAttribute("style", "display:none")
                 });
     
         </script>
@@ -839,8 +863,8 @@
 
 <!-- KING'S QUOTES POPUPS -->
         <div id = kingPopups>
-            <img id = "kingIcon" src = "../assets/images/king.png" width = 75px>
-            <span class = "popup" id = "message01" style = display:inline>
+            <img id = "kingIcon" src = "../assets/images/king.png" width = 75px style = display:none>
+            <span class = "popup" id = "message01" style = display:none>
                 Finally, you’re here! My advisors tell me that you will be able to help. 
                 Somehow, I’ve lost all the gems on my crown, and I believe they may be scattered around the castle. 
                 Perhaps they fell off while doing my rounds through the castle yesterday. Look around anywhere you need to inside, 

@@ -10,6 +10,7 @@ function messageSixController(){
 
     message.setAttribute('visible', 'true');
     sessionStorage.setItem('message6Shown', 'true');
+    socket.emit('message06Mobile')
     // console.log('Showing Kings message!')
 
     setInterval(() => {

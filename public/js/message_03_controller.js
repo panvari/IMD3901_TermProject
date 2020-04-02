@@ -9,12 +9,13 @@ function messageThreeController(){
     }
 
     message.setAttribute('visible', 'true');
+    socket.emit('message03Mobile')
     // console.log('Showing Kings message!')
 
     setInterval(() => {
         message.setAttribute('visible', 'false');
         sessionStorage.setItem('message3Shown', 'true');
-    }, 35000)
+    }, 3500000)
 
 }
 

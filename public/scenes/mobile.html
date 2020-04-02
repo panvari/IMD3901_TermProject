@@ -569,26 +569,6 @@
                     document.getElementById("roomTitle").innerHTML = "Weapons Room";
                 });
 
-                let gem1 = document.querySelector('#gem1')
-                let gem2 = document.querySelector('#gem2')
-
-                //setInterval((data) => {
-                    //if (sessionStorage.getItem('gem1Collected') === 'true') {
-                       // gem1.setAttribute('opacity', '1');
-                    //}
-                    //if (sessionStorage.getItem('gem2Collected') === 'true') {
-                     //   gem2.setAttribute('opacity', '1');
-                    //    gemItem2.setAttribute('material', 'color', 'red');
-                    //}
-                   // if (sessionStorage.getItem('gem3Collected') === 'true') {
-                      //  gem3.setAttribute('opacity', '1');
-                   // }
-                    //if (sessionStorage.getItem('gem4Collected') === 'true') {
-                     //   document.getElementById("gem4").setAttribute("style", "opacity:1")
-                    //}
-
-               // }, 1000);
-
                 socket.on('gem1Change', function(data) {
                     document.getElementById("gem1").setAttribute("style", "opacity:1")
                 });
@@ -613,13 +593,135 @@
                     document.getElementById("gem6").setAttribute("style", "opacity:1")
                 });
 
-                // socket.on('gem1', function(data){
-                //     document.getElementById("gem1").setAttribute("opacity", "1");
-                // });
+                socket.on('message01', function(data) {
+                    document.getElementById("message01").setAttribute("style", "display:inline")
+                    document.getElementById("message02").setAttribute("style", "display:none")
+                    document.getElementById("message03").setAttribute("style", "display:none")
+                    document.getElementById("message04").setAttribute("style", "display:none")
+                    document.getElementById("message05").setAttribute("style", "display:none")
+                    document.getElementById("message06").setAttribute("style", "display:none")
+                    document.getElementById("message07").setAttribute("style", "display:none")
+                    document.getElementById("message08").setAttribute("style", "display:none")
+                    document.getElementById("message09").setAttribute("style", "display:none")
+                    document.getElementById("message10").setAttribute("style", "display:none")
+                });
 
-                // socket.on('gem2', function(data){
-                //     document.getElementById("gem2").setAttribute("opacity", "1");
-                // });
+                socket.on('message02', function(data) {
+                    document.getElementById("message01").setAttribute("style", "display:none")
+                    document.getElementById("message02").setAttribute("style", "display:inline")
+                    document.getElementById("message03").setAttribute("style", "display:none")
+                    document.getElementById("message04").setAttribute("style", "display:none")
+                    document.getElementById("message05").setAttribute("style", "display:none")
+                    document.getElementById("message06").setAttribute("style", "display:none")
+                    document.getElementById("message07").setAttribute("style", "display:none")
+                    document.getElementById("message08").setAttribute("style", "display:none")
+                    document.getElementById("message09").setAttribute("style", "display:none")
+                    document.getElementById("message10").setAttribute("style", "display:none")
+                });
+
+                socket.on('message03', function(data) {
+                    document.getElementById("message01").setAttribute("style", "display:none")
+                    document.getElementById("message02").setAttribute("style", "display:none")
+                    document.getElementById("message03").setAttribute("style", "display:inline")
+                    document.getElementById("message04").setAttribute("style", "display:none")
+                    document.getElementById("message05").setAttribute("style", "display:none")
+                    document.getElementById("message06").setAttribute("style", "display:none")
+                    document.getElementById("message07").setAttribute("style", "display:none")
+                    document.getElementById("message08").setAttribute("style", "display:none")
+                    document.getElementById("message09").setAttribute("style", "display:none")
+                    document.getElementById("message10").setAttribute("style", "display:none")
+                });
+
+                socket.on('message04', function(data) {
+                    document.getElementById("message01").setAttribute("style", "display:none")
+                    document.getElementById("message02").setAttribute("style", "display:none")
+                    document.getElementById("message03").setAttribute("style", "display:none")
+                    document.getElementById("message04").setAttribute("style", "display:inline")
+                    document.getElementById("message05").setAttribute("style", "display:none")
+                    document.getElementById("message06").setAttribute("style", "display:none")
+                    document.getElementById("message07").setAttribute("style", "display:none")
+                    document.getElementById("message08").setAttribute("style", "display:none")
+                    document.getElementById("message09").setAttribute("style", "display:none")
+                    document.getElementById("message10").setAttribute("style", "display:none")
+                });
+
+                socket.on('message05', function(data) {
+                    document.getElementById("message01").setAttribute("style", "display:none")
+                    document.getElementById("message02").setAttribute("style", "display:none")
+                    document.getElementById("message03").setAttribute("style", "display:none")
+                    document.getElementById("message04").setAttribute("style", "display:none")
+                    document.getElementById("message05").setAttribute("style", "display:inline")
+                    document.getElementById("message06").setAttribute("style", "display:none")
+                    document.getElementById("message07").setAttribute("style", "display:none")
+                    document.getElementById("message08").setAttribute("style", "display:none")
+                    document.getElementById("message09").setAttribute("style", "display:none")
+                    document.getElementById("message10").setAttribute("style", "display:none")
+                });
+
+                socket.on('message06', function(data) {
+                    document.getElementById("message01").setAttribute("style", "display:none")
+                    document.getElementById("message02").setAttribute("style", "display:none")
+                    document.getElementById("message03").setAttribute("style", "display:none")
+                    document.getElementById("message04").setAttribute("style", "display:none")
+                    document.getElementById("message05").setAttribute("style", "display:none")
+                    document.getElementById("message06").setAttribute("style", "display:inline")
+                    document.getElementById("message07").setAttribute("style", "display:none")
+                    document.getElementById("message08").setAttribute("style", "display:none")
+                    document.getElementById("message09").setAttribute("style", "display:none")
+                    document.getElementById("message10").setAttribute("style", "display:none")
+                });
+
+                socket.on('message07', function(data) {
+                    document.getElementById("message01").setAttribute("style", "display:none")
+                    document.getElementById("message02").setAttribute("style", "display:none")
+                    document.getElementById("message03").setAttribute("style", "display:none")
+                    document.getElementById("message04").setAttribute("style", "display:none")
+                    document.getElementById("message05").setAttribute("style", "display:none")
+                    document.getElementById("message06").setAttribute("style", "display:none")
+                    document.getElementById("message07").setAttribute("style", "display:inline")
+                    document.getElementById("message08").setAttribute("style", "display:none")
+                    document.getElementById("message09").setAttribute("style", "display:none")
+                    document.getElementById("message10").setAttribute("style", "display:none")
+                });
+
+                socket.on('message08', function(data) {
+                    document.getElementById("message01").setAttribute("style", "display:none")
+                    document.getElementById("message02").setAttribute("style", "display:none")
+                    document.getElementById("message03").setAttribute("style", "display:none")
+                    document.getElementById("message04").setAttribute("style", "display:none")
+                    document.getElementById("message05").setAttribute("style", "display:none")
+                    document.getElementById("message06").setAttribute("style", "display:none")
+                    document.getElementById("message07").setAttribute("style", "display:none")
+                    document.getElementById("message08").setAttribute("style", "display:inline")
+                    document.getElementById("message09").setAttribute("style", "display:none")
+                    document.getElementById("message10").setAttribute("style", "display:none")
+                });
+
+                socket.on('message09', function(data) {
+                    document.getElementById("message01").setAttribute("style", "display:none")
+                    document.getElementById("message02").setAttribute("style", "display:none")
+                    document.getElementById("message03").setAttribute("style", "display:none")
+                    document.getElementById("message04").setAttribute("style", "display:none")
+                    document.getElementById("message05").setAttribute("style", "display:none")
+                    document.getElementById("message06").setAttribute("style", "display:none")
+                    document.getElementById("message07").setAttribute("style", "display:none")
+                    document.getElementById("message08").setAttribute("style", "display:none")
+                    document.getElementById("message09").setAttribute("style", "display:inline")
+                    document.getElementById("message10").setAttribute("style", "display:none")
+                });
+
+                socket.on('message10', function(data) {
+                    document.getElementById("message01").setAttribute("style", "display:none")
+                    document.getElementById("message02").setAttribute("style", "display:none")
+                    document.getElementById("message03").setAttribute("style", "display:none")
+                    document.getElementById("message04").setAttribute("style", "display:none")
+                    document.getElementById("message05").setAttribute("style", "display:none")
+                    document.getElementById("message06").setAttribute("style", "display:none")
+                    document.getElementById("message07").setAttribute("style", "display:none")
+                    document.getElementById("message08").setAttribute("style", "display:none")
+                    document.getElementById("message09").setAttribute("style", "display:none")
+                    document.getElementById("message10").setAttribute("style", "display:inline")
+                });
     
         </script>
 
@@ -738,56 +840,56 @@
 <!-- KING'S QUOTES POPUPS -->
         <div id = kingPopups>
             <img id = "kingIcon" src = "../assets/images/king.png" width = 75px>
-            <span class = "popup" id = "gameStart">
+            <span class = "popup" id = "message01" style = display:inline>
                 Finally, you’re here! My advisors tell me that you will be able to help. 
                 Somehow, I’ve lost all the gems on my crown, and I believe they may be scattered around the castle. 
                 Perhaps they fell off while doing my rounds through the castle yesterday. Look around anywhere you need to inside, 
                 I have granted you access everywhere, and please, help me find my gems!
             </span>
 
-            <span class = "popup" id = "greatHall">
+            <span class = "popup" id = "message02" style = display:none>
                 Welcome to my castle! Perhaps leading you through the events that occured yesterday will help you locate the missing gems? 
                 Well, to begin, I always start the day by checking in on the Guard’s Room and Weapons Room to ensure that the castle is safe 
                 and properly guarded.
             </span>
 
-            <span class = "popup" id = "weaponsRoom">
+            <span class = "popup" id = "message03" style = display:none>
                 Amazing, you found one of the gems! My advisors were right about you after all. Now, if I can recall correctly, 
                 after making sure that the castle would be safe I started feeling really hungry, so I went to make sure my meal 
                 was being prepared.
             </span>
 
-            <span class = "popup" id = "pantry">
+            <span class = "popup" id = "message04" style = display:none>
                 Great work, you found another gem! Now let me see, after I ate, I believe I went to check on the servants to 
                 make sure everything was in order.
             </span>
 
-            <span class = "popup" id = "servantsQuarters">
+            <span class = "popup" id = "message05" style = display:none>
                 Excellent work, you’re halfway there! After I checked on the servants, 
                 I decided to spend some time outdoors in the courtyard to get some fresh air.
             </span>
 
-            <span class = "popup" id = "innerCourtyard">
+            <span class = "popup" id = "message06" style = display:none>
                 Now let me see, after I spent some time in the courtyard I decided to climb the watchtower so that I could view my kingdom.
             </span>
 
-            <span class = "popup" id = "tower">
+            <span class = "popup" id = "message07" style = display:none>
                 Good job, you found another one of the missing gems! After admiring the view of my kingdom, 
                 it was time for me to train. I spent hours outside in the training area of the courtyard, 
                 perhaps I lost a gem there?
             </span>
             
-            <span class = "popup" id = "trainingArea">
+            <span class = "popup" id = "message08" style = display:none>
                 Amazing, you found another gem! Once I was done training, I was feeling very tired, 
                 so I decided to retire to my great chambers for a while to get some rest.
             </span>
 
-            <span class = "popup" id ="greatChambers">
+            <span class = "popup" id ="message09" style = display:none>
                 Well, I guess I didn’t lose a gem here. Now let me think, after some rest I ended 
                 the day in the throne room to oversee kingdom activities.
             </span>
 
-            <span class = "popup" id = "throneRoomFinal">
+            <span class = "popup" id = "message10" style = display:none>
                 Fantastic work, you found all the missing gems! Thank you so much for all your help and 
                 I hope you learned a bit about my castle along the way.
             </span>

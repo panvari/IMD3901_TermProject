@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/positionTriggers.js"></script>
+    <script src="./js/laundryFlick.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script> <!-- Sockets -->
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!-- GUI -->
+
+    <title>Fruit Basket</title>
+</head>
+<body>
+    <a-scene>
+
+        <a-assets>
+            <a-asset-item id="servantsRoom" src="./assets/models/GreatHall.glb"></a-asset-item>
+            <a-asset-item id="wall" src="./assets/models/Walls.glb"></a-asset-item>
+
+            <a-asset-item id="basket" src="./assets/models/Basket.glb"></a-asset-item>
+            <a-asset-item id="dress" src="./assets/mobileProps/Dress.glb"></a-asset-item>
+            <a-asset-item id="pants" src="./assets/mobileProps/Pants.glb"></a-asset-item>
+            <a-asset-item id="shirt" src="./assets/mobileProps/Shirt.glb"></a-asset-item>
+            <a-asset-item id="shorts" src="./assets/mobileProps/Shorts.glb"></a-asset-item>
+            <a-asset-item id="skirt" src="./assets/mobileProps/Skirt.glb"></a-asset-item>
+            <a-asset-item id="sock" src="./assets/mobileProps/Sock.glb"></a-asset-item>
+
+        </a-assets>
+
+
+<!-- Camera Rig -->
+        <a-entity player_position id="cameraRig" position="0 1.6 0">
+            <a-camera look-controls="touchEnabled: false" position="0 0 0">
+                <a-entity   id = 'cursor'
+                            cursor="rayOrigin:mouse;"
+                            raycaster="far:20; interval:100; objects:.clickable">
+                </a-entity>
+
+                <a-entity visible = "true" class="clickable clothing notAllowed" id="dress" gltf-model="#dress" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                <a-entity visible = "false" class="clickable clothing allowed" id="pants" gltf-model="#pants" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                <a-entity visible = "false" class="clickable clothing allowed" id="shirt" gltf-model="#shirt" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                <a-entity visible = "false" class="clickable clothing notAllowed" id="shorts" gltf-model="#shorts" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                <a-entity visible = "false" class="clickable clothing notAllowed" id="skirt" gltf-model="#skirt" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                <a-entity visible = "false" class="clickable clothing allowed" id="sock" gltf-model="#sock" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                
+                <a-entity   class="clickable" 
+                id="cancel"
+                geometry="primitive:cylinder; height:0.01; radius:0.05;"
+                rotation="90 0 0"
+                position="-0.3 0.6 -1"
+                material="color:#ff002b"
+                remove=""></a-entity>
+
+                <a-gui-label 
+                    id="playerLocation"
+                    width="1" height="0.2"
+                    font-family="Arial"
+                    font-size="50px"
+                    padding="1rem 2rem"
+                    position="2 1.5 -2"
+                    value="">
+                </a-gui-label>
+            </a-camera> 
+        </a-entity>
+
+        <a-entity gltf-model="#servantsRoom" scale="1.676 2 2" position="0 0 -18.923" rotation="0 90 0"></a-entity>
+        <a-light type="point" position="-2 7 8"></a-light>
+        <a-light type="point" position="-2 7 -16"></a-light>
+
+        <a-entity gltf-model="#wall" scale="2.525 2.525 2.525" position="0 0.059 -8.803" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#wall" scale="2.525 2.525 2.525" position="0 7.713 -8.803" rotation="0 -180.000 -180.000"></a-entity>
+
+        <a-entity gltf-model="#bed" scale="1 1 1" position="-9.357 0 -17.06" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bed" scale="1 1 1" position="-9.357 0 -21.780" rotation="0, 0, 0"></a-entity>
+        <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 -21.780" rotation="0, 180, 0"></a-entity>
+        <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 .540" rotation="0, 180, 0"></a-entity>
+
+        <a-entity class="clickable" gltf-model="#basket" scale="0.1 0.1 0.1" position="0 0.2 -8" rotation="0 0 0"></a-entity>
+        
+
+    </a-scene>
+
+    <!-- Socket Script -->
+    
+    <script>
+
+        let locator = document.getElementById('playerLocation');
+        locator.setAttribute('value', 'Laundry'); //change room values dynamically
+
+        let socket = io(); 
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_1', function(data) {
+            window.location.replace('index.html')
+        });
+
+    </script>
+</body>
+</html>

@@ -25,7 +25,7 @@ app.get('/about', function(req, res) {
     res.sendFile(__dirname + '/public/scenes/about.html');
 });
 
-app.get('/maincourtyard', (req, res) => {
+app.get('/mainCourtyard', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/mainCourtyard.html');
 });
 
@@ -86,12 +86,21 @@ app.get('/pantry', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/pantry.html');
 });
 
+//MINIGAMES
 app.get('/tapestryMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/tapestry.html');
 });
 
 app.get('/armourMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/armoury.html');
+});
+
+app.get('/fruitMini', (req, res) => {
+    res.sendFile(__dirname + '/public/minigames/fruit.html');
+});
+
+app.get('/laundryMini', (req, res) => {
+    res.sendFile(__dirname + '/public/minigames/laundry.html');
 });
 
 //websocket stuff
@@ -189,6 +198,46 @@ socketIO.on('connection', (socket) => {
 
     socket.on('gem6Mobile', (data) => {
         socketIO.sockets.emit('gem6Change');
+    });
+
+    socket.on('message01Mobile', (data) => {
+        socketIO.sockets.emit('message01');
+    });
+
+    socket.on('message02Mobile', (data) => {
+        socketIO.sockets.emit('message02');
+    });
+
+    socket.on('message03Mobile', (data) => {
+        socketIO.sockets.emit('message03');
+    });
+
+    socket.on('message04Mobile', (data) => {
+        socketIO.sockets.emit('message04');
+    });
+
+    socket.on('message05Mobile', (data) => {
+        socketIO.sockets.emit('message05');
+    });
+
+    socket.on('message06Mobile', (data) => {
+        socketIO.sockets.emit('message06');
+    });
+
+    socket.on('message07Mobile', (data) => {
+        socketIO.sockets.emit('message07');
+    });
+
+    socket.on('message08Mobile', (data) => {
+        socketIO.sockets.emit('message08');
+    });
+
+    socket.on('message09Mobile', (data) => {
+        socketIO.sockets.emit('message09');
+    });
+
+    socket.on('message10Mobile', (data) => {
+        socketIO.sockets.emit('message10');
     });
 
     // MINI GAME CONTROLS FOR Julianna

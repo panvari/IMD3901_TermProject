@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/positionTriggers.js"></script>
+    <script src="./js/armourOrder.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script> <!-- Sockets -->
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!-- GUI -->>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
+    <script src="https://rawgit.com/Ctrl-Alt-Zen/aframe-mobile-controls/master/components/twoway-motion/twoway-motion.js"></script>
+
+    <title>Matching Game</title>
+</head>
+<body>
+    <a-scene>
+
+        <a-assets>
+            <a-asset-item id="turret" src="./assets/models/Turret.glb"></a-asset-item>
+            <a-asset-item id="wall" src="./assets/models/Wall1.glb"></a-asset-item>
+            <a-asset-item id="door" src="./assets/models/door.glb"></a-asset-item>
+            <a-asset-item id="keep" src="./assets/models/Keep.glb"></a-asset-item>
+
+            <a-asset-item id="chestplate" src="./assets/mobileProps/Chestplate.glb"></a-asset-item>
+            <a-asset-item id="gauntlet" src="./assets/mobileProps/Gauntlet.glb"></a-asset-item>
+            <a-asset-item id="helmet" src="./assets/mobileProps/Helmet.glb"></a-asset-item>
+            <a-asset-item id="sword" src="./assets/models/sword.glb"></a-asset-item>
+            <a-asset-item id="boot" src="./assets/mobileProps/Boot.glb"></a-asset-item>
+
+            <a-asset-item id="dummyBlue" src="./assets/models/trainingDummyMobileBlue.glb"></a-asset-item>
+            <a-asset-item id="dummyGreen" src="./assets/models/trainingDummyMobileGreen.glb"></a-asset-item>
+            <a-asset-item id="dummyPurple" src="./assets/models/trainingDummyMobilePurple.glb"></a-asset-item>
+            <a-asset-item id="dummyRed" src="./assets/models/trainingDummyMobileRed.glb"></a-asset-item>
+            <a-asset-item id="dummyYellow" src="./assets/models/trainingDummyMobileYellow.glb"></a-asset-item>
+
+        </a-assets>
+
+        <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
+
+        <a-entity player_position id="cameraRig" position="0 1.6 0">
+            <a-camera look-controls="touchEnabled:false" wasd-controls="acceleration: 220" twoway-motion="speed: 65" position="0 0 0">
+                <a-entity   id = 'cursor'
+                            cursor="rayOrigin:mouse;"
+                            raycaster="far:20; interval:100; objects:.clickable">
+                </a-entity>
+
+                <a-gui-label 
+                    id="playerLocation"
+                    width="1" height="0.2"
+                    font-family="Arial"
+                    font-size="50px"
+                    padding="1rem 2rem"
+                    position="2 1.5 -2"
+                    value="">
+                </a-gui-label>
+            </a-camera> 
+        </a-entity>
+
+        <!-- Lighting  -->
+        <a-light type="ambient" position="5.579 25.204 -2.032" color="#222"></a-light>
+        <a-light type="point" position="5.579 25.204 -2.032"></a-light>
+        <a-light type="point" position="5.579 25.204 -10.032"></a-light>
+
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="15.373 0 3.253" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="15.373 0 -21.612" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="16.829 0 -23.091" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-11 0 -23.091" rotation="0 90 0"></a-gltf-model>
+
+        <a-gltf-model static-body material="color: grey" src="#turret" position="16.546 0 -21.612" scale="1 0.85 1"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="16.546 0 3.253" scale="1 0.85 1"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="-10.546 0 3.253" scale="1 0.85 1"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="-10.546 0 -21.612" scale="1 0.85 1"></a-gltf-model>
+
+        <a-gltf-model src="#dummyBlue" class="clickable" scale=".8 .8 .8" position="8.132 -.950 -17.794" rotation="0 -24.835 0"></a-gltf-model>
+        <a-gltf-model src="#dummyGreen" class="clickable" scale=".8 .8 .8" position="10.842 -.950 -14.318" rotation="0 -47.434 0"></a-gltf-model>
+        <a-gltf-model src="#dummyPurple" class="clickable" scale=".8 .8 .8" position="0.2 -.950 -17" rotation="0 -24.167 0"></a-gltf-model>
+        <a-gltf-model src="#dummyYellow" class="clickable" scale=".8 .8 .8" position="13.594 -.950 -4" rotation="0 -90 0"></a-gltf-model>
+        <a-gltf-model src="#dummyRed" class="clickable" scale=".8 .8 .8" position="13 -.950 -10" rotation="0 -63.167 0"></a-gltf-model>
+        
+        <a-gltf-model pick-up="" src="#helmet" class="clickable" scale=".125 .125 .125" position="1.7 0.2 -3" rotation="0 -63.167 0"></a-gltf-model>
+        <a-gltf-model pick-up="" src="#gauntlet" class="clickable" scale=".125 .125 .125" position="-0.3 0.2 -6.5" rotation="0 -63.167 0"></a-gltf-model>
+        <a-gltf-model pick-up="" src="#chestplate" class="clickable" scale=".3 .3 .3" position="3.7 0.2 0" rotation="0 -63.167 0"></a-gltf-model>
+        <a-gltf-model pick-up="" src="#sword" class="clickable" scale=".8 .8 .8" position="6.8 0.2 -5.8" rotation="0 -63.167 0"></a-gltf-model>
+        <a-gltf-model pick-up="" src="#boot" class="clickable" scale=".4 .4 .4" position="2.6 0.2 -9.6" rotation="0 -63.167 0"></a-gltf-model>
+
+    </a-scene>
+
+    <!-- Socket Script -->
+    
+    <script>
+
+        let locator = document.getElementById('playerLocation');
+        locator.setAttribute('value', 'Armoury'); //change room values dynamically
+
+        let socket = io(); 
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_1', function(data) {
+            window.location.replace('index.html')
+        });
+
+    </script>
+</body>
+</html>

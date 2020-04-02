@@ -25,7 +25,7 @@ app.get('/about', function(req, res) {
     res.sendFile(__dirname + '/public/scenes/about.html');
 });
 
-app.get('/maincourtyard', (req, res) => {
+app.get('/mainCourtyard', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/mainCourtyard.html');
 });
 
@@ -86,12 +86,21 @@ app.get('/pantry', (req, res) => {
     res.sendFile(__dirname + '/public/scenes/pantry.html');
 });
 
+//MINIGAMES
 app.get('/tapestryMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/tapestry.html');
 });
 
 app.get('/armourMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/armoury.html');
+});
+
+app.get('/fruitMini', (req, res) => {
+    res.sendFile(__dirname + '/public/minigames/fruit.html');
+});
+
+app.get('/laundryMini', (req, res) => {
+    res.sendFile(__dirname + '/public/minigames/laundry.html');
 });
 
 //websocket stuff

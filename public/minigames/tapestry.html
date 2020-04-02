@@ -9,23 +9,27 @@
     <script src="./js/changeColour.js"></script>
 
     <script src="/socket.io/socket.io.js"></script> <!-- Sockets -->
-    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!-- GUI -->>
-    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
-
-    <title>Tapestry game</title>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!-- GUI -->
+    <script src="https://rawgit.com/Ctrl-Alt-Zen/aframe-mobile-controls/master/components/twoway-motion/twoway-motion.js"></script>
+    
+    <title>Kingdom's Colours</title>
 </head>
 <body>
     <a-scene>
 
-        <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
-
         <a-assets>
-            <!-- Models -->
+            <a-asset-item id="throneRoom" src="./assets/models/GreatHall.glb"></a-asset-item>
+
+            <a-asset-item id="blueT" src="./assets/models/longTapestryBlue.glb"></a-asset-item>
+            <a-asset-item id="whiteT" src="./assets/models/longTapestryWhite.glb"></a-asset-item>
+            <a-asset-item id="redT" src="./assets/models/longTapestryRed.glb"></a-asset-item>
+            <a-asset-item id="yellowT" src="./assets/models/longTapestryYellow.glb"></a-asset-item>
+            <a-asset-item id="chandelier" src="./assets/models/Chandelier.glb"></a-asset-item>
 
         </a-assets>
 
         <a-entity player_position id="cameraRig" position="0 1.6 0">
-            <a-camera look-controls wasd-controls="acceleration: 220" position="0 0 0">
+            <a-camera look-controls="touchEnabled:false" wasd-controls="acceleration: 220" twoway-motion="speed: 65" position="0 0 0">
                 <a-entity   id = 'cursor'
                             cursor="rayOrigin:mouse;"
                             raycaster="far:20; interval:100; objects:.clickable">
@@ -44,125 +48,132 @@
             </a-camera> 
         </a-entity>
 
+        <a-entity gltf-model="#throneRoom" scale="1.693 2 3" position="0 0 -16.874" rotation="0 90 0"></a-entity>
+        <a-light type="point" position="-2 7 8"></a-light>
+        <a-light type="point" position="-2 7 -16"></a-light>
+
 <!-- tapestries -->
+        <a-entity gltf-model="#blueT" scale=".8 .8 .8" position="-18.953 -0.129 -7.521" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#redT" scale=".8 .8 .8" position="18.953 -0.129 -7.521" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#whiteT" scale=".8 .8 .8" position="-18.953 -0.129 -26.912" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#yellowT" scale=".8 .8 .8" position="18.953 -0.129 -26.912" rotation="0 -90 0"></a-entity>
+
 <!-- BLUE TAPESTRY -->
         <a-entity   id = "blueTapestry"
                     class = "tapestry"
-                    geometry = "primitive:plane; width:2; height:4;"
+                    geometry = "primitive:plane; width:1.5; height:8;"
                     material = "color:#778899"
-                    rotation = "0 0 0"
-                    position = "0 2 -5"></a-entity>
+                    rotation = "0 90 0"
+                    position = "-18.953 6 -7.521"></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "-1 0 -3"
+                    position = "-16.953 0 -8.521"
                     material = "color:#00008b"
                     change-blue = ""
                     end-game = ""></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "0 0 -3"
+                    position = "-16.953 0 -6.521"
                     material = "color:#ff4f00"
                     change-blue = ""
                     end-game = ""></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "1 0 -3"
+                    position = "-16.953 0 -7.521"
                     material = "color:#ffffff"
                     change-blue = ""
                     end-game = ""></a-entity>
 
-<!-- WHITE TAPESTRY -->
+<!-- WHITE TAPESTRY BUTTONS -->
+
         <a-entity   id = "whiteTapestry"
                     class = "tapestry"
-                    geometry = "primitive:plane; width:2; height:4;"
+                    geometry = "primitive:plane; width:1.5; height:8;"
                     material = "color:#778899"
                     rotation = "0 90 0"
-                    position = "-5 2 0"></a-entity>
+                    position = "-18.953 6 -26.912"></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "-3 0 1"
+                    position = "-16.953 0 -26.912"
                     material = "color:#ffffff"
                     change-white = ""
                     end-game = ""></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "-3 0 0"
+                    position = "-16.953 0 -25.912"
                     material = "color:#008000"
                     change-white = ""
                     end-game = ""></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "-3 0 -1"
+                    position = "-16.953 0 -27.912"
                     material = "color:#ffab19"
                     change-white = ""
                     end-game = ""></a-entity>
 
-<!-- RED TAPESTRY -->
+<!-- RED TAPESTRY BUTTONS-->
         <a-entity   id = "redTapestry"
                     class = "tapestry"
-                    geometry = "primitive:plane; width:2; height:4;"
+                    geometry = "primitive:plane; width:1.5; height:8;"
                     material = "color:#778899"
                     rotation = "0 -90 0"
-                    position = "5 2 0"></a-entity>
+                    position = "18.953 6 -7.521"></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "3 0 1"
+                    position = "16.953 0 -7.521"
                     material = "color:#008000"
                     change-red = ""
                     end-game = ""></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "3 0 0"
+                    position = "16.953 0 -6.521"
                     material = "color:#e60000"
                     change-red = ""
                     end-game = ""></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "3 0 -1"
+                    position = "16.953 0 -8.521"
                     material = "color:#ff4f00"
                     change-red = ""
                     end-game = ""></a-entity>
 
-<!-- YELLOW TAPESTRY -->
+<!-- YELLOW TAPESTRY BUTTONS -->
         <a-entity   id = "yellowTapestry"
                     class = "tapestry"
-                    geometry = "primitive:plane; width:2; height:4;"
+                    geometry = "primitive:plane; width:1.5; height:8;"
                     material = "color:#778899"
-                    rotation = "0 180 0"
-                    position = "0 2 5"></a-entity>
+                    rotation = "0 -90 0"
+                    position = "18.953 6 -26.912"></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "-1 0 3"
+                    position = "16.953 0 -26.912"
                     material = "color:#00008b"
                     change-yellow = ""
                     end-game = ""></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "0 0 3"
+                    position = "16.953 0 -25.912"
                     material = "color:#ff00ff"
                     change-yellow = ""
                     end-game = ""></a-entity>
 
         <a-entity   class = "clickable"
                     geometry = "primitive:cylinder; height:0.1; radius:0.3;"
-                    position = "1 0 3"
+                    position = "16.953 0 -27.912"
                     material = "color:#ffab19"
                     change-yellow = ""
                     end-game = ""></a-entity>
-        
-        <!-- josh models -->
-        <!-- <a-obj-model id="room" material="color: grey" src="#room" position="0 0 -10" scale="0.009 0.015 0.009"></a-obj-model> -->
 
     </a-scene>
 
@@ -171,7 +182,7 @@
     <script>
 
         let locator = document.getElementById('playerLocation');
-        locator.setAttribute('value', 'Hello'); //change room values dynamically
+        locator.setAttribute('value', 'Kingdom Colours'); //change room values dynamically
 
         let socket = io(); 
         //default connect event

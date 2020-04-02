@@ -20,6 +20,7 @@
   "homepage": "https://github.com/panvari/IMD3901_TermProject#readme",
   "dependencies": {
     "aframe-gui": "^0.3.8",
+    "aframe-mobile-controls": "0.0.5",
     "aframe-physics-system": "^4.0.1",
     "aframe-watcher": "^1.4.0",
     "express": "^4.17.1",

@@ -23,6 +23,7 @@
             <!-- Images -->
             <img id="gemImage" src="./assets/images/gem.png">
             <img id="kingColors" src="./assets/images/kingColorsGame.png">
+            <img id="kingMessage" src="./assets/images/kingMessage_09.png">
 
             <!-- Models -->
             <a-asset-item id="weaponsRoom" src="./assets/models/GreatHall.glb"></a-asset-item>
@@ -47,8 +48,8 @@
                 <a-gui-label id="playerLocation" width="1.5" height="0.3" font-size="4rem" padding="1rem 2rem" position="3 1.8 -2.5" value="Great Chambers">
                 </a-gui-label>
 
-                <a-entity visible="false" id="popUp" geometry="primitive: plane; width: 3; height: 3.5" material="color: white" text=" width: 2.8; align: left; font: https://cdn.aframe.io/fonts/Exo2SemiBold.fnt; color: white; baseline: bottom; letterSpacing: 3; lineHeight:40; value: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem iste distinctio facere error in? Natus dolorum modi, aspernatur amet praesentium eveniet, ea ex aliquam voluptatem repellat nesciunt minima non autem, labore facilis perspiciatis quis. Eius, tempore accusamus! Quos, ipsa eos aliquam vero architecto quae eligendi voluptate ex corrupti mollitia ducimus. "
-                    position="-2.7 -0.5 -2.5">
+                <a-entity visible="false" id="kingMessage_09" position="-2.2 -0.5 -2.5">
+                    <a-image src="#kingMessage" width="4" height=" 2"></a-image>
                 </a-entity>
 
                 <a-image class="gem" id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
@@ -104,6 +105,7 @@
 
     <script src="./js/gemItemControl.js"></script>
     <script src="./js/scoreSystem.js"></script>
+    <script src="./js/message_09_controller.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         function changeScene(val) {

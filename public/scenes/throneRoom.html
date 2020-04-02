@@ -23,6 +23,8 @@
             <!-- Images -->
             <img id="gemImage" src="./assets/images/gem.png">
             <img id="kingColors" src="./assets/images/kingColorsGame.png">
+            <img id="kingMessage" src="./assets/images/kingMessage_10.png">
+
 
 
             <!-- Models -->
@@ -66,6 +68,10 @@
 
                 <a-entity visible="false" id="kingColorInstructions" position="-2.2 -0.5 -2.5">
                     <a-image src="#kingColors" width="4" height=" 3"></a-image>
+                </a-entity>
+
+                <a-entity visible="false" id="kingMessage_10" position="2.2 -0.5 -2.5">
+                    <a-image src="#kingMessage" width="4" height=" 2"></a-image>
                 </a-entity>
 
                 <a-image id="gem1" src="#gemImage" width="0.3" height="0.5" position="-3.5 1.8 -2.5" opacity="0.4"></a-image>
@@ -164,6 +170,7 @@
 
     <script src="./js/gemItemControl.js"></script>
     <script src="./js/scoreSystem.js"></script>
+    <script src="./js/message_10_controller.js"></script>
     <script src="/socket.io/socket.io.js "></script>
     <script>
         function changeScene(val) {

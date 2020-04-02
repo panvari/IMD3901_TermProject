@@ -191,6 +191,46 @@ socketIO.on('connection', (socket) => {
         socketIO.sockets.emit('gem6Change');
     });
 
+    socket.on('message01Mobile', (data) => {
+        socketIO.sockets.emit('message01');
+    });
+
+    socket.on('message02Mobile', (data) => {
+        socketIO.sockets.emit('message02');
+    });
+
+    socket.on('message03Mobile', (data) => {
+        socketIO.sockets.emit('message03');
+    });
+
+    socket.on('message04Mobile', (data) => {
+        socketIO.sockets.emit('message04');
+    });
+
+    socket.on('message05Mobile', (data) => {
+        socketIO.sockets.emit('message05');
+    });
+
+    socket.on('message06Mobile', (data) => {
+        socketIO.sockets.emit('message06');
+    });
+
+    socket.on('message07Mobile', (data) => {
+        socketIO.sockets.emit('message07');
+    });
+
+    socket.on('message08Mobile', (data) => {
+        socketIO.sockets.emit('message08');
+    });
+
+    socket.on('message09Mobile', (data) => {
+        socketIO.sockets.emit('message09');
+    });
+
+    socket.on('message10Mobile', (data) => {
+        socketIO.sockets.emit('message10');
+    });
+
     // MINI GAME CONTROLS FOR Julianna
     socket.on('launch_mini_game1', (data) => {
         console.log('Lunching MiniGame 1');

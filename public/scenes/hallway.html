@@ -89,7 +89,7 @@
         <a-entity gltf-model="#wall" scale="2.525 2.525 3.284" position="0 0.059 -18.898" rotation="0 0 0"></a-entity>
 
         <a-entity onclick="changeScene('great_hall')" gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
-        <a-entity onclick="changeScene('inner_courtyard')" gltf-model=" #door " scale="1.4 1.4 1.4 " position="0 0 -40.386 " rotation="0 0 0 "></a-entity>
+        <a-entity onclick="changeScene('inner_courtyard')" gltf-model="#door" scale="1.4 1.4 1.4 " position="0 0 -40.386 " rotation="0 0 0 "></a-entity>
 
         <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="3.193 0 -4.8" rotation="0 90 0"></a-entity>
         <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-3.193 0 -4.8" rotation="0 90 0"></a-entity>
@@ -138,20 +138,20 @@
         <a-box static-body visible="false " position="5.4 5.3 -18.7 " scale="0.7 12 50 "></a-box>
         <a-box static-body visible="false " position="-5.4 5.3 -18.7 " scale="0.7 12 50 "></a-box>
 
-        <a-box static-body visible="false " position="-3.35 5.3 -0.2 " scale="0.5 15 0.5 "></a-box>
-        <a-box static-body visible="false " position="3.35 5.3 -0.2 " scale="0.5 15 0.5 "></a-box>
+        <a-box static-body visible="false " position="-3.092 5.3 -0.2 " scale="0.209 15 0.209"></a-box>
+        <a-box static-body visible="false " position="3.092 5.3 -0.2 " scale="0.209 15 0.209 "></a-box>
 
-        <a-box static-body visible="false " position="-3.35 5.3 -4.8 " scale="0.5 15 0.5 "></a-box>
-        <a-box static-body visible="false " position="3.35 5.3 -4.8 " scale="0.5 15 0.5 "></a-box>
+        <a-box static-body visible="false " position="-3.092 5.3 -4.8 " scale="0.209 15 0.209"></a-box>
+        <a-box static-body visible="false " position="3.092 5.3 -4.8 " scale="0.209 15 0.209"></a-box>
 
-        <a-box static-body visible="false " position="-3.35 5.3 -16.8 " scale="0.5 15 0.5 "></a-box>
-        <a-box static-body visible="false " position="3.35 5.3 -16.8 " scale="0.5 15 0.5 "></a-box>
+        <a-box static-body visible="false " position="-3.092 5.3 -16.8 " scale="0.209 15 0.209"></a-box>
+        <a-box static-body visible="false " position="3.092 5.3 -16.8 " scale="0.209 15 0.209"></a-box>
 
-        <a-box static-body visible="false " position="-3.35 5.3 -28.8 " scale="0.5 15 0.5 "></a-box>
-        <a-box static-body visible="false " position="3.35 5.3 -28.8 " scale="0.5 15 0.5 "></a-box>
+        <a-box static-body visible="false " position="-3.092 5.3 -28.8 " scale="0.209 15 0.209"></a-box>
+        <a-box static-body visible="false " position="3.092 5.3 -28.8 " scale="0.209 15 0.209"></a-box>
 
-        <a-box static-body visible="false " position="-3.35 5.3 -38.3 " scale="0.5 15 0.5 "></a-box>
-        <a-box static-body visible="false " position="3.35 5.3 -38.3 " scale="0.5 15 0.5 "></a-box>
+        <a-box static-body visible="false " position="-3.092 5.3 -38.3 " scale="0.209 15 0.209"></a-box>
+        <a-box static-body visible="false " position="3.092 5.3 -38.3 " scale="0.209 15 0.209"></a-box>
     
     </a-scene>
 
@@ -178,7 +178,7 @@
         });
 
         socket.on('inner_courtyard', function(data) {
-            window.location.replace('inner_courtyard')
+            window.location.replace('innerCourtyard')
         });
     </script>
 </body>

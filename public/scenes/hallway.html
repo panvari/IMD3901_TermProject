@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/gem2Popups.js"></script>
+    <script src="./js/throneRoomPositionTrigger.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
@@ -87,48 +89,48 @@
         <a-entity gltf-model="#wall" scale="2.525 2.525 3.284" position="0 0.059 -18.898" rotation="0 0 0"></a-entity>
 
         <a-entity onclick="changeScene('great_hall')" gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 2.2" rotation="0 180 0"></a-entity>
-        <a-entity onclick="changeScene('inner_courtyard')" gltf-model=" #door " scale="1.4 1.4 1.4 " position="0 0 -40.386 " rotation="0 0 0 "></a-entity>
+        <a-entity onclick="changeScene('inner_courtyard')" gltf-model="#door" scale="1.4 1.4 1.4 " position="0 0 -40.386 " rotation="0 0 0 "></a-entity>
 
-        <a-entity gltf-model="#pillar " scale=" 1 1.8 0.7 " position="3.193 0 -4.8 " rotation="0 90 0 "></a-entity>
-        <a-entity gltf-model="#pillar " scale=" 1 1.8 0.7 " position="-3.193 0 -4.8 " rotation="0 90 0 "></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="3.193 0 -4.8" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-3.193 0 -4.8" rotation="0 90 0"></a-entity>
 
-        <a-entity gltf-model="#pillar " scale=" 1 1.8 0.7 " position="3.193 0 -16.8 " rotation="0 90 0 "></a-entity>
-        <a-entity gltf-model="#pillar " scale=" 1 1.8 0.7 " position="-3.193 0 -16.8 " rotation="0 90 0 "></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="3.193 0 -16.8" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-3.193 0 -16.8" rotation="0 90 0"></a-entity>
 
-        <a-entity gltf-model="#pillar " scale=" 1 1.8 0.7 " position="3.193 0 -28.8 " rotation="0 90 0 "></a-entity>
-        <a-entity gltf-model="#pillar " scale=" 1 1.8 0.7 " position="-3.193 0 -28.8 " rotation="0 90 0 "></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="3.193 0 -28.8" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 1.8 0.7" position="-3.193 0 -28.8" rotation="0 90 0"></a-entity>
 
-        <a-entity gltf-model="#pillar " scale=" 1 2.216 0.7 " position="-3.193 0 -38.314 " rotation="0 0 0 "></a-entity>
-        <a-entity gltf-model="#pillar " scale=" 1 2.216 0.7 " position="3.193 0 -38.314 " rotation="0 0 0 "></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="-3.193 0 -38.314" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="3.193 0 -38.314" rotation="0 0 0"></a-entity>
+        
+        <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="-3.193 0 -.233" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#pillar" scale=" 1 2.216 0.7" position="3.193 0 -.233" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#pillar " scale=" 1 2.216 0.7 " position="-3.193 0 -.233 " rotation="0 0 0 "></a-entity>
-        <a-entity gltf-model="#pillar " scale=" 1 2.216 0.7 " position="3.193 0 -.233 " rotation="0 0 0 "></a-entity>
+        <a-entity gltf-model="#carpet" scale=" 1.674 1 1.434" position="0 0.2 -18.794" rotation="0 0 0"></a-entity>
 
-        <a-entity gltf-model="#carpet " scale=" 1.674 1 1.434 " position="0 0.2 -18.794 " rotation="0 0 0 "></a-entity>
+        <a-entity gltf-model="#chandelier" scale=".3 0.649 .3" position="0 14.367 -16.8" rotation="0, 0, 0"></a-entity>
 
-        <a-entity gltf-model="#chandelier " scale=".3 0.649 .3 " position="0 14.367 -16.8 " rotation="0, 0, 0 "></a-entity>
+        <a-entity gltf-model="#blueT" scale=".8 .8 .8" position="-4.499 -0.129 -4.277" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#redT" scale=".8 .8 .8" position="-4.499 -0.129 -12.988" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#whiteT" scale=".8 .8 .8" position="-4.499 -0.129 -26.633" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#yellowT" scale=".8 .8 .8" position="-4.499 -0.129 -34.882" rotation="0 90 0"></a-entity>
 
-        <a-entity gltf-model="#blueT " scale=".8 .8 .8 " position="-4.499 -0.129 -4.277 " rotation="0 90 0 "></a-entity>
-        <a-entity gltf-model="#redT " scale=".8 .8 .8 " position="-4.499 -0.129 -12.988 " rotation="0 90 0 "></a-entity>
-        <a-entity gltf-model="#whiteT " scale=".8 .8 .8 " position="-4.499 -0.129 -26.633 " rotation="0 90 0 "></a-entity>
-        <a-entity gltf-model="#yellowT " scale=".8 .8 .8 " position="-4.499 -0.129 -34.882 " rotation="0 90 0 "></a-entity>
+        <a-entity gltf-model="#blueT" scale=".8 .8 .8" position="4.499 -0.129 -4.277" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#redT" scale=".8 .8 .8" position="4.499 -0.129 -12.988" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#whiteT" scale=".8 .8 .8" position="4.499 -0.129 -26.633" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#yellowT" scale=".8 .8 .8" position="4.499 -0.129 -34.882" rotation="0 -90 0"></a-entity>
 
-        <a-entity gltf-model="#blueT " scale=".8 .8 .8 " position="4.499 -0.129 -4.277 " rotation="0 -90 0 "></a-entity>
-        <a-entity gltf-model="#redT " scale=".8 .8 .8 " position="4.499 -0.129 -12.988 " rotation="0 -90 0 "></a-entity>
-        <a-entity gltf-model="#whiteT " scale=".8 .8 .8 " position="4.499 -0.129 -26.633 " rotation="0 -90 0 "></a-entity>
-        <a-entity gltf-model="#yellowT " scale=".8 .8 .8 " position="4.499 -0.129 -34.882 " rotation="0 -90 0 "></a-entity>
+        <a-entity gltf-model="#paintingLong01" scale=".62 .62 .62" position="-4.625 2.5 -20.158" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingLong02" scale=".62 .62 .62" position="4.625 2.5 -20.158" rotation="0 -90 0"></a-entity>
 
-        <a-entity gltf-model="#paintingLong01 " scale=".62 .62 .62 " position="-4.625 2.5 -20.158 " rotation="0 90 0 "></a-entity>
-        <a-entity gltf-model="#paintingLong02 " scale=".62 .62 .62 " position="4.625 2.5 -20.158 " rotation="0 -90 0 "></a-entity>
+        <a-entity gltf-model="#paintingSmall01" scale=".62 .62 .62" position="-4.625 2.5 -8.63" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall02" scale=".62 .62 .62" position="-4.625 2.5 -31.093" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall03" scale=".62 .62 .62" position="4.625 2.5 -8.63" rotation="0 -90 0"></a-entity>
+        <a-entity gltf-model="#paintingSmall04" scale=".62 .62 .62" position="4.625 2.5 -31.093" rotation="0 -90 0"></a-entity>
 
-        <a-entity gltf-model="#paintingSmall01 " scale=".62 .62 .62 " position="-4.625 2.5 -8.63 " rotation="0 90 0 "></a-entity>
-        <a-entity gltf-model="#paintingSmall02 " scale=".62 .62 .62 " position="-4.625 2.5 -31.093 " rotation="0 90 0 "></a-entity>
-        <a-entity gltf-model="#paintingSmall03 " scale=".62 .62 .62 " position="4.625 2.5 -8.63 " rotation="0 -90 0 "></a-entity>
-        <a-entity gltf-model="#paintingSmall04 " scale=".62 .62 .62 " position="4.625 2.5 -31.093 " rotation="0 -90 0 "></a-entity>
-
-        <a-entity text="value: Great Hall; align: center; color:#785236; " position="0 4.684 1.762 " scale="7 7 1 " rotation="0 180 0 "></a-entity>
-        <a-entity text="value: Inner Courtyard; align: center; color:#785236; " position="0 4.684 -39.956 " scale="7 7 1 " rotation="0 0 0 "></a-entity>
-
+        <a-entity text="value: Great Hall; align: center; color:#785236;" position="0 4.684 1.762" scale="7 7 1" rotation="0 180 0"></a-entity>
+        <a-entity text="value: Inner Courtyard; align: center; color:#785236;" position="0 4.684 -39.956" scale="7 7 1" rotation="0 0 0"></a-entity>
+    
         <!-- Phyics -->
         <a-box static-body visible="false " position="0 5.3 2.9 " scale="14 14 1 "></a-box>
         <a-box static-body visible="false " position="0 5.3 -41 " scale="14 14 1 "></a-box>
@@ -136,26 +138,25 @@
         <a-box static-body visible="false " position="5.4 5.3 -18.7 " scale="0.7 12 50 "></a-box>
         <a-box static-body visible="false " position="-5.4 5.3 -18.7 " scale="0.7 12 50 "></a-box>
 
-        <a-box static-body visible="false " position="-3.35 5.3 -0.2 " scale="0.5 15 0.5 "></a-box>
-        <a-box static-body visible="false " position="3.35 5.3 -0.2 " scale="0.5 15 0.5 "></a-box>
+        <a-box static-body visible="false " position="-3.092 5.3 -0.2 " scale="0.209 15 0.209"></a-box>
+        <a-box static-body visible="false " position="3.092 5.3 -0.2 " scale="0.209 15 0.209 "></a-box>
 
-        <a-box static-body visible="false " position="-3.35 5.3 -4.8 " scale="0.5 15 0.5 "></a-box>
-        <a-box static-body visible="false " position="3.35 5.3 -4.8 " scale="0.5 15 0.5 "></a-box>
+        <a-box static-body visible="false " position="-3.092 5.3 -4.8 " scale="0.209 15 0.209"></a-box>
+        <a-box static-body visible="false " position="3.092 5.3 -4.8 " scale="0.209 15 0.209"></a-box>
 
-        <a-box static-body visible="false " position="-3.35 5.3 -16.8 " scale="0.5 15 0.5 "></a-box>
-        <a-box static-body visible="false " position="3.35 5.3 -16.8 " scale="0.5 15 0.5 "></a-box>
+        <a-box static-body visible="false " position="-3.092 5.3 -16.8 " scale="0.209 15 0.209"></a-box>
+        <a-box static-body visible="false " position="3.092 5.3 -16.8 " scale="0.209 15 0.209"></a-box>
 
-        <a-box static-body visible="false " position="-3.35 5.3 -28.8 " scale="0.5 15 0.5 "></a-box>
-        <a-box static-body visible="false " position="3.35 5.3 -28.8 " scale="0.5 15 0.5 "></a-box>
+        <a-box static-body visible="false " position="-3.092 5.3 -28.8 " scale="0.209 15 0.209"></a-box>
+        <a-box static-body visible="false " position="3.092 5.3 -28.8 " scale="0.209 15 0.209"></a-box>
 
-        <a-box static-body visible="false " position="-3.35 5.3 -38.3 " scale="0.5 15 0.5 "></a-box>
-        <a-box static-body visible="false " position="3.35 5.3 -38.3 " scale="0.5 15 0.5 "></a-box>
-
+        <a-box static-body visible="false " position="-3.092 5.3 -38.3 " scale="0.209 15 0.209"></a-box>
+        <a-box static-body visible="false " position="3.092 5.3 -38.3 " scale="0.209 15 0.209"></a-box>
+    
     </a-scene>
 
-    <script src="./js/gemItemControl.js"></script>
-    <script src="./js/scoreSystem.js"></script>
-    <script src="/socket.io/socket.io.js "></script>
+    <script src="./js/throneRoomScoreSystem.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script>
         function changeScene(val) {
             if (val == 'great_hall') {
@@ -177,7 +178,7 @@
         });
 
         socket.on('inner_courtyard', function(data) {
-            window.location.replace('inner_courtyard')
+            window.location.replace('innerCourtyard')
         });
     </script>
 </body>

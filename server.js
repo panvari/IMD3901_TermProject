@@ -240,6 +240,10 @@ socketIO.on('connection', (socket) => {
         socketIO.sockets.emit('message10');
     });
 
+    socket.on('messageOffMobile', (data) => {
+        socketIO.sockets.emit('messageOff');
+    });
+
     // MINI GAME CONTROLS FOR Julianna
     socket.on('launch_mini_game1', (data) => {
         console.log('Lunching MiniGame 1');

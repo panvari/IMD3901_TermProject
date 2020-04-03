@@ -7,10 +7,12 @@ function messageTwoController(){
     }
 
     message.setAttribute('visible', 'true');
+    socket.emit('message02Mobile')
     console.log('Showing Kings message!')
 
     setInterval(() => {
         message.setAttribute('visible', 'false');
+        socket.emit('messageOffMobile')
         sessionStorage.setItem('message2Shown', 'true');
     }, 35000)
 

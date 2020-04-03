@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="./js/positionTriggers.js"></script>
-    <script src="./js/laundryFlick.js"></script>
+    <script src="./js/minigames/laundryFlick.js"></script>
 
     <script src="/socket.io/socket.io.js"></script> <!-- Sockets -->
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!-- GUI -->
@@ -39,20 +39,22 @@
                             raycaster="far:20; interval:100; objects:.clickable">
                 </a-entity>
 
-                <a-entity visible = "true" class="clickable clothing notAllowed" id="dress" gltf-model="#dress" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
-                <a-entity visible = "false" class="clickable clothing allowed" id="pants" gltf-model="#pants" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
-                <a-entity visible = "false" class="clickable clothing allowed" id="shirt" gltf-model="#shirt" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
-                <a-entity visible = "false" class="clickable clothing notAllowed" id="shorts" gltf-model="#shorts" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
-                <a-entity visible = "false" class="clickable clothing notAllowed" id="skirt" gltf-model="#skirt" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
-                <a-entity visible = "false" class="clickable clothing allowed" id="sock" gltf-model="#sock" scale="0.05 0.05 0.05" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
-                
-                <a-entity   class="clickable" 
-                id="cancel"
-                geometry="primitive:cylinder; height:0.01; radius:0.05;"
-                rotation="90 0 0"
-                position="-0.3 0.6 -1"
-                material="color:#ff002b"
-                remove=""></a-entity>
+                <a-entity id="clothing">
+                    <a-entity flick="" visible = "true" class="clickable clothing notAllowed" id="dress" gltf-model="#dress" scale="0.1 0.1 0.1" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                    <a-entity flick="" visible = "false" class="clothing allowed" id="pants" gltf-model="#pants" scale="0.1 0.1 0.1" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                    <a-entity flick="" visible = "false" class="clothing allowed" id="shirt" gltf-model="#shirt" scale="0.1 0.1 0.1" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                    <a-entity flick="" visible = "false" class="clothing notAllowed" id="shorts" gltf-model="#shorts" scale="0.1 0.1 0.1" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                    <a-entity flick="" visible = "false" class="clothing notAllowed" id="skirt" gltf-model="#skirt" scale="0.1 0.1 0.1" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                    <a-entity flick="" visible = "false" class="clothing allowed" id="sock" gltf-model="#sock" scale="0.1 0.1 0.1" position="0 -0.5 -1" rotation="0 0 0"></a-entity>
+                    
+                    <a-entity   class="clickable" 
+                                id="cancel"
+                                geometry="primitive:cylinder; height:0.01; radius:0.05;"
+                                rotation="90 0 0"
+                                position="-0.3 0.6 -1"
+                                material="color:#ff002b"
+                                delete-clothing=""></a-entity>
+                </a-entity>
 
                 <a-gui-label 
                     id="playerLocation"
@@ -78,7 +80,7 @@
         <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 -21.780" rotation="0, 180, 0"></a-entity>
         <a-entity gltf-model="#bed" scale="1 1 1" position="9.357 0 .540" rotation="0, 180, 0"></a-entity>
 
-        <a-entity class="clickable" gltf-model="#basket" scale="0.1 0.1 0.1" position="0 0.2 -8" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#basket" scale="0.3 0.3 0.3" position="0 0.2 -6" rotation="0 0 0"></a-entity>
         
 
     </a-scene>

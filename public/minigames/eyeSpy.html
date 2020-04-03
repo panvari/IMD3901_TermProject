@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/positionTriggers.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script> <!-- Sockets -->
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!-- GUI -->
+    <!-- touch motion for mobile movement -->
+    <script src="https://rawgit.com/Ctrl-Alt-Zen/aframe-mobile-controls/master/components/twoway-motion/twoway-motion.js"></script>
+    <!-- Environment -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    
+    <title>Eye Spy</title>
+</head>
+<body>
+    <a-scene>
+
+        <a-assets>
+            <a-asset-item id="wall" src="./assets/models/Wall1.glb"></a-asset-item>
+            <a-asset-item id="keep" src="./assets/models/Keep.glb"></a-asset-item>
+            <a-asset-item id="fence" src="./assets/models/fence.glb"></a-asset-item>
+            <a-asset-item id="tower" src="./assets/models/RoofedTurret.glb"></a-asset-item>
+            <a-asset-item id="door" src="./assets/models/door.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity player_position id="cameraRig" position="0 1.6 -7">
+            <a-camera look-controls="touchEnabled:false" wasd-controls="acceleration: 220" twoway-motion="speed: 65" position="0 0 0">
+                <a-entity   id = 'cursor'
+                            cursor="rayOrigin:mouse;"
+                            raycaster="far:20; interval:100; objects:.clickable">
+                </a-entity>
+
+                <a-gui-label 
+                    id="playerLocation"
+                    width="1" height="0.2"
+                    font-family="Arial"
+                    font-size="50px"
+                    padding="1rem 2rem"
+                    position="2 1.5 -2"
+                    value="">
+                </a-gui-label>
+            </a-camera> 
+        </a-entity>
+
+        <a-entity environment="preset: threetowers; dressing: trees; dressingAmount: 30"></a-entity>
+
+        <a-light type="point" position="5.579 25.204 -2.032"></a-light>
+        <a-light type="point" position="0 25.204 0"></a-light>
+
+        
+        <!-- castle -->
+        <a-entity gltf-model="#tower" scale=" .01 .01 .01" position="0 0 0" rotation="0 0 0"></a-entity>
+        
+        <a-gltf-model src="#keep" position="0 0 60.056" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model src="#keep" position="41.892 0 41.231" scale="2 2.5 2" rotation="0 180 0"></a-gltf-model>
+        <a-gltf-model src="#keep" position="-22.857 0 60.056" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model src="#keep" position="-45.490 0 60.056" scale="2 2.5 2" rotation="0 90 0"></a-gltf-model>
+
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="0 0 29.523" rotation="0 180 0"></a-entity>
+        <a-entity gltf-model="#door" scale="1.4 1.4 1.4" position="-18.093 0 21.369" rotation="0 90 0"></a-entity>
+
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="19.085 0 6.067" rotation="0 72.574 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="21.958 0 9.926" rotation="0 -26.893 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="3.361 0 -3.394" rotation="0 26.903 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-19.085 0 7.723" rotation="0 90.000 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-49.728 0 8.004" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-19.579 0 8.934" rotation="0 0 0"></a-gltf-model>
+
+        <!-- load in props to find: apple, sword, arrow, basket -->
+        <!-- load in some other random props -->
+
+    </a-scene>
+
+    <!-- Socket Script -->
+    
+    <script>
+
+        let locator = document.getElementById('playerLocation');
+        locator.setAttribute('value', 'Forest'); //change room values dynamically
+
+        let socket = io(); 
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_1', function(data) {
+            window.location.replace('index.html')
+        });
+
+    </script>
+</body>
+</html>

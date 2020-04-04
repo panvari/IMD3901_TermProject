@@ -127,31 +127,52 @@ socketIO.on('connection', (socket) => {
     socket.on('mobileLoadTraining', (data) => {
         socketIO.sockets.emit('training_areaMobile');
         socketIO.sockets.emit('message08');
+        socketIO.sockets.emit('gem1Change');
+        socketIO.sockets.emit('gem2Change');
+        socketIO.sockets.emit('gem3Change');
+        socketIO.sockets.emit('gem4Change');
+        socketIO.sockets.emit('gem5Change');
     });
 
     socket.on('mobileLoadTower', (data) => {
         socketIO.sockets.emit('towerMobile');
         socketIO.sockets.emit('message07');
+        socketIO.sockets.emit('gem1Change');
+        socketIO.sockets.emit('gem2Change');
+        socketIO.sockets.emit('gem3Change');
+        socketIO.sockets.emit('gem4Change');
     });
 
     socket.on('mobileLoadPantry', (data) => {
         socketIO.sockets.emit('pantryMobile');
         socketIO.sockets.emit('message04');
+        socketIO.sockets.emit('gem1Change');
+        socketIO.sockets.emit('gem2Change');
     });
 
     socket.on('mobileLoadWeapons', (data) => {
         socketIO.sockets.emit('weapons_roomMobile');
         socketIO.sockets.emit('message03');
+        socketIO.sockets.emit('gem1Change');
     });
 
     socket.on('mobileLoadThrone', (data) => {
         socketIO.sockets.emit('throne_roomMobile');
         socketIO.sockets.emit('message10');
+        socketIO.sockets.emit('gem1Change');
+        socketIO.sockets.emit('gem2Change');
+        socketIO.sockets.emit('gem3Change');
+        socketIO.sockets.emit('gem4Change');
+        socketIO.sockets.emit('gem5Change');
+        socketIO.sockets.emit('gem6Change');
     });
 
     socket.on('mobileLoadServant', (data) => {
         socketIO.sockets.emit('servant_quartersMobile');
         socketIO.sockets.emit('message05');
+        socketIO.sockets.emit('gem1Change');
+        socketIO.sockets.emit('gem2Change');
+        socketIO.sockets.emit('gem3Change');
     });
 
     //ROOM CHANGING EVENTS

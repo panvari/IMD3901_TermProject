@@ -14,15 +14,52 @@
             <!-- Socket Script -->
 
             <script>
+                let socket = io();
 
-                let socket = io(); 
+                function loadMessage(){
+                    socket.emit("mobileLoaded");
+                    gem1 = document.querySelector('#gem1')
+                    gem2 = document.querySelector('#gem2')
+                    gem3 = document.querySelector('#gem3')
+                    gem4 = document.querySelector('#gem4')
+                    gem5 = document.querySelector('#gem5')
+                    gem6 = document.querySelector('#gem6')
+
+                    setInterval((data) => {
+                        let gemsList = document.querySelectorAll(".gem");
+                        console.log(sessionStorage.getItem('gem3Collected'));
+
+                        if (sessionStorage.getItem('gem1Collected') == 'true') {
+                            gem1.setAttribute("style", "opacity:1");
+                        }
+
+                        if (sessionStorage.getItem('gem2Collected') == 'true') {
+                            gem2.setAttribute("style", "opacity:1");
+                        }
+
+                        if (sessionStorage.getItem('gem3Collected') == 'true') {
+                            gem3.setAttribute("style", "opacity:1");
+                        }
+
+                        if (sessionStorage.getItem('gem4Collected') == 'true') {
+                            gem4.setAttribute("style", "opacity:1");
+                        }
+
+                        if (sessionStorage.getItem('gem5Collected') == 'true') {
+                            gem5.setAttribute("style", "opacity:1");
+                        }
+
+                        if (sessionStorage.getItem('gem6Collected') == 'true') {
+                            gem6.setAttribute("style", "opacity:1");
+                        }
+                    }, 1000);
+                }
                 //default connect event
                 socket.on('connect', function() {
                     console.log("connected!");
                 });
 
                 //CALLING MINIGAMES
-                //the numbers might not be correct, i based these numbers off of the gemItemControl.js file
                 socket.on('launch_minigame_1', function(data) {
                     window.location.replace('/armourMini'); //weapons room
                 });
@@ -290,27 +327,27 @@
                 // GEM CALLS
 
                 socket.on('gem1Change', function(data) {
-                    document.getElementById("gem1").setAttribute("style", "opacity:1")
+                    window.sessionStorage.setItem('gem1Collected', 'true');
                 });
 
                 socket.on('gem2Change', function(data) {
-                    document.getElementById("gem2").setAttribute("style", "opacity:1")
+                    window.sessionStorage.setItem('gem2Collected', 'true');
                 });
 
                 socket.on('gem3Change', function(data) {
-                    document.getElementById("gem3").setAttribute("style", "opacity:1")
+                    window.sessionStorage.setItem('gem3Collected', 'true');
                 });
 
                 socket.on('gem4Change', function(data) {
-                    document.getElementById("gem4").setAttribute("style", "opacity:1")
+                    window.sessionStorage.setItem('gem4Collected', 'true');
                 });
 
                 socket.on('gem5Change', function(data) {
-                    document.getElementById("gem5").setAttribute("style", "opacity:1")
+                    window.sessionStorage.setItem('gem5Collected', 'true');
                 });
 
                 socket.on('gem6Change', function(data) {
-                    document.getElementById("gem6").setAttribute("style", "opacity:1")
+                    window.sessionStorage.setItem('gem6Collected', 'true');
                 });
 
                 socket.on('message01', function(data) {
@@ -471,16 +508,16 @@
 
         <title>Castle Quest</title>
     </head>
-    <body>
+    <body id = "page" onload="loadMessage()">
 
         <div id = "header">
             <div id = "gems">
-                <img class = "gem" id="gem1" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
-                <img class = "gem" id="gem2" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
-                <img class = "gem" id="gem3" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
-                <img class = "gem" id="gem4" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
-                <img class = "gem" id="gem5" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
-                <img class = "gem" id="gem6" src="./assets/images/gem.png" width = 20 style = opacity:0.4>
+                <img class = "gem" id="gem1" src="./assets/images/gem.png" width = 20 style="opacity:0.4">
+                <img class = "gem" id="gem2" src="./assets/images/gem.png" width = 20 style="opacity:0.4">
+                <img class = "gem" id="gem3" src="./assets/images/gem.png" width = 20 style="opacity:0.4">
+                <img class = "gem" id="gem4" src="./assets/images/gem.png" width = 20 style="opacity:0.4">
+                <img class = "gem" id="gem5" src="./assets/images/gem.png" width = 20 style="opacity:0.4">
+                <img class = "gem" id="gem6" src="./assets/images/gem.png" width = 20 style="opacity:0.4">
             </div>
             
 

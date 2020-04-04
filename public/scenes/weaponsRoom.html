@@ -237,6 +237,10 @@
             console.log("connected!");
         });
 
+        socket.on('pageLocationQuery', (data) => {
+            socket.emit('mobileLoadWeapons');
+        });
+
         socket.on('great_hall', function(data) {
             window.location.replace('greathall') //Call
         });

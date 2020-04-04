@@ -88,7 +88,7 @@ AFRAME.registerComponent("delete-fruit",{
         if (!fruits.length){
             console.log("win condition");
             setTimeout(window.location.replace('/mobile'), 3000);
-            socket.emit('fruitMini_MobileWin')
+            socket.emit('fruitMini_MobileWin');
         }
         else {
             console.log("next fruit");

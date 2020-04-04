@@ -178,6 +178,10 @@
             console.log("connected!");
         });
 
+        socket.on('pageLocationQuery', (data) => {
+            socket.emit('mobileLoadTraining');
+        });
+
         socket.on('inner_courtyard', function(data) {
             window.location.replace('innercourtyard') //Call
         });

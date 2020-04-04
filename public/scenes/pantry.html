@@ -204,6 +204,9 @@
         socket.on('kitchen', function(data) {
             window.location.replace('kitchen') //Call
         });
+        socket.on('pageLocationQuery', (data) => {
+            socket.emit('mobileLoadPantry');
+        });
     </script>
 </body>
 

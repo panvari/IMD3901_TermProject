@@ -119,6 +119,41 @@ socketIO.on('connection', (socket) => {
         console.log(socket.id + ' has disconnected');
     });
 
+    //MOBILE SCENE CHANGE
+    socket.on('mobileLoaded', (data) => {
+        socketIO.sockets.emit('pageLocationQuery');
+    });
+
+    socket.on('mobileLoadTraining', (data) => {
+        socketIO.sockets.emit('training_areaMobile');
+        socketIO.sockets.emit('message08');
+    });
+
+    socket.on('mobileLoadTower', (data) => {
+        socketIO.sockets.emit('towerMobile');
+        socketIO.sockets.emit('message07');
+    });
+
+    socket.on('mobileLoadPantry', (data) => {
+        socketIO.sockets.emit('pantryMobile');
+        socketIO.sockets.emit('message04');
+    });
+
+    socket.on('mobileLoadWeapons', (data) => {
+        socketIO.sockets.emit('weapons_roomMobile');
+        socketIO.sockets.emit('message03');
+    });
+
+    socket.on('mobileLoadThrone', (data) => {
+        socketIO.sockets.emit('throne_roomMobile');
+        socketIO.sockets.emit('message10');
+    });
+
+    socket.on('mobileLoadServant', (data) => {
+        socketIO.sockets.emit('servant_quartersMobile');
+        socketIO.sockets.emit('message05');
+    });
+
     //ROOM CHANGING EVENTS
     socket.on('great_hall', (data) => {
         socketIO.sockets.emit('great_hall');
@@ -281,42 +316,6 @@ socketIO.on('connection', (socket) => {
     socket.on('launch_mini_game6', (data) => {
         console.log('Launching MiniGame 6');
         socketIO.sockets.emit('launch_minigame_6'); //Mobile listen for this call
-    });
-
-    socket.on('armourMini_MobileWin', (data) => {
-        socketIO.sockets.emit('weapons_roomMobile');
-        socketIO.sockets.emit('gem1Change');
-        socketIO.sockets.emit('message03');
-    });
-
-    socket.on('fruitMini_MobileWin', (data) => {
-        socketIO.sockets.emit('pantryMobile');
-        socketIO.sockets.emit('gem2Change');
-        socketIO.sockets.emit('message04');
-    });
-
-    socket.on('laundryMini_MobileWin', (data) => {
-        socketIO.sockets.emit('servant_quartersMobile');
-        socketIO.sockets.emit('gem3Change');
-        socketIO.sockets.emit('message05');
-    });
-
-    socket.on('towerMini_MobileWin', (data) => {
-        socketIO.sockets.emit('towerMobile');
-        socketIO.sockets.emit('gem4Change');
-        socketIO.sockets.emit('message07');
-    });
-
-    socket.on('targetMini_MobileWin', (data) => {
-        socketIO.sockets.emit('training_areaMobile');
-        socketIO.sockets.emit('gem5Change');
-        socketIO.sockets.emit('message08');
-    });
-
-    socket.on('tapestryMini_MobileWin', (data) => {
-        socketIO.sockets.emit('throne_roomMobile');
-        socketIO.sockets.emit('gem6Change');
-        socketIO.sockets.emit('message10');
     });
 
 });

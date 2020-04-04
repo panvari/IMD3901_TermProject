@@ -41,7 +41,7 @@
         <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
 
         <a-entity player_position id="cameraRig" position="0 1.6 0">
-            <a-camera look-controls="touchEnabled:false" wasd-controls="acceleration: 220" twoway-motion="speed: 65" position="0 0 0">
+            <a-camera id="camera" look-controls="touchEnabled:false" wasd-controls="acceleration: 220" twoway-motion="speed: 65" position="0 0 0">
                 <a-entity   id = 'cursor'
                             cursor="rayOrigin:mouse;"
                             raycaster="far:20; interval:100; objects:.clickable">
@@ -74,17 +74,20 @@
         <a-gltf-model static-body material="color: grey" src="#turret" position="-10.546 0 3.253" scale="1 0.85 1"></a-gltf-model>
         <a-gltf-model static-body material="color: grey" src="#turret" position="-10.546 0 -21.612" scale="1 0.85 1"></a-gltf-model>
 
-        <a-gltf-model src="#dummyBlue" class="clickable" scale=".8 .8 .8" position="8.132 -.950 -17.794" rotation="0 -24.835 0"></a-gltf-model>
-        <a-gltf-model src="#dummyGreen" class="clickable" scale=".8 .8 .8" position="10.842 -.950 -14.318" rotation="0 -47.434 0"></a-gltf-model>
-        <a-gltf-model src="#dummyPurple" class="clickable" scale=".8 .8 .8" position="0.2 -.950 -17" rotation="0 -24.167 0"></a-gltf-model>
-        <a-gltf-model src="#dummyYellow" class="clickable" scale=".8 .8 .8" position="13.594 -.950 -4" rotation="0 -90 0"></a-gltf-model>
-        <a-gltf-model src="#dummyRed" class="clickable" scale=".8 .8 .8" position="13 -.950 -10" rotation="0 -63.167 0"></a-gltf-model>
+        <a-entity id = "props">
+            <a-entity match="" class="clickable blue" gltf-model="#dummyBlue" scale=".8 .8 .8" position="8.132 -.950 -17.794" rotation="0 -24.835 0"></a-entity>
+            <a-entity match="" class="clickable green" gltf-model="#dummyGreen" scale=".8 .8 .8" position="10.842 -.950 -14.318" rotation="0 -47.434 0"></a-entity>
+            <a-entity match="" class="clickable purple" gltf-model="#dummyPurple" scale=".8 .8 .8" position="0.2 -.950 -17" rotation="0 -24.167 0"></a-entity>
+            <a-entity match="" class="clickable yellow" gltf-model="#dummyYellow" scale=".8 .8 .8" position="13.594 -.950 -4" rotation="0 -90 0"></a-entity>
+            <a-entity match="" class="clickable red" gltf-model="#dummyRed" scale=".8 .8 .8" position="13 -.950 -10" rotation="0 -63.167 0"></a-entity>
+            
+            <a-entity pick-up="" class="clickable prop green" gltf-model="#helmet" scale=".125 .125 .125" position="1.7 0.2 -3" rotation="0 -63.167 0"></a-entity>
+            <a-entity pick-up="" class="clickable prop yellow" gltf-model="#gauntlet" scale=".125 .125 .125" position="-0.3 0.2 -6.5" rotation="0 -63.167 0"></a-entity>
+            <a-entity pick-up="" class="clickable prop red" gltf-model="#chestplate" scale=".3 .3 .3" position="3.7 -0.3 0" rotation="0 -63.167 0"></a-entity>
+            <a-entity pick-up="" class="clickable prop blue" gltf-model="#sword" scale=".8 .8 .8" position="6.8 -0.5 -5.8" rotation="0 -63.167 0"></a-entity>
+            <a-entity pick-up="" class="clickable prop purple" gltf-model="#boot" scale=".4 .4 .4" position="2.6 0.2 -9.6" rotation="0 -63.167 0"></a-entity>
+        </a-entity>
         
-        <a-gltf-model pick-up="" src="#helmet" class="clickable" scale=".125 .125 .125" position="1.7 0.2 -3" rotation="0 -63.167 0"></a-gltf-model>
-        <a-gltf-model pick-up="" src="#gauntlet" class="clickable" scale=".125 .125 .125" position="-0.3 0.2 -6.5" rotation="0 -63.167 0"></a-gltf-model>
-        <a-gltf-model pick-up="" src="#chestplate" class="clickable" scale=".3 .3 .3" position="3.7 0.2 0" rotation="0 -63.167 0"></a-gltf-model>
-        <a-gltf-model pick-up="" src="#sword" class="clickable" scale=".8 .8 .8" position="6.8 0.2 -5.8" rotation="0 -63.167 0"></a-gltf-model>
-        <a-gltf-model pick-up="" src="#boot" class="clickable" scale=".4 .4 .4" position="2.6 0.2 -9.6" rotation="0 -63.167 0"></a-gltf-model>
 
     </a-scene>
 

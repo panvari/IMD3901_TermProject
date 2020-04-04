@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="./js/positionTriggers.js"></script>
+    <script src="./js/minigames/eyeSpy.js"></script>
 
     <script src="/socket.io/socket.io.js"></script> <!-- Sockets -->
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!-- GUI -->
@@ -25,6 +26,14 @@
             <a-asset-item id="fence" src="./assets/models/fence.glb"></a-asset-item>
             <a-asset-item id="tower" src="./assets/models/RoofedTurret.glb"></a-asset-item>
             <a-asset-item id="door" src="./assets/models/door.glb"></a-asset-item>
+
+            <a-asset-item id="apple" src="./assets/models/Apple.glb"></a-asset-item>
+            <a-asset-item id="sword" src="./assets/models/sword.glb"></a-asset-item>
+            <a-asset-item id="arrow" src="./assets/models/arrow.glb"></a-asset-item>
+            <a-asset-item id="basket" src="./assets/models/Basket.glb"></a-asset-item>
+            <a-asset-item id="target" src="./assets/models/Target.glb"></a-asset-item>
+            <a-asset-item id="helmet" src="./assets/mobileProps/Helmet.glb"></a-asset-item>
+            <a-asset-item id="ham" src="./assets/models/Ham.glb"></a-asset-item>
         </a-assets>
 
         <a-entity player_position id="cameraRig" position="0 1.6 -7">
@@ -72,6 +81,15 @@
 
         <!-- load in props to find: apple, sword, arrow, basket -->
         <!-- load in some other random props -->
+        <a-entity id="props">
+            <a-entity pick-up="" class="clickable collectable" id="apple" gltf-model="#apple" scale="0.3 0.3 0.3" position="-5 0 -6" rotation="0 0 0"></a-entity>
+            <a-entity pick-up="" class="clickable collectable" id="sword" gltf-model="#sword" scale="0.4 0.4 0.4" position="-17 0.3 -12" rotation="0 -63.167 90"></a-entity>
+            <a-entity pick-up="" class="clickable collectable" id="arrow" gltf-model="#arrow" scale="0.8 0.8 0.8" position="3 0.1 -10" rotation="0 -63.167 90"></a-entity>
+            <a-entity pick-up="" class="clickable collectable" id="basket" gltf-model="#basket" scale=".1 .1 .1" position="-5.6 0.2 -30" rotation="0 -63.167 0"></a-entity>
+            <a-entity pick-up="" class="clickable" id="target" gltf-model="#target" scale=".3 .3 .3" position="24 0.2 -15" rotation="0 -63.167 0"></a-entity>
+            <a-entity pick-up="" class="clickable" id="helmet" gltf-model="#helmet" scale=".08 .08 .08" position="-20 0.2 -26" rotation="0 -63.167 0"></a-entity>
+            <a-entity pick-up="" class="clickable" id="ham" gltf-model="#ham" scale=".08 .08 .08" position="-8.3 0 -25" rotation="0 -63.167 0"></a-entity>
+        </a-entity>
 
     </a-scene>
 

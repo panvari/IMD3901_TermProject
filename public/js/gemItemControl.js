@@ -15,7 +15,7 @@ AFRAME.registerComponent('weaponsgem', {
                 armourInstructions.setAttribute('visible', 'true');
                 window.sessionStorage.setItem('gem1Collected', 'true');
                 gemNoise.play();
-                socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
+                socket.emit('launch_mini_game1') //Call Minigame for mobile
             } else if (counter % 2 == 1) {
                 armourInstructions.setAttribute('visible', 'false');
             }
@@ -41,7 +41,7 @@ AFRAME.registerComponent('traininggem', {
                 trainingGem.setAttribute('material', 'color', 'red');
                 window.sessionStorage.setItem('gem5Collected', 'true');
                 gemNoise.play();
-                socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
+                socket.emit('launch_mini_game5') //Call Minigame for mobile
             } else if (counter % 2 == 1) {
                 trainingInstructions.setAttribute('visible', 'false');
             }
@@ -67,7 +67,7 @@ AFRAME.registerComponent('servantsgem', { //DONE
                 servantsGem.setAttribute('material', 'color', 'red')
                 window.sessionStorage.setItem('gem3Collected', 'true');
                 gemNoise.play();
-                socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
+                socket.emit('launch_mini_game3') //Call Minigame for mobile
             } else if (counter % 2 == 1) {
                 servantsInstructions.setAttribute('visible', 'false');
             }
@@ -93,7 +93,7 @@ AFRAME.registerComponent('pantrygem', { // DONE
                 pantryGem.setAttribute('material', 'color', 'red');
                 window.sessionStorage.setItem('gem2Collected', 'true');
                 gemNoise.play();
-                socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
+                socket.emit('launch_mini_game2') //Call Minigame for mobile
             } else if (counter % 2 == 1) {
                 pantryInstructions.setAttribute('visible', 'false');
             }
@@ -120,7 +120,7 @@ AFRAME.registerComponent('towergem', { //DONE
                 window.sessionStorage.setItem('gem4Collected', 'true');
                 gemNoise.play();
                 socket.emit('launch_tower_MiniGame')
-                socket.emit('launch_mini_game1') //Call Minigame 1 for mobile
+                socket.emit('launch_mini_game4') //Call Minigame for mobile
             } else if (counter % 2 == 1) {
                 towerInstructions.setAttribute('visible', 'false');
             }
@@ -146,7 +146,7 @@ AFRAME.registerComponent('thronegem', {
                 throneRoomGem.setAttribute('material', 'color', 'red');
                 window.sessionStorage.setItem('gem6Collected', 'true');
                 gemNoise.play();
-                socket.emit('launch_Minigame') //Call Minigame for mobile
+                socket.emit('launch_mini_game6') //Call Minigame for mobile
             } else if (counter % 2 == 1) {
                 kingColorInstructions.setAttribute('visible', 'false');
             }

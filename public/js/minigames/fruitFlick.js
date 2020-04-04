@@ -39,7 +39,6 @@ AFRAME.registerComponent("flick",{
             }
             while(fruits[index].classList.contains("clickable") && (fruits.length >= 1));
             
-            console.log("next fruit");
             fruits[index].setAttribute("visible", "true");
             fruits[index].classList.add("clickable");
         }

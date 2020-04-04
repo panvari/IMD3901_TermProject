@@ -64,7 +64,6 @@ table {
 #gems {
 	display: inline-block;
 	padding: 5px;
-	margin-left: 20px;
 }
 
 img.gem{
@@ -82,17 +81,21 @@ h1 {
 	display: inline-block;
 	font-size: large;
 	font-weight: bold;
-	margin-left: 5px;
+}
+
+#header {
+	text-align:center;
+	margin: auto;
 }
 
 .roomText{
-	display: block;
 	margin-top: 10px;
 	background-color: #99ff99;
 	border-radius: 20px;
 	padding: 10px;
-	margin-left: 20px;
-	margin-right: 20px;
+	width: 85%;
+	text-align: center;
+	margin: auto;
 }
 
 #different{
@@ -125,6 +128,7 @@ h1 {
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 20px;
+	width: 90%;
 }
 
 #throneRoomIMG{

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="./js/positionTriggers.js"></script>
+    <script src="./js/minigames/targetPractice.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script> <!-- Sockets -->
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script> <!-- GUI -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script> <!--Environment extension-->
+    <!-- <script src="https://rawgit.com/Ctrl-Alt-Zen/aframe-mobile-controls/master/components/twoway-motion/twoway-motion.js"></script> -->
+
+    <title>Target Practice</title>
+</head>
+<body>
+    <a-scene>
+
+        <a-assets>
+            <a-asset-item id="turret" src="./assets/models/Turret.glb"></a-asset-item>
+            <a-asset-item id="wall" src="./assets/models/Wall1.glb"></a-asset-item>
+            <a-asset-item id="door" src="./assets/models/door.glb"></a-asset-item>
+            <a-asset-item id="keep" src="./assets/models/Keep.glb"></a-asset-item>
+            <a-asset-item id="arrow" src="./assets/models/arrow.glb"></a-asset-item>
+            <a-asset-item id="target" src="./assets/mobileProps/Target.glb"></a-asset-item>
+
+        </a-assets>
+
+        <a-entity environment="preset: threetowers; dressingAmount: 0"></a-entity>
+
+        <a-entity player_position id="cameraRig" position="0 1.6 0">
+            <a-camera id="camera" look-controls="touchEnabled:false" wasd-controls="acceleration: 220" position="0 0 0">
+                <a-entity   id = 'cursor'
+                            cursor="rayOrigin:mouse;"
+                            raycaster="far:20; interval:100; objects:.clickable">
+                </a-entity>
+
+                <a-gui-label 
+                    id="playerLocation"
+                    width="1" height="0.2"
+                    font-family="Arial"
+                    font-size="50px"
+                    padding="1rem 2rem"
+                    position="2 1.5 -2"
+                    value="">
+                </a-gui-label>
+
+                <a-entity id="arrow">
+                    <a-entity flick="" class="clickable" id="arrow" gltf-model="#arrow" scale="0.8 0.8 0.8" position="0 -2 0.2" rotation="-75 -18 0"></a-entity>
+                </a-entity>
+
+                <a-entity   class="clickable" 
+                            id="fireButton"
+                            geometry="primitive:cylinder; height:0.01; radius:0.05;"
+                            rotation="90 0 0"
+                            position="-0.3 0.6 -1"
+                            material="color:#4b8cff"
+                            flick=""></a-entity>
+            </a-camera> 
+        </a-entity>
+
+        <!-- Lighting  -->
+        <a-light type="ambient" position="5.579 25.204 -2.032" color="#222"></a-light>
+        <a-light type="point" position="5.579 25.204 -2.032"></a-light>
+        <a-light type="point" position="5.579 25.204 -10.032"></a-light>
+
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="15.373 0 3.253" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="15.373 0 -21.612" rotation="0 0 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="16.829 0 -23.091" rotation="0 90 0"></a-gltf-model>
+        <a-gltf-model id="walls" src="#wall" scale="0.5 0.8 1" position="-11 0 -23.091" rotation="0 90 0"></a-gltf-model>
+
+        <a-gltf-model static-body material="color: grey" src="#turret" position="16.546 0 -21.612" scale="1 0.85 1"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="16.546 0 3.253" scale="1 0.85 1"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="-10.546 0 3.253" scale="1 0.85 1"></a-gltf-model>
+        <a-gltf-model static-body material="color: grey" src="#turret" position="-10.546 0 -21.612" scale="1 0.85 1"></a-gltf-model>
+        
+        <!-- Targets -->
+        <a-entity id="targets">
+            <a-entity class="target" id="target1" gltf-model="#target" scale=".5 .5 .5" position="-6.8 0 -14" rotation="0 127 0"></a-entity>
+            <a-entity class="target" id="target2" gltf-model="#target" scale=".5 .5 .5" position="1.6 0 -17" rotation="0 85 0"></a-entity>
+            <a-entity class="target" id="target3" gltf-model="#target" scale=".5 .5 .5" position="11 0 -15" rotation="0 43 0"></a-entity>
+            <a-entity class="target" id="target4" gltf-model="#target" scale=".5 .5 .5" position="13 0 -8" rotation="0 0 0"></a-entity>
+            <a-entity class="target" id="target5" gltf-model="#target" scale=".5 .5 .5" position="10.7 0 -1" rotation="0 -27 0"></a-entity>
+        </a-entity>
+
+    </a-scene>
+
+    <!-- Socket Script -->
+    
+    <script>
+
+        let locator = document.getElementById('playerLocation');
+        locator.setAttribute('value', 'Training Area'); //change room values dynamically
+
+        let socket = io(); 
+        //default connect event
+        socket.on('connect', function() {
+            console.log("connected!");
+        });
+
+        socket.on('scene_1', function(data) {
+            window.location.replace('index.html')
+        });
+
+    </script>
+</body>
+</html>

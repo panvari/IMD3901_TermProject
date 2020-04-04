@@ -254,22 +254,34 @@ socketIO.on('connection', (socket) => {
 
     // MINI GAME CONTROLS FOR Julianna
     socket.on('launch_mini_game1', (data) => {
-        console.log('Lunching MiniGame 1');
+        console.log('Launching MiniGame 1');
         socketIO.sockets.emit('launch_minigame_1'); //Mobile listen for this call
     });
 
     socket.on('launch_mini_game2', (data) => {
-        console.log('Lunching MiniGame 2');
+        console.log('Launching MiniGame 2');
         socketIO.sockets.emit('launch_minigame_2'); //Mobile listen for this call
     });
 
-    // socket.on('gem1', (data) => {
-    //     socketIO.sockets.emit('gem1'); //Mobile listen for this call
-    // });
+    socket.on('launch_mini_game3', (data) => {
+        console.log('Launching MiniGame 3');
+        socketIO.sockets.emit('launch_minigame_3'); //Mobile listen for this call
+    });
 
-    // socket.on('gem2', (data) => {
-    //     socketIO.sockets.emit('gem2'); //Mobile listen for this call
-    // });
+    socket.on('launch_mini_game4', (data) => {
+        console.log('Launching MiniGame 4');
+        socketIO.sockets.emit('launch_minigame_4'); //Mobile listen for this call
+    });
+
+    socket.on('launch_mini_game5', (data) => {
+        console.log('Launching MiniGame 5');
+        socketIO.sockets.emit('launch_minigame_5'); //Mobile listen for this call
+    });
+
+    socket.on('launch_mini_game6', (data) => {
+        console.log('Launching MiniGame 6');
+        socketIO.sockets.emit('launch_minigame_6'); //Mobile listen for this call
+    });
 
 });
 

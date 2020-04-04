@@ -283,6 +283,42 @@ socketIO.on('connection', (socket) => {
         socketIO.sockets.emit('launch_minigame_6'); //Mobile listen for this call
     });
 
+    socket.on('armourMini_MobileWin', (data) => {
+        socketIO.sockets.emit('weapons_roomMobile');
+        socketIO.sockets.emit('gem1Change');
+        socketIO.sockets.emit('message03');
+    });
+
+    socket.on('fruitMini_MobileWin', (data) => {
+        socketIO.sockets.emit('pantryMobile');
+        socketIO.sockets.emit('gem2Change');
+        socketIO.sockets.emit('message04');
+    });
+
+    socket.on('laundryMini_MobileWin', (data) => {
+        socketIO.sockets.emit('servant_quartersMobile');
+        socketIO.sockets.emit('gem3Change');
+        socketIO.sockets.emit('message05');
+    });
+
+    socket.on('towerMini_MobileWin', (data) => {
+        socketIO.sockets.emit('towerMobile');
+        socketIO.sockets.emit('gem4Change');
+        socketIO.sockets.emit('message07');
+    });
+
+    socket.on('targetMini_MobileWin', (data) => {
+        socketIO.sockets.emit('training_areaMobile');
+        socketIO.sockets.emit('gem5Change');
+        socketIO.sockets.emit('message08');
+    });
+
+    socket.on('tapestryMini_MobileWin', (data) => {
+        socketIO.sockets.emit('throne_roomMobile');
+        socketIO.sockets.emit('gem6Change');
+        socketIO.sockets.emit('message10');
+    });
+
 });
 
 //finally, start server

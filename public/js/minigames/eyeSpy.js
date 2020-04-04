@@ -25,6 +25,7 @@ AFRAME.registerComponent("pick-up",{
         if(items.length == 4){
             console.log("win condition");
             setTimeout(window.location.replace('/mobile'), 3000);
+            socket.emit('towerMini_MobileWin')
         }
     },
 });

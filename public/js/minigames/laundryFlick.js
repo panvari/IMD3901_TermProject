@@ -91,6 +91,7 @@ AFRAME.registerComponent("delete-clothing",{
         if (!clothes.length){
             console.log("win condition");
             setTimeout(window.location.replace('/mobile'), 3000);
+            socket.emit('laundryMini_MobileWin')
         }
         else {
             console.log("next clothing");

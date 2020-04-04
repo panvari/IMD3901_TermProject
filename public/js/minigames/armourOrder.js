@@ -81,6 +81,7 @@ AFRAME.registerComponent("match",{
         if(!props.length){
             console.log("win condition");
             setTimeout(window.location.replace('/mobile'), 3000);
+            socket.emit('armourMini_MobileWin')
         }
     },
 });

@@ -41,6 +41,7 @@ AFRAME.registerComponent("flick",{
         if (!targets.length){
             console.log("win condition");
             setTimeout(window.location.replace('/mobile'), 3000);
+            socket.emit('targetMini_MobileWin')
         }
         
     },

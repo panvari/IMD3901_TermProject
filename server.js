@@ -107,6 +107,10 @@ app.get('/towerMini', (req, res) => {
     res.sendFile(__dirname + '/public/minigames/eyeSpy.html');
 });
 
+app.get('/targetMini', (req, res) => {
+    res.sendFile(__dirname + '/public/minigames/targetPractice.html');
+});
+
 //websocket stuff
 socketIO.on('connection', (socket) => {
     console.log(socket.id + ' has connected!');

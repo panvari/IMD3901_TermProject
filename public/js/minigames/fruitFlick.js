@@ -15,8 +15,6 @@ AFRAME.registerComponent("flick",{
         const Context_AF = this;
         let fruits = document.querySelectorAll(".fruit");
 
-        console.log(fruits);
-
         if (Context_AF.el.classList.contains("allowed")){
             console.log(Context_AF.el);
             // Context_AF.el.setAttribute('animation__2', {property: 'position', to: {x:camPosition.x, y:camPosition.y, z:camPosition.z}, loop: false, dur:2000, easing: 'easeInOutQuad'});
